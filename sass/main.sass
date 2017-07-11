@@ -1,0 +1,603 @@
+/* Main style project */
+@import "bourbon"
+@import "vars"
+@import "libs"
+@import "media"
+
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.75
+	font-family: $default-font
+	overflow-x: hidden;
+	opacity: 1
+html
+	background: #fff
+.is-home
+	.site-header
+		min-height: 1300px
+		height: 100vh
+		background-color: #000
+		background-position: center center
+		z-index: 0
+		.top-line
+			position: absolute
+			padding-top: 27px
+			width: 100%
+			z-index: 1
+.logo
+	img
+		width: 240px
+		height: auto
+		margin-left: 75px
+section, header
+	position: relative
+	background-size: cover
+	background-position: center
+.top-composition
+
+.link-menu
+	top: 5px
+	position: relative
+	right: 148px
+	float: right
+	li
+		a
+			color: $blue
+.in-left-menu
+    -webkit-animation: menu-animation 0.5s linear forwards
+    animation: menu-animation 0.5s linear forwards
+@-webkit-keyframes menu-animation 
+    0% 
+    	right: 150px
+    10% 
+    	right: 163px
+    20% 
+    	right: 176px
+    30% 
+    	right: 190px
+    40% 
+    	right: 203px
+    50% 
+    	right: 216px
+    60% 
+    	right: 230px
+    70% 
+    	right: 243px
+    80% 
+    	right: 260px
+    90% 
+    	right: 275px
+    100% 
+    	right: 280px
+@keyframes menu-animation
+    0% 
+    	right: 150px
+    10% 
+    	right: 163px
+    20% 
+    	right: 176px
+    30% 
+    	right: 190px
+    40% 
+    	right: 203px
+    50% 
+    	right: 216px
+    60% 
+    	right: 230px
+    70% 
+    	right: 243px
+    80% 
+    	right: 260px
+    90% 
+    	right: 275px
+    100% 
+    	right: 280px
+.in-right-menu
+	-webkit-animation: menu-right-animation 0.5s linear forwards
+    animation: menu-right-animation 0.5s linear forwards
+    display: none
+@-webkit-keyframes menu-right-animation
+    0% 
+    	right: 280px
+    10% 
+    	right: 275px
+    20% 
+    	right: 260px
+    30% 
+    	right: 243px
+    40% 
+    	right: 230px
+    50% 
+    	right: 216px
+    60% 
+    	right: 203px
+    70% 
+    	right: 190px
+    80% 
+    	right: 176px
+    90% 
+    	right: 163px
+    100% 
+    	right: 150px
+@keyframes menu-right-animation
+    0% 
+    	right: 280px
+    10% 
+    	right: 275px
+    20% 
+    	right: 260px
+    30% 
+    	right: 243px
+    40% 
+    	right: 230px
+    50% 
+    	right: 216px
+    60% 
+    	right: 203px
+    70% 
+    	right: 190px
+    80% 
+    	right: 176px
+    90% 
+    	right: 163px
+    100% 
+    	right: 150px
+    	
+.hiring-link, .portal-link, .contact-us
+	font-family: Segoeui
+	top: 44px
+	font-size: 18px
+	white-space: nowrap //!!!!!!!!for small screen
+	margin-right: 5px
+	display: inline-block
+	padding: 10px 24px 7px 24px
+	text-transform: uppercase
+.contact-us
+	border: 2px solid $blue
+	border-radius: 37px
+	height: 43px
+
+.hamburger
+	position: absolute
+	right: 0
+	top: 28px
+.hamburger-inner, .hamburger-inner:after, .hamburger-inner:before
+    height: 4px
+    background-color: $blue
+    position: absolute
+    bottom: 10px
+    border-radius: 1px
+    -webkit-border-radius: 1px
+    width: 40px
+    margin-bottom: 2px
+.in-left
+	-webkit-animation: left-animation 0.5s linear forwards
+    animation: left-animation 0.5s linear forwards
+@-webkit-keyframes left-animation 
+    0% 
+    	right:  0
+    10% 
+    	right: 14px
+    20% 
+    	right: 26px
+    30% 
+    	right: 40px
+    40% 
+    	right: 53px
+    50% 
+    	right: 66px
+    60% 
+    	right: 80px
+    70% 
+    	right: 94px
+    80% 
+    	right: 106px
+    80% 
+    	right: 120px
+    100% 
+    	right: 135px
+@keyframes left-animation 
+    0% 
+    	right:  0
+    10% 
+    	right: 14px
+    20% 
+    	right: 26px
+    30% 
+    	right: 40px
+    40% 
+    	right: 53px
+    50% 
+    	right: 66px
+    60% 
+    	right: 80px
+    70% 
+    	right: 33px
+    80% 
+    	right: 106px
+    80% 
+    	right: 120px
+    100% 
+    	right: 135px
+.in-right
+	-webkit-animation: right-animation 0.5s linear forwards
+    animation: right-animation 0.5s linear forwards
+@-webkit-keyframes right-animation
+    0% 
+    	right: 135px
+    10% 
+    	right: 122px
+    20% 
+    	right: 107px
+    30% 
+    	right: 93px
+    40% 
+    	right: 80px
+    50% 
+    	right: 66px
+    60% 
+    	right: 53px
+    70% 
+    	right: 33px
+    80% 
+    	right: 26px
+    80% 
+    	right: 14px
+    100% 
+    	right:  0
+    
+@keyframes right-animation
+    0% 
+    	right: 135px
+    10% 
+    	right: 122px
+    20% 
+    	right: 107px
+    30% 
+    	right: 93px
+    40% 
+    	right: 80px
+    50% 
+    	right: 66px
+    60% 
+    	right: 53px
+    70% 
+    	right: 33px
+    80% 
+    	right: 26px
+    80% 
+    	right: 14px
+    100% 
+    	right:  0
+.render-menu
+	display: block !important
+#my-menu
+    ul
+        line-height: 50px
+        padding-top: 0
+        li
+            background-color: #fff
+            width: 200px
+            height: 50px
+            text-align: center
+            vertical-align: middle;
+            cursor: pointer
+            a
+                color: $blue
+            a:hover
+                color: #1ca4bf
+        .active
+            width: 100%
+            background-color: $blue
+            a
+                color: #fff
+#my-menu
+    right: -201px;
+    position: absolute
+    top: 34px
+    z-index: 2
+    display: none
+.show-menu
+    display: block !important
+    -webkit-animation: show-menu 0.5s linear forwards
+    animation: show-menu 0.5s linear forwards
+@-webkit-keyframes show-menu 
+    0% 
+    	right:  -200px
+    10% 
+    	right: -180px
+    20% 
+    	right: -160px
+    30% 
+    	right: -140px
+    40% 
+    	right: -120px
+    50% 
+    	right: -100px
+    60% 
+    	right: -80px
+    70% 
+    	right: -60px
+    80% 
+    	right: -40px
+    80% 
+    	right: -20px
+    100% 
+    	right: 0px
+@keyframes show-menu  
+    0% 
+    	right:  -200px
+    10% 
+    	right: -180px
+    20% 
+    	right: -160px
+    30% 
+    	right: -140px
+    40% 
+    	right: -120px
+    50% 
+    	right: -100px
+    60% 
+    	right: -80px
+    70% 
+    	right: -60px
+    80% 
+    	right: -40px
+    80% 
+    	right: -20px
+    100% 
+    	right: 0px
+.close-menu
+	-webkit-animation: close-menu 0.5s linear forwards
+    animation: close-menu 0.5s linear forwards
+@-webkit-keyframes close-menu 
+    0% 
+    	right:  0px
+    10% 
+    	right: -20px
+    20% 
+    	right: -40px
+    30% 
+    	right: -60px
+    40% 
+    	right: -80px
+    50% 
+    	right: -100px
+    60% 
+    	right: -120px
+    70% 
+    	right: -140px
+    80% 
+    	right: -160px
+    80% 
+    	right: -180px
+    100% 
+    	right: -200px
+@keyframes close-menu 
+    0% 
+    	right:  0px
+    10% 
+    	right: -20px
+    20% 
+    	right: -40px
+    30% 
+    	right: -60px
+    40% 
+    	right: -80px
+    50% 
+    	right: -100px
+    60% 
+    	right: -120px
+    70% 
+    	right: -140px
+    80% 
+    	right: -160px
+    80% 
+    	right: -180px
+    100% 
+    	right: -200px
+.header-flex, .slider-flex
+	display:flex
+	height: 100%
+	top: 195px
+	position: relative
+.flex-cloud
+	display:flex
+	height: 100%
+	top: 320px
+	position: relative
+.composition
+	font-family: Display-Light
+	position: relative
+	text-align: right;
+	color: #fff
+	line-height: 1.50
+.composition-cloud
+	font-family: Display-Light
+	color: #000
+    position: relative
+	line-height: 1.25
+	font-size: 18px
+	h1
+		color: #74819e
+.cloud
+    min-height: 1250px
+    margin-top: -180px
+    margin-bottom: -215px
+    z-index: 2
+.we-specilise
+	color: #000
+	bottom: 400px
+	margin-top: 400px
+	text-align: center
+	img
+		width: 140px
+.we-specilise, .flex-cloud
+    opacity: 0
+.earth
+	position: relative
+	min-height: 700px
+	bottom: 0
+	background-position: 50% !important
+	margin-top: -300px
+	z-index: 1
+.aus-flex .composition, .isr-flex .composition, .brz-flex .composition, .usa-flex .composition, .houston-flex .composition
+	width: 8%
+	border-radius: 100%
+	text-align: center
+	background: rgba(159, 198, 215, 0.7)
+	padding: 0 1.5%
+	div
+		width: 63%
+		height: 63%
+		background-color: #fff
+		border-radius: 100%
+		position: inherit
+		margin: 18% auto
+		padding: 9% 0;
+		color: #000
+		font-family: Segoeui
+		font-size: 11px
+		opacity: 1
+		line-height: 0
+		img
+			width:  41%
+		p
+			margin-top: 9px
+canvas
+    position: absolute
+#bezier-aus 
+    left: 57%
+    top: 26%
+    width: 23%
+    height: 41%
+#bezier-usa
+    color: $blue
+    left: 13%
+    top: 24%
+    width: 42%
+    height: 41%
+.earth .composition
+    position: absolute
+    opacity: 0
+.show-composition
+    opacity: 1 !important
+.houston-flex .composition
+	left: 52%
+	top: 23%
+	div
+		font-size: 10px
+.usa-flex .composition
+	left: 15%
+	top: 27%
+.isr-flex .composition
+	left: 53%
+	top: 42%
+.brz-flex .composition
+	left: 28%
+	top: 55%
+.aus-flex .composition
+	left: 77%;
+	top: 58%
+.houston-flex
+	left: 0
+.slider
+	min-height: 700px
+.how-we-work
+	font-size: 3em
+#my-footer
+	min-height: 440px
+	background-color: #545555
+.section-footer    
+	margin-left: 75px
+	top: 100px
+	position: relative
+	div
+		margin-left: 30px
+		color: #fff
+	.logo-footer-wrapp
+		img
+		max-width: 240px
+		height: auto
+		margin-right: 8%
+		margin-bottom: none
+.footer__pages
+	font-family: Display-Light
+	div
+		margin-left: 0
+		padding: 0
+		li
+			color: $blue
+			font-size: 18px
+			padding: 2px 0
+	.footer__pages-title
+		border-bottom: 2px solid $blue
+		font-family: Display-Light
+		font-size: 21px
+		padding-bottom: 20px
+		margin-top: 0px 
+		margin-bottom: 40px		
+.footer__contact-title, .footer__social-title
+	border-bottom: 2px solid #a9e8f9
+	font-family: Display-Light 
+	font-size: 18px
+	padding-bottom: 20px
+	margin-top: 0px 
+	font-family: Display-Light
+	font-size: 21px
+	margin-bottom: 40px
+.footer__contact, 
+	div
+		width: 40px
+		height: 40px
+		text-align: center
+		margin-left: 0
+		margin-right: 10px
+		border-radius: 5px
+		display: inline-block
+		padding: 6px
+		img
+			width: 40px
+.footer__social
+    div
+        border: 1.5px solid #979898
+        width: 40px
+        height: 40px
+        text-align: center
+        margin-left: 0
+        margin-right: 10px
+        border-radius: 5px
+        display: inline-block
+        padding: 6px
+        img
+            width: 25px
+
+.smutch
+	background-image: linear-gradient(to right, #4c4c4c 50%, rgba(255,255,255,0) 0%);
+	background-size: 90px 15px;
+	background-repeat: repeat-x;
+	height: 15px	
+#flex-cloud, #we-specilise
+    -webkit-animation: cloud 0.5s linear forwards
+    animation: cloud 0.5s linear forwards
+@keyframes cloud
+    25%
+        opacity: 0.2
+    50%
+        opacity: 0.4
+    75%
+        opacity: 0.6
+    100%
+        opacity: 1
+@webkit-keyframes cloud
+    25%
+        opacity: 0.2
+    50%
+        opacity: 0.4
+    75%
+        opacity: 0.6
+    100%
+        opacity: 1
