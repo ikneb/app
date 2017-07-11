@@ -181,7 +181,7 @@ $(function(){
         });
     }
     $('body').on('mousewheel', function(e){
-       	e.preventDefault();
+        e.preventDefault();
         e.stopPropagation();
         
 
@@ -202,78 +202,78 @@ $(function(){
         isAnimating  = true;
         
         if (anchors[currentAnchor] < 800) {
-        	
+            
         } else if( anchors[currentAnchor] < 1200 && render == true) {
-        	setTimeout(function () {
-        		$('.houston-flex .composition').addClass('show-composition');
-        		drawC = document.getElementById('bezier-aus');
-        		if (drawC && drawC.getContext) {
-				    ctx = drawC.getContext('2d');
-				    ctx.lineWidth= 0.03;
-				    
-				    var flow; 
-				    var arr = new Array();
-				    // aus
-				    arr[0] = new Array(0, 5);
-				    arr[1] = new Array(100, 0);
-				    arr[2] = new Array(200 , 0);
-				    arr[3] = new Array(300, 50);
-				    arr[4] = new Array(500, 400);
-				    arr[5] = new Array(700, 600);
-				    arr[6] = new Array(750, 800);
-				   
+            setTimeout(function () {
+                $('.houston-flex .composition').addClass('show-composition');
+                drawC = document.getElementById('bezier-aus');
+                if (drawC && drawC.getContext) {
+                    ctx = drawC.getContext('2d');
+                    ctx.lineWidth= 0.03;
+                    
+                    var flow; 
+                    var arr = new Array();
+                    // aus
+                    arr[0] = new Array(0, 5);
+                    arr[1] = new Array(100, 0);
+                    arr[2] = new Array(200 , 0);
+                    arr[3] = new Array(300, 50);
+                    arr[4] = new Array(500, 400);
+                    arr[5] = new Array(700, 600);
+                    arr[6] = new Array(750, 800);
+                   
 
-				    //isr
-				    arr[7] = new Array(10, 10);
-				    arr[8] = new Array(50, 50);
-				    arr[9] = new Array(0, 80);
+                    //isr
+                    arr[7] = new Array(10, 10);
+                    arr[8] = new Array(50, 50);
+                    arr[9] = new Array(0, 80);
 
 
-				    flow = getBezierCurve(new Array(arr[0], arr[1], arr[2], arr[3], arr[4], arr[5], arr[6]), 0.05);
-				    drawLines(ctx, flow, 10);
+                    flow = getBezierCurve(new Array(arr[0], arr[1], arr[2], arr[3], arr[4], arr[5], arr[6]), 0.05);
+                    drawLines(ctx, flow, 10);
 
-				    flow = getBezierCurve(new Array(arr[7], arr[8], arr[9]), 0.05);
-				    drawLines(ctx, flow, 10);
-				}
-				    drawU = document.getElementById('bezier-usa');
-        		if (drawU && drawU.getContext) {
-				    ctx = drawU.getContext('2d');
-				    ctx.lineWidth= 0.03;
-				    
-				    var flow; 
-				    var arr = new Array();
-				    // usa
-				    arr[0] = new Array(300, 10);
-				    arr[1] = new Array(300, 50);
-				    arr[2] = new Array(200 , 50);
-				    arr[3] = new Array(100, 50);
-				    arr[4] = new Array(50, 40);
-				   
-				    //bzr
-				    arr[5] = new Array(300, 28);
+                    flow = getBezierCurve(new Array(arr[7], arr[8], arr[9]), 0.05);
+                    drawLines(ctx, flow, 10);
+                }
+                    drawU = document.getElementById('bezier-usa');
+                if (drawU && drawU.getContext) {
+                    ctx = drawU.getContext('2d');
+                    ctx.lineWidth= 0.03;
+                    
+                    var flow; 
+                    var arr = new Array();
+                    // usa
+                    arr[0] = new Array(300, 10);
+                    arr[1] = new Array(300, 50);
+                    arr[2] = new Array(200 , 50);
+                    arr[3] = new Array(100, 50);
+                    arr[4] = new Array(50, 40);
+                   
+                    //bzr
+                    arr[5] = new Array(300, 28);
                     arr[6] = new Array(310, 60);
                     arr[7] = new Array(20, 200);
 
-				    flow = getBezierCurve(new Array(arr[0],  arr[1], arr[2], arr[3], arr[4]), 0.05);
-				    drawLines(ctx, flow, 10);
+                    flow = getBezierCurve(new Array(arr[0],  arr[1], arr[2], arr[3], arr[4]), 0.05);
+                    drawLines(ctx, flow, 10);
 
-				    flow = getBezierCurve(new Array(arr[5], arr[6],  arr[7] ), 0.05);
-				    drawLines(ctx, flow, 10);
+                    flow = getBezierCurve(new Array(arr[5], arr[6],  arr[7] ), 0.05);
+                    drawLines(ctx, flow, 10);
                     return;
-				}
-        	}, 800);
-        	setTimeout(function () {
-        		$('.isr-flex .composition').addClass('show-composition');
-        	}, 1000);
-        	setTimeout(function () {
-        		$('.brz-flex .composition').addClass('show-composition');
-        	}, 1200);
-        	setTimeout(function () {
-        		$('.aus-flex .composition').addClass('show-composition');
-        	}, 1400);
-        	setTimeout(function () {
-        		$('.usa-flex .composition').addClass('show-composition');
-        	}, 1600);
+                }
+            }, 800);
+            setTimeout(function () {
+                $('.isr-flex .composition').addClass('show-composition');
+            }, 1000);
+            setTimeout(function () {
+                $('.brz-flex .composition').addClass('show-composition');
+            }, 1200);
+            setTimeout(function () {
+                $('.aus-flex .composition').addClass('show-composition');
+            }, 1400);
+            setTimeout(function () {
+                $('.usa-flex .composition').addClass('show-composition');
+            }, 1600);
             } else if (anchors[currentAnchor] >1400) {
                 setTimeout(function () {
                $(".flex-cloud").attr('id','flex-cloud');
@@ -296,38 +296,46 @@ $(function(){
 
 
 $(document).ready(function () {
-		$('.hamburger').click(function() {
-			if(click){
-				$(this).removeClass('is-active').removeClass('js-hamburger');
-				$('#my-menu').removeClass('show-menu').addClass('close-menu');
-					$('.link-menu').removeClass('in-left-menu').addClass('in-right-menu');
-					$('#hamburger').removeClass('in-left').addClass('in-right');
-				click = false;
-			} else {
-				$(this).addClass('is-active').addClass('js-hamburger');
-				$('#my-menu').removeClass('close-menu').addClass('show-menu');
-				
-					$('.link-menu').addClass('in-left-menu').removeClass('in-right-menu');
-					$('#hamburger').addClass('in-left').removeClass('in-right');
-			
-				click = true;
-			}
-		}); 
+        $('.hamburger').click(function() {
+            if(click){
+                $(this).removeClass('is-active').removeClass('js-hamburger');
+                $('#my-menu').removeClass('show-menu').addClass('close-menu');
+                    $('.link-menu').removeClass('in-left-menu').addClass('in-right-menu');
+                    $('#hamburger').removeClass('in-left').addClass('in-right');
+                click = false;
+            } else {
+                $(this).addClass('is-active').addClass('js-hamburger');
+                $('#my-menu').removeClass('close-menu').addClass('show-menu');
+                
+                    $('.link-menu').addClass('in-left-menu').removeClass('in-right-menu');
+                    $('#hamburger').addClass('in-left').removeClass('in-right');
+            
+                click = true;
+            }
+        }); 
 
-		$('#my-menu>ul>li').click(function () {
-			var _this = $(this);
-			$('.active').removeClass('active');
-			_this.addClass('active');
-		});
-
-		$('.height-composition').each(function(i, element){
-            	var composition = $(this)[0];
-				composition.style.height = composition.clientWidth + 'px';
-				window.onresize = function() {
-    			composition.style.height = composition.clientWidth + 'px';
-			}
+        $('#my-menu>ul>li').click(function () {
+            var _this = $(this);
+            $('.active').removeClass('active');
+            _this.addClass('active');
         });
 
+        $('.height-composition').each(function(i, element){
+                var composition = $(this)[0];
+                composition.style.height = composition.clientWidth + 'px';
+                window.onresize = function() {
+                composition.style.height = composition.clientWidth + 'px';
+            }
+        });
+
+        var wind = document.documentElement.clientWidth; 
+            if (wind < 480) {
+                 $('.isr-flex .composition').addClass('show-composition');
+                 $('.brz-flex .composition').addClass('show-composition');
+                 $('.aus-flex .composition').addClass('show-composition');
+                 $('.usa-flex .composition').addClass('show-composition');
+                 $('.houston-flex .composition').addClass('show-composition');
+                 $(".flex-cloud").attr('id','flex-cloud');
+                $(".we-specilise").attr('id','we-specilise');
+            }
 });
-
-
