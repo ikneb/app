@@ -2,14 +2,33 @@
 @import "bourbon"
 @import "vars"
 
-@media only screen and (min-width: 1680px) 
+@media only screen and (min-width: 1690px) 
+	.earth .brz-flex .composition
+		left: 27%
+		top: 53%
+	.earth .line-isr
+		left: 33%
+		top: 13%	
 	.earth
 	    margin: -300px -150px 0 -150px
 	    min-height: 1000px !important
 	.houston-flex .composition
-		top: 19% !important
+		top: 23% !important
+	.earth .line-aus
+    	width: 44%
+    	height: 43%
+    	left: 49%
+    	top: 24%
+@media only screen and (min-width: 1900px) 
+	.earth .line-isr
+		left: 35%
+	.earth .brz-flex .composition
+		left: 27%
+		top: 53%	
 
 @media only screen and (max-width: 1352px)
+	#my-content .cloud
+		margin-top: -202px
 	.header-flex
 		padding-top: 136px
 	.top-line .link-menu
@@ -49,7 +68,8 @@
 	.mm-nolistview .hidden-media
 		display: block
 	.link-menu
-		display: none
+		.hiring-link, .portal-link
+			display: none
 	#my-header .earth
 		min-height: 404px
 	#my-content .cloud
@@ -71,6 +91,43 @@
 		width: 95%
 /* Extra Small Devices, Phones */
 @media only screen and (max-width: 480px)
+	.top-line .in-left-menu
+	    -webkit-animation: menu-media-animation 0.5s linear forwards
+	    animation: menu-media-animation 0.5s linear forwards
+	@-webkit-keyframes menu-media-animation 
+	    0% 
+	    	right: 180px
+	    25% 
+	    	right: 190px
+	    50% 
+	    	right: 200px
+	    75% 
+	    	right: 210px
+	    100% 
+	    	right: 220px
+	@keyframes menu-animation
+	    0% 
+	    	right: 50px
+	    10% 
+	    	right: 63px
+	    20% 
+	    	right: 76px
+	    30% 
+	    	right: 90px
+	    40% 
+	    	right: 03px
+	    50% 
+	    	right: 16px
+	    60% 
+	    	right: 30px
+	    70% 
+	    	right: 43px
+	    80% 
+	    	right: 60px
+	    90% 
+	    	right: 75px
+	    100% 
+	    	right: 80px
 	.show-composition p
 		display: none
 	.footer__contact div
@@ -122,7 +179,8 @@
 	.mm-nolistview .hidden-media
 		display: block
 	.link-menu
-		display: none
+		.hiring-link, .portal-link
+			display: none
 	.section-footer .logo-footer-wrapp
         bottom: 0
 	.slider-flex .row
