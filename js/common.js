@@ -139,10 +139,7 @@ $(document).ready(function () {
 
         var windWidth = document.documentElement.clientWidth; 
         var windHeigth = document.documentElement.clientHeight;
-        if (windWidth < 480) {
-            
-        }
-
+        console.log(windWidth);
         if (come('.earth')) {
              fly();
         } 
