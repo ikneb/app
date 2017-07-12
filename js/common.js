@@ -89,6 +89,13 @@ $(function(){
             });
         }
     });
+    $('body').on('touchmove', function(e){
+        e.preventDefault();
+        e.stopPropagation();
+        fly();
+        cloudFly();
+        
+    });
     updateAnchors(); 
 });
 
