@@ -3,9 +3,9 @@ var currentAnchor = -1;
 var isAnimating  = false;
 var click = false;
 var render = false;
+var firstMousWell = true;
 
 
-console.log(document.documentElement.clientWidth);
 
 function fly() {
     setTimeout(function () {
@@ -47,8 +47,9 @@ $(function(){
     $('body').on('mousewheel', function(e){
         e.preventDefault();
         e.stopPropagation();
-    
-        if( isAnimating ) {
+        
+
+        if( isAnimating) {
             return false;
         }
         isAnimating  = true;
@@ -64,29 +65,44 @@ $(function(){
             currentAnchor = 0;
         }
         isAnimating  = true;
-        
-        console.log(anchors[currentAnchor]);
         if( anchors[currentAnchor] > 600) {
             fly();
         }
          if (parseInt(anchors[currentAnchor]) > 1200) {
-              console.log(parseInt(anchors[currentAnchor]));
                cloudFly();
         }
             render = true;
-        
-        $('html, body').animate({
-            scrollTop: parseInt( anchors[currentAnchor] )
-        }, 500, 'swing', function(){
-            isAnimating  = false;
-        });
+        if (firstMousWell) {
+               $('html, body').animate({
+                scrollTop: parseInt(615)
+            }, 500, 'swing', function(){
+                isAnimating  = false;
+            });
+               firstMousWell = false;
+               fly();
+                currentAnchor++;
+        } else {
+            $('html, body').animate({
+                scrollTop: parseInt( anchors[currentAnchor] )
+            }, 500, 'swing', function(){
+                isAnimating  = false;
+            });
+        }
     });
-
     updateAnchors(); 
-    
 });
 
+function come(elem) {
+  var docViewTop = $(window).scrollTop() + $(window).height();
+  
+  var docViewBottom = docViewTop + $(window).height();
+  var elemTop = $(elem).offset().top;
 
+  if (parseInt(docViewTop) > parseInt(elemTop)) {
+    return true;
+  }
+  return false;
+}
 
 $(document).ready(function () {
         $('.hamburger').click(function() {
@@ -126,4 +142,12 @@ $(document).ready(function () {
         if (windWidth < 480) {
             
         }
+
+        if (come('.earth')) {
+             fly();
+        } 
+        if (come('.cloud')) {
+            cloudFly();
+        }
+
 });
