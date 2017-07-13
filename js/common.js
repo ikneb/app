@@ -4,7 +4,8 @@ var isAnimating  = false;
 var click = false;
 var render = false;
 var firstMousWell = true;
-
+var windWidth = document.documentElement.clientWidth; 
+var windHeigth = document.documentElement.clientHeight;
 
 
 function fly() {
@@ -88,6 +89,7 @@ $(function(){
                 isAnimating  = false;
             });
         }
+        console.log(anchors);
     });
     $('body').on('touchmove', function(e){
         e.preventDefault();
@@ -144,10 +146,9 @@ $(document).ready(function () {
             }
         });
 
-        var windWidth = document.documentElement.clientWidth; 
-        var windHeigth = document.documentElement.clientHeight;
-        console.log(windWidth);
-        if (come('.earth')) {
+        
+        console.log(windHeigth);
+        if (come('.earth') && windHeigth < 900) {
              fly();
         } 
         if (come('.cloud')) {
