@@ -89,7 +89,6 @@ $(function(){
                 isAnimating  = false;
             });
         }
-        console.log(anchors);
     });
     $('body').on('touchmove', function(e){
         e.preventDefault();
@@ -105,8 +104,7 @@ function come(elem) {
   var docViewTop = $(window).scrollTop() + $(window).height();
   
   var docViewBottom = docViewTop + $(window).height();
-  var elemTop = $(elem).offset().top;
-
+  var elemTop = $(elem).offset().top + 100;
   if (parseInt(docViewTop) > parseInt(elemTop)) {
     return true;
   }
@@ -146,9 +144,7 @@ $(document).ready(function () {
             }
         });
 
-        
-        console.log(windHeigth);
-        if (come('.earth') && windHeigth < 900) {
+        if (come('.earth') && !device.ios()) {
              fly();
         } 
         if (come('.cloud')) {
