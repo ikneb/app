@@ -505,7 +505,28 @@ canvas
     position: absolute
     opacity: 0
 .show-composition
-    opacity: 1 !important
+    left: 52%
+    top: 23%
+    -webkit-animation: show-composition 0.5s linear forwards
+    animation: show-composition 0.5s linear forwards
+@keyframes show-composition
+    25%
+        opacity: 0.2
+    50%
+        opacity: 0.4
+    75%
+        opacity: 0.6
+    100%
+        opacity: 1 
+@webkit-keyframes show-composition
+    25%
+        opacity: 0.2
+    50%
+        opacity: 0.4
+    75%
+        opacity: 0.6
+    100%
+        opacity: 1
 .houston-flex .composition
 	left: 52%
 	top: 23%
