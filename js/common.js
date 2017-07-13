@@ -6,6 +6,7 @@ var render = false;
 var firstMousWell = true;
 var windWidth = document.documentElement.clientWidth; 
 var windHeigth = document.documentElement.clientHeight;
+var stop = false;
 
 
 function fly() {
@@ -48,9 +49,10 @@ $(function(){
     $('body').on('mousewheel', function(e){
         e.preventDefault();
         e.stopPropagation();
-        
+        console.log(isAnimating);
 
         if( isAnimating) {
+
             return false;
         }
         isAnimating  = true;
@@ -76,7 +78,7 @@ $(function(){
         if (firstMousWell) {
                $('html, body').animate({
                 scrollTop: parseInt(615)
-            }, 500, 'swing', function(){
+            }, 1100, 'swing', function(){
                 isAnimating  = false;
             });
                firstMousWell = false;
@@ -85,7 +87,7 @@ $(function(){
         } else {
             $('html, body').animate({
                 scrollTop: parseInt( anchors[currentAnchor] )
-            }, 500, 'swing', function(){
+            }, 1100, 'swing', function(){
                 isAnimating  = false;
             });
         }
