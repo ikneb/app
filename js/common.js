@@ -34,7 +34,7 @@ function cloudFly (){
      setTimeout(function () {
                     $(".flex-cloud").attr('id','flex-cloud');
                     $(".we-specilise").attr('id','we-specilise');
-                }, 1000);
+                }, 600);
 }
 
 $(function(){
