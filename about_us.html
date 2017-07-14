@@ -34,7 +34,7 @@
 
 </head>
 
-<body class="is-about-us">
+<body class="is-about-us" id="is-about-us">
 
 	<div id="my-page" >
 	<div class="anchor" id="anchor1" style="position:relative; top: -130px;"></div>
@@ -90,7 +90,10 @@
       </div>
 		
       <div id="my-content">
-      		<section class="become" >
+      		<section class="become" id="become" >
+      		<canvas id="canvasElement" width="1300" height="700">
+      			
+      		</canvas>
       		<div class="anchor" id="anchor2" style=""></div>
 				<div class="header-flex-become">
 					<div class="composition-become">
@@ -101,11 +104,43 @@
       			
       		</section>
       		<section class="basic-principles">
-      		<div class="anchor" id="anchor3" style=""></div>
       			<div class="header-flex-principles">
 					<div class="composition-principles">
 						<h1 class='h1'>Basic principles of operation</h1>	      							
 					</div>
+	      		</div>
+	      		<div class="principles-container">
+	      			<div class="row composition-left">
+	      				<div class="col-md-3">
+	      					<img src="img/head.svg" alt="">
+	      				</div>
+						<div class="wrapp-composition-left">
+							<h2 class='h2'>Creat Minds</h2>	      							
+							<p>We give our clients great solutions that help them to deal
+							with the most complex technical problems. That is why we
+							are lloking for intelligent employees with great ideas and thinking outside the box.</p>	      							
+						</div>
+	      			</div>
+	      			<div class="row composition-right">
+		      			<div class="col-md-3">
+		      				<img src="img/hands.svg" alt="">
+		      			</div>
+		      			<div class="wrapp-composition-right">
+							<h2 class='h2'>Right Approach</h2>	      							
+							<p>We create a team that turns any of your ideas into relity.
+							From finding the right person to selectiong the technologies
+							that ahoud be use. We work openly so you will never lose control on your project.</p>	      							
+						</div>
+	      			</div>
+	      			<div class="row composition-left">
+	      				<div class="col-md-3">
+	      					<img src="img/poeple.svg" alt="">
+	      				</div>
+	      				<div class="wrapp-composition-left">
+							<h2 class='h2'>Unbroken communion</h2>	      						
+							<p>We believe that communication is an integral part of the work on any project. Therefore, we provide complete information about the work that was done. We share with you our experience and suggestions, and fully support your ideas and wishes.</p>	      							
+						</div>
+	      			</div>
 	      		</div>
       			
       		</section>
@@ -113,7 +148,6 @@
       </div>
 
       <div id="my-footer">
-      <div class="anchor" id="anchor5" ></div>
 			<div class="row section-footer">
 				<div class="col-md-4 logo-footer-wrapp"><a href="#" class="footer-logo">
 	      				<img src="img/logo_Houston.svg" alt="title"/></a></div>
@@ -179,7 +213,7 @@
 	<script>loadCSS( "css/main.min.css?ver=1.0.0", false, "all" );</script>
 	<!--<Deject>--><script>loadCSS("header.min.css?ver=1.0.0", false, "all" );</script><!--</Deject>-->
 	<!-- Load Custom CSS End -->
-	
+	<!-- <script src="app/libs/tetris/tetris.js"></script> -->
 
 <!-- Load Custom CSS Compiled without JS Start -->
 <noscript>

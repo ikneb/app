@@ -39,6 +39,15 @@ function cloudFly (){
                 }, 600);
 }
 
+function aboutUsFly (){
+     setTimeout(function () {
+                    $(".header-flex-about").attr('id','about-us-fly-text');
+                    $(".about-img").addClass('about-us-fly-img');
+
+                }, 1000);
+}
+
+
 $(function(){
     function updateAnchors() {
         anchors = [];
@@ -46,52 +55,57 @@ $(function(){
             anchors.push( $(element).offset().top );
         });
     }
-    $('body').on('mousewheel', function(e){
-        e.preventDefault();
-        e.stopPropagation();
-        console.log(isAnimating);
+        var cells = document.getElementById('is-home');
+        if (cells) {
+        $('body').on('mousewheel', function(e){
+            e.preventDefault();
+            e.stopPropagation();
+            console.log(isAnimating);
 
-        if( isAnimating) {
+            if( isAnimating) {
 
-            return false;
-        }
-        isAnimating  = true;
-        
-        // Increase or reset current anchor
-        if( e.originalEvent.wheelDelta >= 0 ) {
-            currentAnchor--;
-        }else{
-            currentAnchor++;
-        }
-        if( currentAnchor > (anchors.length - 1) 
-           || currentAnchor < 0 ) {
-            currentAnchor = 0;
-        }
-        isAnimating  = true;
-        if( anchors[currentAnchor] > 600) {
-            fly();
-        }
-         if (parseInt(anchors[currentAnchor]) > 1200) {
-               cloudFly();
-        }
-            render = true;
-        if (firstMousWell) {
-               $('html, body').animate({
-                scrollTop: parseInt(615)
-            }, 1100, 'swing', function(){
-                isAnimating  = false;
-            });
-               firstMousWell = false;
-               fly();
+                return false;
+            }
+            isAnimating  = true;
+            
+            // Increase or reset current anchor
+            if( e.originalEvent.wheelDelta >= 0 ) {
+                currentAnchor--;
+            }else{
                 currentAnchor++;
-        } else {
-            $('html, body').animate({
-                scrollTop: parseInt( anchors[currentAnchor] )
-            }, 1100, 'swing', function(){
-                isAnimating  = false;
-            });
-        }
-    });
+            }
+            if( currentAnchor > (anchors.length - 1) 
+               || currentAnchor < 0 ) {
+                currentAnchor = 0;
+            }
+            isAnimating  = true;
+            if( anchors[currentAnchor] > 600) {
+                fly();
+            }
+             if (parseInt(anchors[currentAnchor]) > 1200) {
+                   cloudFly();
+            }
+                render = true;
+            if (firstMousWell) {
+                   $('html, body').animate({
+                    scrollTop: parseInt(615)
+                }, 1100, 'swing', function(){
+                    isAnimating  = false;
+                });
+                   firstMousWell = false;
+                   fly();
+                    currentAnchor++;
+            } else {
+                $('html, body').animate({
+                    scrollTop: parseInt( anchors[currentAnchor] )
+                }, 1100, 'swing', function(){
+                    isAnimating  = false;
+                });
+            }
+        });
+    }
+    
+
     $('body').on('touchmove', function(e){
         e.preventDefault();
         e.stopPropagation();
@@ -112,6 +126,337 @@ function come(elem) {
   }
   return false;
 }
+
+
+$(function() {
+    var cells = document.getElementById('is-about-us');
+        if (cells) {
+    var canvas = $('#canvasElement');
+    canvas.attr('width', windWidth).attr('height', windHeigth);
+    var context = canvas.get(0).getContext('2d');
+    var canvasWidth = canvas.width();
+    var canvasHeight = canvas.height();
+    var canvasItem = canvasWidth/10;
+
+
+    var x1 = 0, x2 = canvasItem, x3 = canvasWidth -(canvasWidth - x2) + canvasItem , x4 = canvasWidth -(canvasWidth - x3) + canvasItem, x5 =canvasWidth -(canvasWidth - x4) + canvasItem, x6 = canvasWidth -(canvasWidth - x5) + canvasItem, x7 = canvasWidth -(canvasWidth - x6) + canvasItem, x8 = canvasWidth -(canvasWidth - x7) + canvasItem, x9 = canvasWidth -(canvasWidth - x8) + canvasItem , x10 = canvasWidth -(canvasWidth - x9) + canvasItem;
+    var y1 = canvasHeight - canvasItem, y2 = canvasHeight - canvasItem, y3 = canvasHeight - canvasItem, y4 = canvasHeight - canvasItem, y5 = canvasHeight - canvasItem, y6 = canvasHeight - canvasItem, y7 = canvasHeight - canvasItem, y8 = canvasHeight - canvasItem, y9 = canvasHeight - canvasItem, y10 = canvasHeight - canvasItem ;
+    
+    var x11 = 0, x12 = canvasItem, x13 = canvasWidth -(canvasWidth - x12) + canvasItem, x14 = canvasWidth -(canvasWidth - x13) + canvasItem, x15 =canvasWidth -(canvasWidth - x14) + canvasItem, x16 = canvasWidth -(canvasWidth - x15) + canvasItem, x17 = canvasWidth -(canvasWidth - x16) + canvasItem, x18 = canvasWidth -(canvasWidth - x17) + canvasItem, x19 = canvasWidth -(canvasWidth - x18) + canvasItem , x20 = canvasWidth -(canvasWidth - x19) + canvasItem;
+    var y11 = canvasHeight - canvasItem * 2, y12 = -canvasItem , y13 = -canvasItem, y14 = canvasHeight - canvasItem * 2, y15 = -canvasItem, y16 = -canvasItem, y17 = canvasHeight - canvasItem * 2, y18 = -canvasItem, y19 = canvasHeight - canvasItem * 2, y20 = canvasHeight - canvasItem * 2 ;
+        
+    var x21 = 0, x22 = canvasWidth -(canvasWidth - x8) + canvasItem, x23 = canvasWidth -(canvasWidth - x9) + canvasItem;
+    var y21 = -canvasItem, y22 = -canvasItem, y23 = -canvasItem;
+
+    var y12w = y12 - canvasItem;
+    var y13w = y13 - canvasItem;
+    var y15w = y15 - canvasItem;
+    var y16w = y16 - canvasItem;
+    var y18w = y18 - canvasItem;
+    var y21w = y21 - canvasItem;
+    var y22w = y22 - canvasItem;
+    var y23w = y23 - canvasItem;
+
+    var color1 = "#09606a";
+    var color2 = "#00c2e9";
+    var color3 = "#b4d8f4";
+    var color4 = "#a9e8f9";
+    var color5 = "#6abfc9";
+    var widthItems = canvasItem;
+    var heightItems = canvasItem;
+
+    function moveBox1() {
+        // clear holst
+        // draw 
+        context.fillStyle = color1;
+        context.fillRect(x1, y1, widthItems, heightItems);
+        //move 
+        y1++;
+    }
+
+    function moveBox2() {
+        // draw 
+        context.fillStyle = color2;
+        context.fillRect(x2, y2, widthItems, heightItems);
+        //move 
+        y2++;
+    }
+
+    function moveBox3() {
+        // draw 
+        context.fillStyle = color3;
+        context.fillRect(x3, y3, widthItems, heightItems);
+        //move 
+        y3++;
+    }
+
+    function moveBox4() {
+        // draw 
+        context.fillStyle = color2;
+        context.fillRect(x4, y4, widthItems, heightItems);
+        //move 
+        y4++;
+    }
+
+    function moveBox5() {
+        // draw 
+        context.fillStyle = color1;
+        context.fillRect(x5, y5, widthItems, heightItems);
+        //move 
+        y5++;   
+    }
+
+    function moveBox6() {
+        // draw 
+        context.fillStyle = color3;
+        context.fillRect(x6, y6, widthItems, heightItems);
+        //move 
+        y6++;
+    }
+
+    function moveBox7() {
+        // draw 
+        context.fillStyle = color1;
+        context.fillRect(x7, y7, widthItems, heightItems);
+        //move 
+        y7++;
+    }
+
+    function moveBox8() {
+        // draw 
+        context.fillStyle = color4;
+        context.fillRect(x8, y8, widthItems, heightItems);
+        //move 
+        y8++;
+    }
+
+    function moveBox9() {
+        // draw 
+        context.fillStyle = color3;
+        context.fillRect(x9, y9, widthItems, heightItems);
+        //move 
+        y9++;
+    }
+
+    function moveBox10() {
+        // draw 
+        context.fillStyle = color4;
+        context.fillRect(x10, y10, widthItems, heightItems);
+        //move 
+        y10++;
+    }
+
+    function moveBox11() {
+        // draw 
+        context.fillStyle = color4;
+        context.fillRect(x11, y11, widthItems, heightItems);
+        //move 
+        y11++;
+    }
+
+    function moveBox12() {
+        // draw 
+        context.fillStyle = color1;
+        context.fillRect(x12, y12, widthItems, heightItems);
+
+        context.fillStyle = '#fff';
+        context.fillRect(x12, y12w, widthItems, heightItems);
+
+        //move 
+        y12 = y12 + 5; y12++;
+        y12w = y12w + 5; y12w++;
+        var timerId = setTimeout( moveBox12, 1);
+
+        var stop = canvasHeight - canvasItem * 2;
+        
+        if (y12 == stop) {
+            clearTimeout(timerId);
+        }
+    }
+
+    function moveBox13() {
+        // draw 
+        context.fillStyle = color4;
+        context.fillRect(x13, y13, widthItems, heightItems);
+
+        context.fillStyle = '#fff';
+        context.fillRect(x13, y13w, widthItems, heightItems);
+        //move 
+        y13 = y13 + 5; y13++;
+        y13w = y13w + 5; y13w++;
+        var timerId = setTimeout( moveBox13, 1);
+
+        var stop = canvasHeight - canvasItem * 2;
+        
+        if (y13 == stop) {
+            clearTimeout(timerId);
+        }
+    }
+
+    function moveBox14() {
+        // draw 
+        context.fillStyle = color3;
+        context.fillRect(x14, y14, widthItems, heightItems);
+        //move 
+        y14++;
+    }
+
+    function moveBox15() {
+        // draw 
+        context.fillStyle = color3;
+        context.fillRect(x15, y15, widthItems, heightItems);
+
+        context.fillStyle = '#fff';
+        context.fillRect(x15, y15w, widthItems, heightItems);
+        //move 
+        y15 = y15 + 5; y15++;
+        y15w = y15w + 5; y15w++;
+        var timerId = setTimeout( moveBox15, 1);
+
+        var stop = canvasHeight - canvasItem * 2;
+        
+        if (y15 == stop) {
+            clearTimeout(timerId);
+        }
+    }
+
+    function moveBox16() {
+        // draw 
+        context.fillStyle = color5;
+        context.fillRect(x16, y16, widthItems, heightItems);
+
+        context.fillStyle = '#fff';
+        context.fillRect(x16, y16w, widthItems, heightItems);
+        //move 
+        y16 = y16 + 5; y16++;
+        y16w = y16w + 5; y16w++;
+        var timerId = setTimeout( moveBox16, 1);
+
+        var stop = canvasHeight - canvasItem * 2;
+        
+        if (y16 == stop) {
+            clearTimeout(timerId);
+        }
+    }
+
+    function moveBox17() {
+        // draw 
+        context.fillStyle = color3;
+        context.fillRect(x17, y17, widthItems, heightItems);
+        //move 
+        y17++;
+    }
+
+    function moveBox18() {
+        // draw 
+        context.fillStyle = color5;
+        context.fillRect(x18, y18, widthItems, heightItems);
+
+        context.fillStyle = '#fff';
+        context.fillRect(x18, y18w, widthItems, heightItems);
+        //move 
+        y18 = y18 + 5; y18++;
+        y18w = y18w + 5; y18w++;
+        var timerId = setTimeout( moveBox18, 1);
+
+        var stop = canvasHeight - canvasItem * 2;
+        
+        if (y18 == stop) {
+            clearTimeout(timerId);
+        }
+    }
+
+    function moveBox19() {
+        // draw 
+        context.fillStyle = color2;
+        context.fillRect(x19, y19, widthItems, heightItems);
+        //move 
+        y19++;
+    }
+
+    function moveBox20() {
+        // draw 
+        context.fillStyle = color1;
+        context.fillRect(x20, y20, widthItems, heightItems);
+        //move 
+        y20++;
+    }
+
+    function moveBox21() {
+        // draw 
+        context.fillStyle = color1;
+        context.fillRect(x21, y21, widthItems, heightItems);
+
+        context.fillStyle = '#fff';
+        context.fillRect(x21, y21w, widthItems, heightItems);
+        //move 
+        
+    }
+
+    function moveBox22() {
+        // draw 
+        context.fillStyle = color1;
+        context.fillRect(x22, y22, widthItems, heightItems);
+
+        context.fillStyle = '#fff';
+        context.fillRect(x22, y22w, widthItems, heightItems);
+        //move 
+        
+    }
+
+    function moveBox23() {
+        // draw 
+        context.fillStyle = color1;
+        context.fillRect(x23, y23, widthItems, heightItems);
+
+        context.fillStyle = '#fff';
+        context.fillRect(x23, y23w, widthItems, heightItems);
+        //move 
+    
+    }
+
+    moveBox1();
+    moveBox2();
+    moveBox3();
+    moveBox4();
+    moveBox5();
+    moveBox6();
+    moveBox7();
+    moveBox8();
+    moveBox9();
+    moveBox10();
+    moveBox11();
+    setTimeout(function () {
+        moveBox12();
+    }, 1600);
+    setTimeout(function () {
+        moveBox13();
+    }, 400);
+    moveBox14();
+    setTimeout(function () {
+        moveBox15();
+    }, 1500);
+    setTimeout(function () {
+        moveBox16();
+    }, 400);
+    moveBox17();
+    moveBox18();
+    moveBox19();
+    moveBox20();
+    setTimeout(function () {
+        moveBox21();
+    }, 400);
+    setTimeout(function () {
+        moveBox22();
+    }, 400);
+        setTimeout(function () {
+    moveBox23();
+    }, 400);
+
+      
+    }
+
+});
 
 $(document).ready(function () {
         $('.hamburger').click(function() {
@@ -145,12 +490,18 @@ $(document).ready(function () {
                 composition.style.height = composition.clientWidth + 'px';
             }
         });
-
-        if (come('.earth') && !device.ios()) {
+        if ($('body').hasClass('is-home')){
+            if (come('.earth') && !device.ios()) {
              fly();
-        } 
-        if (come('.cloud')) {
-            cloudFly();
+            } 
+            if (come('.cloud')) {
+                cloudFly();
+            }
         }
-
+        if ($('body').hasClass('is-about-us')){
+             aboutUsFly();
+        } 
 });
+
+
+
