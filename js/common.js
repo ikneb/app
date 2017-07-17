@@ -9,6 +9,7 @@ var windHeigth = document.documentElement.clientHeight;
 var stop = false;
 var isAnim = true;
 var swichOfAnimate = false;
+var speed = 4;
 
 
 function fly() {
@@ -111,9 +112,11 @@ $(function(){
     $('body').on('touchmove', function(e){
         e.preventDefault();
         e.stopPropagation();
-        fly();
-        cloudFly();
-        
+        var cells = document.getElementById('is-home');
+        if (cells) {
+            fly();
+            cloudFly();
+        }
     });
     updateAnchors(); 
 });
@@ -241,8 +244,8 @@ $(function() {
         context.fillRect(x12, y12w, widthItems, heightItems);
 
         //move 
-        y12 = y12 + 5;
-        y12w = y12w + 5;
+        y12 = y12 + speed;
+        y12w = y12w + speed;
         var timerId = setTimeout( moveBox12, 1);
 
         var stop = canvasHeight - canvasItem * 2;
@@ -282,8 +285,8 @@ $(function() {
         context.fillStyle = '#fff';
         context.fillRect(x13, y13w, widthItems, heightItems);
         //move 
-        y13 = y13 + 5;
-        y13w = y13w + 5;
+        y13 = y13 + speed;
+        y13w = y13w + speed;
         var timerId = setTimeout( moveBox13, 1);
 
         var stop = canvasHeight - canvasItem * 2 + 1 ;
@@ -332,8 +335,8 @@ $(function() {
         context.fillStyle = '#fff';
         context.fillRect(x15, y15w, widthItems, heightItems);
         //move 
-        y15 = y15 + 5;
-        y15w = y15w + 5;
+        y15 = y15 + speed;
+        y15w = y15w + speed;
         var timerId = setTimeout( moveBox15, 1);
 
         var stop = canvasHeight - canvasItem * 2;
@@ -372,8 +375,8 @@ $(function() {
         context.fillStyle = '#fff';
         context.fillRect(x16, y16w, widthItems, heightItems);
         //move 
-        y16 = y16 + 5;
-        y16w = y16w + 5;
+        y16 = y16 + speed;
+        y16w = y16w + speed;
         var timerId = setTimeout( moveBox16, 1);
 
         var stop = canvasHeight - canvasItem * 2;
@@ -422,8 +425,8 @@ $(function() {
         context.fillStyle = '#fff';
         context.fillRect(x18, y18w, widthItems, heightItems);
         //move 
-        y18 = y18 + 5;
-        y18w = y18w + 5;
+        y18 = y18 + speed;
+        y18w = y18w + speed;
         var timerId = setTimeout( moveBox18, 1);
 
         var stop = canvasHeight - canvasItem * 2;
@@ -480,8 +483,8 @@ $(function() {
         context.fillRect(x21, y21w, widthItems, heightItems);
         //move 
 
-        y21 = y21 + 5;
-        y21w = y21w + 5;
+        y21 = y21 + speed;
+        y21w = y21w + speed;
         var timerId = setTimeout( moveBox21, 1);
 
         var stop = canvasHeight - canvasItem * 2 - canvasItem;
@@ -523,8 +526,8 @@ $(function() {
         context.fillRect(x22, y22w, widthItems, heightItems);
         //move 
 
-        y22 = y22 + 5;
-        y22w = y22w + 5;
+        y22 = y22 + speed;
+        y22w = y22w + speed;
         var timerId = setTimeout( moveBox22, 1);
 
         var stop = canvasHeight - canvasItem * 2 - canvasItem;
@@ -566,9 +569,9 @@ $(function() {
         context.fillRect(x23, y23w, widthItems, heightItems);
         //move 
 
-        y23 = y23 + 5; 
+        y23 = y23 + speed; 
 
-        y23w = y23w + 5;
+        y23w = y23w + speed;
 
         var timerId = setTimeout( moveBox23, 1);
 
@@ -617,9 +620,15 @@ $(function() {
             moveBox19();
             moveBox20();
             
-
-
             mouse();
+            if (come('#canvasElement')) {
+                    flyBecome();
+            }
+
+
+        if (cells) { 
+
+        }
     }
 
     function mouse () {
@@ -656,8 +665,7 @@ $(function() {
                        firstMousWell = false;
                         currentAnchor++;
                 } else {
-                    console.log(anchors);
-                    console.log(anchors[currentAnchor]);
+            
                    $('html, body').animate({
                         scrollTop: parseInt( anchors[currentAnchor] )
                     }, 1100, 'swing', function(){
