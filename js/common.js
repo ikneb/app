@@ -9,7 +9,7 @@ var windHeigth = document.documentElement.clientHeight;
 var stop = false;
 var isAnim = true;
 var swichOfAnimate = false;
-var speed = 4;
+var speed = 3;
 
 
 function fly() {
@@ -170,6 +170,27 @@ $(function() {
     var widthItems = canvasItem;
     var heightItems = canvasItem;
 
+    function chekPixels(y, stop) {
+        if (
+            parseInt(y) == parseInt(stop) - 1 
+            || parseInt(y) == parseInt(stop) - 2 
+            || parseInt(y) == parseInt(stop) - 3 
+            || parseInt(y) == parseInt(stop) - 4 
+            || parseInt(y) == parseInt(stop) - 4
+            || parseInt(y) == parseInt(stop) - 5
+            || parseInt(y) == parseInt(stop) - 4
+            || parseInt(y) == parseInt(stop) + 5
+            || parseInt(y) == parseInt(stop) + 4
+            || parseInt(y) == parseInt(stop) + 3
+            || parseInt(y) == parseInt(stop) + 2
+            || parseInt(y) == parseInt(stop) + 1
+            || parseInt(y) == parseInt(stop)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     function moveBox1() {
         context.fillStyle = color1;
         context.fillRect(x1, y1, widthItems, heightItems);
@@ -241,7 +262,7 @@ $(function() {
         context.fillRect(x12, y12, widthItems, heightItems);
 
         context.fillStyle = '#fff';
-        context.fillRect(x12, y12w, widthItems, heightItems);
+        context.fillRect(x12 - 2, y12w, widthItems + 3, heightItems);
 
         //move 
         y12 = y12 + speed;
@@ -250,20 +271,7 @@ $(function() {
 
         var stop = canvasHeight - canvasItem * 2;
         
-        if (
-            parseInt(y12) == parseInt(stop) - 1 
-            || parseInt(y12) == parseInt(stop) - 2 
-            || parseInt(y12) == parseInt(stop) - 3 
-            || parseInt(y12) == parseInt(stop) - 4 
-            || parseInt(y12) == parseInt(stop) - 4
-            || parseInt(y12) == parseInt(stop) - 5
-            || parseInt(y12) == parseInt(stop) - 4
-            || parseInt(y12) == parseInt(stop) + 5
-            || parseInt(y12) == parseInt(stop) + 4
-            || parseInt(y12) == parseInt(stop) + 3
-            || parseInt(y12) == parseInt(stop) + 2
-            || parseInt(y12) == parseInt(stop) + 1
-            || parseInt(y12) == parseInt(stop)) {
+        if (chekPixels(y12, stop)) {
              
             var back = parseInt(stop) - parseInt(y12);
                 
@@ -271,7 +279,7 @@ $(function() {
             context.fillRect(x12, y12 + back, widthItems, heightItems);
 
             context.fillStyle = '#fff';
-            context.fillRect(x12, y12w + back, widthItems, heightItems);
+            context.fillRect(x12 - 2, y12w + back, widthItems + 3, heightItems);
 
             clearTimeout(timerId);
         }
@@ -283,7 +291,7 @@ $(function() {
         context.fillRect(x13, y13, widthItems, heightItems);
 
         context.fillStyle = '#fff';
-        context.fillRect(x13, y13w, widthItems, heightItems);
+        context.fillRect(x13 - 2, y13w, widthItems + 2, heightItems);
         //move 
         y13 = y13 + speed;
         y13w = y13w + speed;
@@ -291,20 +299,7 @@ $(function() {
 
         var stop = canvasHeight - canvasItem * 2 + 1 ;
         
-        if (
-            parseInt(y13) == parseInt(stop) - 1 
-            || parseInt(y13) == parseInt(stop) - 2 
-            || parseInt(y13) == parseInt(stop) - 3 
-            || parseInt(y13) == parseInt(stop) - 4 
-            || parseInt(y13) == parseInt(stop) - 4
-            || parseInt(y13) == parseInt(stop) - 5
-            || parseInt(y13) == parseInt(stop) - 4
-            || parseInt(y13) == parseInt(stop) + 5
-            || parseInt(y13) == parseInt(stop) + 4
-            || parseInt(y13) == parseInt(stop) + 3
-            || parseInt(y13) == parseInt(stop) + 2
-            || parseInt(y13) == parseInt(stop) + 1
-            || parseInt(y13) == parseInt(stop)) {
+        if (chekPixels(y13, stop)) {
              
              var back = parseInt(stop) - parseInt(y13);
                 
@@ -313,7 +308,7 @@ $(function() {
             context.fillRect(x13, y13 + back, widthItems, heightItems);
 
             context.fillStyle = '#fff';
-            context.fillRect(x13, y13w + back, widthItems, heightItems);
+            context.fillRect(x13 - 2, y13w + back, widthItems + 3, heightItems);
 
             clearTimeout(timerId);
         }
@@ -333,7 +328,7 @@ $(function() {
         context.fillRect(x15, y15, widthItems, heightItems);
 
         context.fillStyle = '#fff';
-        context.fillRect(x15, y15w, widthItems, heightItems);
+        context.fillRect(x15 - 2, y15w, widthItems + 2, heightItems);
         //move 
         y15 = y15 + speed;
         y15w = y15w + speed;
@@ -341,27 +336,14 @@ $(function() {
 
         var stop = canvasHeight - canvasItem * 2;
         
-        if (
-            parseInt(y15) == parseInt(stop) - 1 
-            || parseInt(y15) == parseInt(stop) - 2 
-            || parseInt(y15) == parseInt(stop) - 3 
-            || parseInt(y15) == parseInt(stop) - 4 
-            || parseInt(y15) == parseInt(stop) - 4
-            || parseInt(y15) == parseInt(stop) - 5
-            || parseInt(y15) == parseInt(stop) - 4
-            || parseInt(y15) == parseInt(stop) + 5
-            || parseInt(y15) == parseInt(stop) + 4
-            || parseInt(y15) == parseInt(stop) + 3
-            || parseInt(y15) == parseInt(stop) + 2
-            || parseInt(y15) == parseInt(stop) + 1
-            || parseInt(y15) == parseInt(stop)) {
+        if (chekPixels(y15, stop)) {
              
              var back = parseInt(stop) - parseInt(y15);
             context.fillStyle = color3;
             context.fillRect(x15, y15 + back, widthItems, heightItems);
 
             context.fillStyle = '#fff';
-            context.fillRect(x15, y15w + back, widthItems, heightItems);
+            context.fillRect(x15 - 2, y15w + back, widthItems + 3, heightItems);
 
             clearTimeout(timerId);
         }
@@ -373,7 +355,7 @@ $(function() {
         context.fillRect(x16, y16, widthItems, heightItems);
 
         context.fillStyle = '#fff';
-        context.fillRect(x16, y16w, widthItems, heightItems);
+        context.fillRect(x16 - 2, y16w, widthItems + 3, heightItems);
         //move 
         y16 = y16 + speed;
         y16w = y16w + speed;
@@ -381,20 +363,7 @@ $(function() {
 
         var stop = canvasHeight - canvasItem * 2;
         
-        if (
-            parseInt(y16) == parseInt(stop) - 1 
-            || parseInt(y16) == parseInt(stop) - 2 
-            || parseInt(y16) == parseInt(stop) - 3 
-            || parseInt(y16) == parseInt(stop) - 4 
-            || parseInt(y16) == parseInt(stop) - 4
-            || parseInt(y16) == parseInt(stop) - 5
-            || parseInt(y16) == parseInt(stop) - 4
-            || parseInt(y16) == parseInt(stop) + 5
-            || parseInt(y16) == parseInt(stop) + 4
-            || parseInt(y16) == parseInt(stop) + 3
-            || parseInt(y16) == parseInt(stop) + 2
-            || parseInt(y16) == parseInt(stop) + 1
-            || parseInt(y16) == parseInt(stop)) {
+        if (chekPixels(y16, stop)) {
              
              var back = parseInt(stop) - parseInt(y16);
                 
@@ -403,7 +372,7 @@ $(function() {
             context.fillRect(x16, y16 + back, widthItems, heightItems);
 
             context.fillStyle = '#fff';
-            context.fillRect(x16, y16w + back, widthItems, heightItems);
+            context.fillRect(x16 - 2, y16w + back, widthItems + 3, heightItems);
 
             clearTimeout(timerId);
         }
@@ -423,7 +392,7 @@ $(function() {
         context.fillRect(x18, y18, widthItems, heightItems);
 
         context.fillStyle = '#fff';
-        context.fillRect(x18, y18w, widthItems, heightItems);
+        context.fillRect(x18 - 2 , y18w, widthItems + 3, heightItems);
         //move 
         y18 = y18 + speed;
         y18w = y18w + speed;
@@ -431,20 +400,7 @@ $(function() {
 
         var stop = canvasHeight - canvasItem * 2;
         
-        if (
-            parseInt(y18) == parseInt(stop) - 1 
-            || parseInt(y18) == parseInt(stop) - 2 
-            || parseInt(y18) == parseInt(stop) - 3 
-            || parseInt(y18) == parseInt(stop) - 4 
-            || parseInt(y18) == parseInt(stop) - 4
-            || parseInt(y18) == parseInt(stop) - 5
-            || parseInt(y18) == parseInt(stop) - 4
-            || parseInt(y18) == parseInt(stop) + 5
-            || parseInt(y18) == parseInt(stop) + 4
-            || parseInt(y18) == parseInt(stop) + 3
-            || parseInt(y18) == parseInt(stop) + 2
-            || parseInt(y18) == parseInt(stop) + 1
-            || parseInt(y18) == parseInt(stop)) {
+        if (chekPixels(y18, stop)) {
              
              var back = parseInt(stop) - parseInt(y18);
 
@@ -452,7 +408,7 @@ $(function() {
             context.fillRect(x18, y18 + back, widthItems, heightItems);
 
             context.fillStyle = '#fff';
-            context.fillRect(x18, y18w + back, widthItems, heightItems);
+            context.fillRect(x18 - 2, y18w + back, widthItems + 3, heightItems);
 
             clearTimeout(timerId);
         }
@@ -480,7 +436,7 @@ $(function() {
         context.fillRect(x21, y21, widthItems, heightItems);
 
         context.fillStyle = '#fff';
-        context.fillRect(x21, y21w, widthItems, heightItems);
+        context.fillRect(x21 - 2, y21w, widthItems + 2, heightItems);
         //move 
 
         y21 = y21 + speed;
@@ -489,20 +445,7 @@ $(function() {
 
         var stop = canvasHeight - canvasItem * 2 - canvasItem;
         
-        if (
-            parseInt(y21) == parseInt(stop) - 1 
-            || parseInt(y21) == parseInt(stop) - 2 
-            || parseInt(y21) == parseInt(stop) - 3 
-            || parseInt(y21) == parseInt(stop) - 4 
-            || parseInt(y21) == parseInt(stop) - 4
-            || parseInt(y21) == parseInt(stop) - 5
-            || parseInt(y21) == parseInt(stop) - 4
-            || parseInt(y21) == parseInt(stop) + 5
-            || parseInt(y21) == parseInt(stop) + 4
-            || parseInt(y21) == parseInt(stop) + 3
-            || parseInt(y21) == parseInt(stop) + 2
-            || parseInt(y21) == parseInt(stop) + 1
-            || parseInt(y21) == parseInt(stop)) {
+        if (chekPixels(y21, stop)) {
              
              var back = parseInt(stop) - parseInt(y21);
 
@@ -510,7 +453,7 @@ $(function() {
             context.fillRect(x21, y21 + back, widthItems, heightItems);
 
             context.fillStyle = '#fff';
-            context.fillRect(x21, y21w + back, widthItems, heightItems);
+            context.fillRect(x21 - 2, y21w + back, widthItems + 2, heightItems);
 
             clearTimeout(timerId);
         }
@@ -523,7 +466,7 @@ $(function() {
         context.fillRect(x22, y22, widthItems, heightItems);
 
         context.fillStyle = '#fff';
-        context.fillRect(x22, y22w, widthItems, heightItems);
+        context.fillRect(x22 - 2, y22w, widthItems + 3, heightItems);
         //move 
 
         y22 = y22 + speed;
@@ -532,20 +475,7 @@ $(function() {
 
         var stop = canvasHeight - canvasItem * 2 - canvasItem;
         
-        if (
-            parseInt(y22) == parseInt(stop) - 1 
-            || parseInt(y22) == parseInt(stop) - 2 
-            || parseInt(y22) == parseInt(stop) - 3 
-            || parseInt(y22) == parseInt(stop) - 4 
-            || parseInt(y22) == parseInt(stop) - 4
-            || parseInt(y22) == parseInt(stop) - 5
-            || parseInt(y22) == parseInt(stop) - 4
-            || parseInt(y22) == parseInt(stop) + 5
-            || parseInt(y22) == parseInt(stop) + 4
-            || parseInt(y22) == parseInt(stop) + 3
-            || parseInt(y22) == parseInt(stop) + 2
-            || parseInt(y22) == parseInt(stop) + 1
-            || parseInt(y22) == parseInt(stop)) {
+        if (chekPixels(y22, stop)) {
              
              var back = parseInt(stop) - parseInt(y22);
 
@@ -553,7 +483,7 @@ $(function() {
             context.fillRect(x22, y22 + back, widthItems, heightItems);
 
             context.fillStyle = '#fff';
-            context.fillRect(x22, y22w + back, widthItems, heightItems);
+            context.fillRect(x22 - 2, y22w + back, widthItems + 3, heightItems);
 
             clearTimeout(timerId);
         }
@@ -566,7 +496,7 @@ $(function() {
         context.fillRect(x23, y23, widthItems, heightItems);
 
         context.fillStyle = '#fff';
-        context.fillRect(x23, y23w, widthItems, heightItems);
+        context.fillRect(x23 - 2, y23w, widthItems + 2, heightItems);
         //move 
 
         y23 = y23 + speed; 
@@ -577,27 +507,14 @@ $(function() {
 
         var stop = canvasHeight - canvasItem * 2 - canvasItem;
         
-        if (
-            parseInt(y23) == parseInt(stop) - 1 
-            || parseInt(y23) == parseInt(stop) - 2 
-            || parseInt(y23) == parseInt(stop) - 3 
-            || parseInt(y23) == parseInt(stop) - 4 
-            || parseInt(y23) == parseInt(stop) - 4
-            || parseInt(y23) == parseInt(stop) - 5
-            || parseInt(y23) == parseInt(stop) - 4
-            || parseInt(y23) == parseInt(stop) + 5
-            || parseInt(y23) == parseInt(stop) + 4
-            || parseInt(y23) == parseInt(stop) + 3
-            || parseInt(y23) == parseInt(stop) + 2
-            || parseInt(y23) == parseInt(stop) + 1
-            || parseInt(y23) == parseInt(stop)) {
+        if (chekPixels(y23, stop)) {
              var back = parseInt(stop) - parseInt(y23);
 
             context.fillStyle = color5;
             context.fillRect(x23, y23 + back, widthItems, heightItems);
 
             context.fillStyle = '#fff';
-            context.fillRect(x23, y23w + back, widthItems, heightItems);
+            context.fillRect(x23 - 3, y23w + back, widthItems + 3, heightItems);
 
             clearTimeout(timerId);
         }
@@ -621,14 +538,21 @@ $(function() {
             moveBox20();
             
             mouse();
-            if (come('#canvasElement')) {
+            if (come('#canvasElement') && isAnim == true) {
                     flyBecome();
+                    firstMousWell = false;
             }
 
 
-        if (cells) { 
-
+        $('body').on('touchmove', function(e){
+        e.stopPropagation();
+        var cells = document.getElementById('is-about-us');
+        if (cells && isAnim == true) {
+             flyBecome();
+            firstMousWell = false;
+            isAnim = false;
         }
+    });
     }
 
     function mouse () {
