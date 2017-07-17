@@ -9,30 +9,30 @@ var windHeigth = document.documentElement.clientHeight;
 var stop = false;
 var isAnim = true;
 var swichOfAnimate = false;
-var speed = 3;
+var speed = 5;
 
 
 function fly() {
     setTimeout(function () {
                 $('.line-aus').addClass('path-aus');
                 $('.houston-flex .composition').addClass('show-composition');
-            }, 800);
+            }, 400);
             setTimeout(function () {
                 $('.line-isr').addClass('path-isr');
                 $('.isr-flex .composition').addClass('show-composition');
-            }, 1000);
+            }, 5000);
             setTimeout(function () {
                 $('.line-bzr').addClass('path-bzr');
                 $('.brz-flex .composition').addClass('show-composition');
-            }, 1200);
+            }, 600);
             setTimeout(function () {
                  $('.line-usa').addClass('path-usa');
                 $('.aus-flex .composition').addClass('show-composition');
                 
-            }, 1400);
+            }, 700);
             setTimeout(function () {
                 $('.usa-flex .composition').addClass('show-composition');
-            }, 1600);
+            }, 800);
 }
 
 function cloudFly (){
@@ -539,8 +539,10 @@ $(function() {
             
             mouse();
             if (come('#canvasElement') && isAnim == true) {
-                    flyBecome();
-                    firstMousWell = false;
+                   setTimeout(function () {
+                        flyBecome();
+                        firstMousWell = false;
+                   }, 800);
             }
 
 
