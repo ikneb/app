@@ -16,24 +16,25 @@ function fly() {
     setTimeout(function () {
                 $('.line-aus').addClass('path-aus');
                 $('.houston-flex .composition').addClass('show-composition');
-            }, 400);
+            }, 800);
             setTimeout(function () {
                 $('.line-isr').addClass('path-isr');
                 $('.isr-flex .composition').addClass('show-composition');
-            }, 5000);
+            }, 1000);
             setTimeout(function () {
                 $('.line-bzr').addClass('path-bzr');
                 $('.brz-flex .composition').addClass('show-composition');
-            }, 600);
+            }, 1200);
             setTimeout(function () {
                  $('.line-usa').addClass('path-usa');
                 $('.aus-flex .composition').addClass('show-composition');
                 
-            }, 700);
+            }, 1400);
             setTimeout(function () {
                 $('.usa-flex .composition').addClass('show-composition');
-            }, 800);
+            }, 1600);
 }
+
 
 function cloudFly (){
      setTimeout(function () {
@@ -610,7 +611,6 @@ $(function() {
             setTimeout(function () {
                 moveBox13();
             }, 400);
-           
             setTimeout(function () {
                 moveBox15();
             }, 1500);
