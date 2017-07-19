@@ -950,15 +950,25 @@ canvas
     margin: 0 auto
     width: 43%
     margin-bottom: 50px
+    height: 35px
     li
         font-family: Segoeui-ligth
         color: $blue
-        padding: 0 3px 7px 3px
+        padding: 0 7px 7px 7px
         overflow: hidden
         cursor: pointer
+        position: relative
     .active
-        border-bottom: 2px solid $blue 
-
+        border-bottom: 2px solid $blue
+        color: $blue
+        font-weight: 600
+        /* padding: 0 0 7px 0 */
+    .is-active
+        border-bottom: 2px solid $blue
+        color: $blue
+        font-weight: 600
+.works-heading li:hover
+    
 .tabs__content
     display: none
 .tabs__content.active
@@ -972,35 +982,30 @@ canvas
     animation-delay: 0.5s
     -webkit-animation-fill-mode: forwards
     animation-fill-mode: forwards
-.works-list li
-    position: relative
-    margin-bottom: 1rem
-    display: inline-block
-    width: 24.7%
+.works-list
+    -webkit-margin-before: 0
+    -webkit-margin-after: 0
+    li
+        position: relative
+        display: inline-block
+        width: 24.7%
+        margin: -2px;
 .works-list .link-holder
     margin-top: 10px
     text-align: center
-.works-list .link-holder a
-    width: 30%
-.works-list .icon
-    width: 50px
-    height: 50px
 .works-heading li
     font-size: 22px
     font-family: Segoeui-ligth
     color: $blue
     overflow: hidden
     cursor: pointer
-.works-heading li.active
-    color: $blue
-    font-weight: 600
 .works-item 
     display: block
     overflow: hidden
 .works-item img 
-    -webkit-transform: scale(1.07)
-    -ms-transform: scale(1.07)
-    transform: scale(1.07)
+    -webkit-transform: scale(1)
+    -ms-transform: scale(1)
+    transform: scale(1)
     transition: -webkit-transform 0.5s
     transition: transform 0.5s
     transition: transform 0.5s, -webkit-transform 0.5s
@@ -1028,9 +1033,9 @@ canvas
     text-align: center
     color: #fff
 .works-list li:hover img
-    -webkit-transform: scale(1.2)
-    -ms-transform: scale(1.2)
-    transform: scale(1.2)
+    -webkit-transform: scale(1.07)
+    -ms-transform: scale(1.07)
+    transform: scale(1.07)
     transition: -webkit-transform 0.5s
     transition: transform 0.5s
     transition: transform 0.5s, -webkit-transform 0.5s
@@ -1038,7 +1043,16 @@ canvas
 .works-list li:hover > .works-item-hover
     height: 100%
     opacity: 1
-    transition: 0.05s
+    transition: 0.01s
+.works-item-hover 
+    span
+        border-bottom: 2px solid #000
+        font-family: Display-Light
+        font-size: 18px
+    p
+        font-family: Display-Light
+        font-size: 18px
+    
 
     
 

@@ -674,6 +674,21 @@ $(document).ready(function () {
         if ($('body').hasClass('is-about-us')){
              aboutUsFly();
         } 
+
+
+        $('.tabs__caption>li').hover(function() {
+            $(this).addClass('active');
+        },function() {
+            
+                $(this).removeClass('active');
+            
+        });
+
+      $('ul.tabs__caption').on('click', 'li:not(.active)', function() {
+        $(this)
+          .addClass('active').siblings().removeClass('active')
+          .closest('div.tabs').find('div.tabs__content').removeClass('active').eq(jQuery(this).index()).addClass('active');
+      });
 });
 
 
