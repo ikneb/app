@@ -48,7 +48,7 @@
 	.composition-cloud
 		position: relative
 	#my-footer .section-footer
-		margin-left: 10%
+		/* margin-left: 10% */
 	.earth .brz-flex .composition
     	left: 28%
     	top: 53%
@@ -190,6 +190,12 @@
 		text-align: center
 	.wrapp-composition-left, .wrapp-composition-right
 		padding-left: 11%
+	.site-header .header-flex-team
+		left: 0
+	.tabs .works-heading
+		width: 79%
+	.tabs__content .works-list li
+		width: 33%
 @media only screen and (max-width: 640px)
 	.slider .flex-slider
 		left: -223px
@@ -367,9 +373,9 @@
 	#my-header .earth
 		margin-top: -411px
 		min-height: 183px
-	.header-flex .composition p,.flex-cloud .composition-cloud p
+	.header-flex .composition p,.flex-cloud .composition-cloud p, .header-flex-team .row .composition p
 		font-size: 14px
-	#my-header .header-flex h1,.flex-cloud .composition-cloud h1
+	#my-header .header-flex h1,.flex-cloud .composition-cloud h1, .header-flex-team  .composition h1
 		font-size: 24px
 	#my-header #my-menu
 		top: 98px
@@ -422,8 +428,20 @@
 		top: 219px
 	#my-page #my-footer .logo-footer-wrapp
 		left: 10%
+	#my-footer .section-footer, 
+    	padding-left: 0
 	.become .header-flex-become
     	top: 91px
+	.site-header .header-flex-team
+		top: 310px
+		.row
+			padding-left: 0
+	.tabs .works-heading
+		width: 100%
+	.tabs__caption.works-heading li
+		font-size: 14px
+	.tabs__content .works-list li
+		width: 100%
 
     	
 /* Custom, iPhone Retina */

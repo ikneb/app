@@ -52,6 +52,8 @@ function aboutUsFly (){
 }
 
 
+    
+
 $(function(){
         function updateAnchors() {
             anchors = [];
@@ -684,11 +686,14 @@ $(document).ready(function () {
             
         });
 
-      $('ul.tabs__caption').on('click', 'li:not(.active)', function() {
-        $(this)
-          .addClass('active').siblings().removeClass('active')
-          .closest('div.tabs').find('div.tabs__content').removeClass('active').eq(jQuery(this).index()).addClass('active');
-      });
+        $('.tabs__caption li').click (function() {
+            if(!$(this).hasClass('is-active')) {
+                $(this)
+              .addClass('is-active').siblings().removeClass('is-active')
+              .closest('div.tabs').find('div.tabs__content').removeClass('active').eq($(this).index()).addClass('active');
+            }
+        });
+
 });
 
 

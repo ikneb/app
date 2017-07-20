@@ -560,7 +560,7 @@ canvas
 	min-height: 440px
 	background-color: #545555
 .section-footer    
-	margin-left: 75px
+	padding-left: 75px
 	top: 115px
 	position: relative
 	div
@@ -926,15 +926,18 @@ canvas
     height: 100%
     top: 175px
     position: relative
-    left: 36px
-    p
-        margin-top: 16px
-        letter-spacing: 0.5px
-        font-size: 20px
-        font-family: Display-Light
-        text-align: left
-        line-height: 1.35
-        max-width: 550px
+    .row
+        padding-left: 36px
+        p
+            margin-top: 16px
+            letter-spacing: 0.5px
+            font-size: 20px
+            font-family: Display-Light
+            text-align: left
+            line-height: 1.35
+            max-width: 550px
+.section-tab
+    margin-bottom: 43px
 .tabs
     position: relative
     top: 45px
@@ -985,6 +988,7 @@ canvas
 .works-list
     -webkit-margin-before: 0
     -webkit-margin-after: 0
+    width: 100%;
     li
         position: relative
         display: inline-block
@@ -1027,8 +1031,9 @@ canvas
     background-color: rgba(0, 194, 242, 0.6)
     color: #fff
     opacity: 0
-    transition: 0.05s
+    transition: 0.01s
     overflow: hidden
+    height: 100%
 .works-item-hover > *
     text-align: center
     color: #fff
@@ -1042,8 +1047,8 @@ canvas
     overflow: hidden
 .works-list li:hover > .works-item-hover
     height: 100%
-    opacity: 1
-    transition: 0.01s
+    opacity: 0.7
+    transition: 0.1s
 .works-item-hover 
     span
         border-bottom: 2px solid #000
