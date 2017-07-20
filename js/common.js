@@ -44,15 +44,22 @@ function cloudFly (){
 }
 
 function aboutUsFly (){
-     setTimeout(function () {
+            if (windWidth > 769 ) {
+                $(".header-flex-about").stop().animate({ top: "178px" }, 2000);
+                $(".img-top").stop().animate({ top: "25%" }, 2000);
+                $(".img-left").stop().animate({ top: "36%" }, 2000);
+                $(".img-bottom").stop().animate({ top: "57%" }, 2000);
+            }
+            setTimeout(function () {
                     $(".header-flex-about").attr('id','about-us-fly-text');
                     $(".about-img").addClass('about-us-fly-img');
-
-                }, 1000);
+                }, 900);
 }
 
-
+function ourTeamFly (){
     
+}
+
 
 $(function(){
         function updateAnchors() {
@@ -676,7 +683,14 @@ $(document).ready(function () {
         if ($('body').hasClass('is-about-us')){
              aboutUsFly();
         } 
-
+        if ($('body').hasClass('is-our-team')) {
+            if (windWidth > 769 ) {
+                $(".header-flex-team").stop().animate({ top: "175px" }, 1000);
+            }
+            setTimeout(function () {
+                    $(".header-flex-team").attr('id','about-us-fly-text');
+                }, 100);
+        }
 
         $('.tabs__caption>li').hover(function() {
             $(this).addClass('active');
