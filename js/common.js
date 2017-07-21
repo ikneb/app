@@ -691,9 +691,9 @@ function setPositionDevItems(rect, _this) {
         $('.dev').css('min-height', '1200px');
     }*/
     var third = windWidth/3;
- console.log(rect.left);
+ 
     if(rect.left < third - 200){
-        console.log(third);
+       
         _this.css({'left': '28.5%', 'top': rect.top});
         _this.addClass('big-dev-item');
     } else if (third > rect.left ) {
