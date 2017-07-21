@@ -56,10 +56,6 @@ function aboutUsFly (){
                 }, 900);
 }
 
-function ourTeamFly (){
-    
-}
-
 
 $(function(){
         function updateAnchors() {
@@ -73,7 +69,7 @@ $(function(){
             $('body').on('mousewheel', function(e){
                 e.preventDefault();
                 e.stopPropagation();
-                console.log(isAnimating);
+                
 
                 if( isAnimating) {
 
@@ -640,6 +636,76 @@ $(function() {
     }
 });
 
+function mousWheel() {
+        $('body').on('mousewheel', function(e){
+                e.preventDefault();
+                e.stopPropagation(); 
+                if( isAnimating) {
+                    return false;
+                }
+                isAnimating  = true;
+                
+                // Increase or reset current anchor
+                if( e.originalEvent.wheelDelta >= 0 ) {
+                    currentAnchor--;
+                }else{
+                    currentAnchor++;
+                }
+                if( currentAnchor > (anchors.length - 1) 
+                   || currentAnchor < 0 ) {
+                    currentAnchor = 0;
+                }
+                isAnimating  = true;
+                if ($('body').hasClass('is-hiring')) {
+                    
+                        setTimeout(function () {
+                            $('.header-opportunities p').addClass('about-us-fly-img');
+                            $(".header-opportunities p").stop().animate({ left: "0px" }, 1000);
+                        }, 1500);   
+                        $('body').unbind('mousewheel');         
+                }
+                if( anchors[currentAnchor] > 600) {          
+                     
+                }
+                    render = true;
+                if (firstMousWell) {
+                       $('html, body').animate({
+                        scrollTop: parseInt(anchors[1])
+                    }, 1100, 'swing', function(){
+                        isAnimating  = false;
+                    });
+                       firstMousWell = false;
+                        currentAnchor++;
+                } else {
+                   $('html, body').animate({
+                        scrollTop: parseInt( anchors[currentAnchor] )
+                    }, 1100, 'swing', function(){
+                        isAnimating  = false;
+                    });
+                }
+            });
+}
+
+function setPositionDevItems(rect, _this) {
+    /*if (rect.top != 0) {
+        $('.dev').css('min-height', '1200px');
+    }*/
+    var third = windWidth/3;
+ console.log(rect.left);
+    if(rect.left < third - 200){
+        console.log(third);
+        _this.css({'left': '28.5%', 'top': rect.top});
+        _this.addClass('big-dev-item');
+    } else if (third > rect.left ) {
+       _this.css({'left': '28.5%', 'top': rect.top});
+        _this.addClass('big-dev-item');
+    } else if(third < rect.left) {
+       _this.css({'right': '27.5%', 'top': rect.top});
+        _this.addClass('big-dev-item');
+    }
+    
+}
+
 $(document).ready(function () {
         $('.hamburger').click(function() {
             if(click){
@@ -684,12 +750,28 @@ $(document).ready(function () {
              aboutUsFly();
         } 
         if ($('body').hasClass('is-our-team')) {
+            mousWheel();
             if (windWidth > 769 ) {
                 $(".header-flex-team").stop().animate({ top: "175px" }, 1000);
             }
             setTimeout(function () {
                     $(".header-flex-team").attr('id','about-us-fly-text');
                 }, 100);
+        }
+        if ($('body').hasClass('is-hiring')) {
+            mousWheel();
+            if (windWidth > 769 ) {
+                $(".header-flex-hiring").stop().animate({ top: "175px" }, 1000);
+            }
+            setTimeout(function () {
+                    $(".header-flex-hiring").attr('id','about-us-fly-text');
+                }, 100);
+            if (come('.content-oportunities')) {
+                setTimeout(function () {
+                            $('.header-opportunities p').addClass('about-us-fly-img');
+                            $(".header-opportunities p").stop().animate({ left: "0px" }, 1000);
+                        }, 700);
+            } 
         }
 
         $('.tabs__caption>li').hover(function() {
@@ -699,12 +781,30 @@ $(document).ready(function () {
                 $(this).removeClass('active');
             
         });
-
         $('.tabs__caption li').click (function() {
             if(!$(this).hasClass('is-active')) {
                 $(this)
               .addClass('is-active').siblings().removeClass('is-active')
               .closest('div.tabs').find('div.tabs__content').removeClass('active').eq($(this).index()).addClass('active');
+            }
+        });
+
+
+        $('body').on('click', '.dev-item',function () {
+            var _this = $(this);
+            $('.dev').find('.dev-item').attr('id', '').attr('style', '');
+            _this.attr('id', 'big-dev-item');
+            var target = document.getElementById('big-dev-item');
+            
+            $('.dev').find('.dev-item').removeClass('big-dev-item');
+            setPositionDevItems($("#big-dev-item").position(), _this);
+        });
+
+        $(document).mouseup(function (e) {
+            var container = $('big-dev-item');
+            if (container.has(e.target).length === 0){
+                $('.dev').find('.dev-item').removeClass('big-dev-item');
+                $('.dev').find('.dev-item').attr('id', '').attr('style', '');    
             }
         });
 
