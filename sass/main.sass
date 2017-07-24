@@ -1185,7 +1185,13 @@ canvas
                 color: #fff
                 padding: 5px 30px
                 border-radius: 6px
-                margin-bottom: 10px 
+                margin-bottom: 10px
+            .botton-your-team
+                display: inline-table
+                padding: 5px 7px
+                width: 73%
+                margin-bottom: 30px
+                font-weight: 600
             .skill
                 width: 100%
                 position: relative
@@ -1201,7 +1207,8 @@ canvas
                     display: none
             .wks
                 padding-top: 11%
-
+            .name-developer
+                font-weight: 600
         .dev-item:hover
             border: 2px solid #008ba0
         .dev-item:nth-child(1)
@@ -1224,7 +1231,7 @@ canvas
             top: 50%
 .avaible-team .dev .dev-item
     padding-bottom: 1%
-.opportunities .content-oportunities .dev .big-dev-item, .avaible-team .content-oportunities .dev .big-dev-item
+.opportunities .content-oportunities .dev .big-dev-item, .avaible-team .dev .big-dev-item, 
     -webkit-animation: opp-animation 0.1s linear forwards
     animation: opp-animation 0.1s linear forwards
     margin: 0
@@ -1320,6 +1327,7 @@ canvas
     border: 2px solid $blue
     border-radius: 10px
     padding: 0.8% 10%
+    color: #000
 .logout
     position: relative
     top: 20px
@@ -1353,6 +1361,8 @@ canvas
     li:hover
         background-color: $blue
         color: #fff
+        img
+            fill: #fff
     .contact-hr
         color: #ffb446
     .active
@@ -1362,7 +1372,133 @@ canvas
     width: 100%
     .filling
         display: none
+        opacity: 0
     .active
         display: block
-
-    
+        -webkit-animation: portal-tab-animation 0.5s linear forwards
+        animation: portal-tab-animation 0.5s linear forwards
+@-webkit-keyframes portal-tab-animation 
+    25%
+        opacity: 0.2
+    50%
+        opacity: 0.4
+    75%
+        opacity: 0.6
+    100%
+        opacity: 1
+@keyframes portal-tab-animation
+    25%
+        opacity: 0.2
+    50%
+        opacity: 0.4
+    75%
+        opacity: 0.6
+    100%
+        opacity: 1
+.holiday-wrapp
+    position: relative
+    width: 55%
+    margin: 4% auto
+.holiday-wrapp
+    margin-top: 6%
+    font-weight: 600
+    .hjoliday-day, .holiday-item
+        border: 2px solid $blue
+        border-radius: 10px
+        margin-right: 4%
+        li
+            border-top: 1px solid $blue
+            padding: 10px 0
+        li:nth-child(1)
+            border-top: none
+            border-bottom: 1px solid $blue
+    .hjoliday-day
+        width: 30%
+    .holiday-item
+        width: 60%
+.panel-body
+    text-align: left
+    padding: 5% 6% 5% 6%
+    font-size: 22px
+    .gform_title
+        text-transform: uppercase
+    .gform_description
+        margin-top: 2%
+        width: 85%
+    .gform_body-ul
+        width: 100%
+        li
+            position:relative
+            margin-bottom: 30px
+            .col
+                width: 28%
+                float: left
+                margin-right: 9%
+            label
+                font-size: 17px
+            input[type="text"]
+                width: 28%
+                margin-right: 100px
+                border: 2px solid $blue
+                border-radius: 10px
+                height: 40px
+            .ginput_container_website, .ginput_container_comp_name
+                input
+                    width: 100%
+            input::-webkit-input-placeholder
+                color: #9d9e9e
+                font-size: 18px
+                padding-left: 10px
+            textarea
+                border: 2px solid $blue
+                border-radius: 10px
+                width: 65%
+.gfield_required
+    color: #ff0000
+.gf_right_half
+.field_description_below
+    clear: both
+#field_1_5
+    padding-top: 30px
+#field_1_5, #field_1_15, #field_1_18
+    .ginput_container_radio
+        margin-top: 10px
+        .gfield_radio
+            display: inline-flex
+            li
+                margin-right: 20px
+.charleft
+    font-size: 14px
+    color: #9d9e9e
+    margin-left: 10px
+.gf_list_3col
+    height: 230px
+    width: 100%
+    vertical-align: baseline
+    .ginput_container
+        vertical-align: baseline
+        margin-top: 10px
+        ul
+            overflow: hidden
+            li
+                width: 33%
+                display: -moz-inline-stack
+                display: inline-block
+                margin: 0 0 .5em
+                min-height: 1em
+                vertical-align: top
+.gfield_select
+    font-size: 16px
+    width: 28%
+    background-color: #fff
+    height: 40px
+    border: 2px solid $blue
+    border-radius: 10px
+.gform_button
+    background-color: $blue
+    border: 2px solid $blue
+    border-radius: 10px
+    width: 150px
+    height: 40px
+    font-size: 18px
+    color: #fff
