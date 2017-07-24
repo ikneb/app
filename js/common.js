@@ -788,14 +788,19 @@ $(document).ready(function () {
               .closest('div.tabs').find('div.tabs__content').removeClass('active').eq($(this).index()).addClass('active');
             }
         });
-
+        $('.portal-menu-ul li').click (function() {
+            if(!$(this).hasClass('active')) {
+                $(this)
+              .addClass('active').siblings().removeClass('active');
+              $('div.tab-login').find('div.filling').removeClass('active').eq($(this).index()).addClass('active');
+            }
+        });
 
         $('body').on('click', '.dev-item',function () {
             var _this = $(this);
             $('.dev').find('.dev-item').attr('id', '').attr('style', '');
             _this.attr('id', 'big-dev-item');
             var target = document.getElementById('big-dev-item');
-            
             $('.dev').find('.dev-item').removeClass('big-dev-item');
             setPositionDevItems($("#big-dev-item").position(), _this);
         });
