@@ -58,13 +58,13 @@
 @media only screen and (max-width: 1030px)
 	#my-header .earth
 		min-height: 537px
+	.show-how-work
+		display: none
 /* Large Devices, Wide Screens */
 @media only screen and (max-width: 1199px)
 	.top-line .link-menu
 		top: 69px
 	#my-footer .logo-footer-wrapp
-		left: 32%
-		top: 194px
 	#my-footer .section-footer
 		left: 0
 	.basic-principles .principles-container .composition-right
@@ -93,6 +93,8 @@
 		margin-left: 38px
 	#my-footer .section-footer
 		top: 0
+		margin-left: 0
+    	margin-right: 0
 	.mm-nolistview .hidden-media
 		display: block
 	.link-menu
@@ -101,7 +103,7 @@
 	#my-header .earth
 		min-height: 321px
 	#my-content .cloud
-		margin-top: -67px
+		margin-top: -341px
 	#my-content
 		background-color: #eaf0f1
 	#my-content .flex-cloud
@@ -176,7 +178,6 @@
 	    100% 
 	    	right: 85px
 	#my-footer .logo-footer-wrapp
-		top: 354px
 	.site-header .about-img
 		max-width: 17%
 	.site-header .img-top
@@ -199,6 +200,17 @@
 		width: 79%
 	.tabs__content .works-list li
 		width: 33%
+	#we-specilise
+		top: 120px
+		.we-specilise-left
+			margin-right: 7%
+			padding-bottom: 0px
+	.we-specilise .we-specilise-left, .we-specilise-right
+		margin: 7%
+		.first-stage
+			padding: 9% 0
+	.flex-slider .slider-icon img
+		top: 132%
 @media only screen and (max-width: 640px)
 	.slider .flex-slider
 		left: -223px
@@ -366,11 +378,12 @@
 	#my-content
 		background-color: #eaf0f1
 	#my-content .cloud
-		margin-top: -213px
+		margin-top: -221px
 	#my-content .flex-cloud
 		margin-top: 122px
 	#my-content .we-specilise
-		margin-top: 224px
+		margin-top: 128px
+		top: 215px
 	#my-content .flex-cloud
 		top: 205px
 	#my-header .earth
@@ -431,7 +444,9 @@
 		top: 219px
 	#my-page #my-footer .logo-footer-wrapp
 		left: 10%
-	#my-footer .section-footer, 
+	.is-home #my-footer
+		padding: 0
+		.section-footer, 
     	padding-left: 0
 	.become .header-flex-become
     	top: 91px
@@ -445,8 +460,23 @@
 		font-size: 14px
 	.tabs__content .works-list li
 		width: 100%
-
-    	
+	.top-line .link-menu
+		top: 75px
+	#we-specilise
+    	top: 235px
+	body.is-home .site-header
+		min-height: 904px
+	.flex-slider .slider-icon img
+		top: 207%
+		opacity: 1
+	.flex-slider .slider-icon img:nth-child(2)
+		left: 46%
+	.flex-slider .slider-icon img:nth-child(4)
+		left: 73%
+	.flex-slider .slider-icon img:nth-child(6)
+		left: 95%
+	.flex-slider .slider-icon img:nth-child(8)
+		left: 120%
 /* Custom, iPhone Retina */
 @media only screen and (max-width: 320px)
 	/**/

@@ -451,16 +451,61 @@ section, header
     margin-bottom: -242px
     z-index: 2
 .we-specilise
-	color: #000
-	margin-top: 365px
-	text-align: center
-	img
-		width: 170px
+    position: relative
+    top: 320px
+    ul
+        padding: 10px 0 0 20px
+        li
+            font-size: 21px
+            font-family: Segoeui-ligth
+            margin-bottom: 5px
+            img
+                width: 24%
+                margin-right: 13px
+.we-specilise-left, .we-specilise-right
+    border: 2px solid #a9e8f9
+    border-radius: 10px
+    padding-bottom: 25px
+    p
+        display: none
+    .row
+        display: none
+    .first-stage
+        text-align: center
+        padding: 13% 0
+        h2
+            font-size: 30px
+            position: relative
+            top: 20px  
+        .labirinth-img
+            width: 30%
+        .puzzle-img
+            width: 35%
+.we-specilise-left:hover, .we-specilise-right:hover
+    -webkit-animation: animate-specialaze 1s linear forwards
+    animation: animate-specialaze 1s linear forwards
+    .first-stage
+        display: none
+    p
+        display: block
+    .row
+        display: block
+
+@-webkit-keyframes animate-specialaze
+    25%
+        -webkit-transform: rotateY(60deg)
+    50%
+        -webkit-transform: rotateY(90deg)
+    75%
+        -webkit-transform: rotateY(60deg)
+    100%
+        -webkit-transform: rotateY(0deg)
+.we-specilise-left
+    margin-right: 15%
 .we-specilise, .flex-cloud
     opacity: 0
 .we-specilise p
-    margin-top: 6px
-    font-size: 21px;
+    font-size: 21px
     font-family: Segoeui-ligth 
 .earth
 	position: relative
@@ -555,14 +600,81 @@ canvas
     top: 248px
     left: -28px
 .slider
-	min-height: 605px
+    background-blend-mode: darken
+    min-height: 605px
 .slider .composition
     text-align: right
 .how-we-work
 	font-size: 3em
-#my-footer
-	min-height: 440px
-	background-color: #545555
+.slider-icon div
+    opacity: 0
+.slider-icon
+    img
+        position: absolute
+        width: 7%
+        top: 215%
+        opacity: 0
+    img:nth-child(2)
+        left: 15%
+    img:nth-child(4)
+        left: 37%
+    img:nth-child(6)
+        left: 59.5%
+    img:nth-child(8)
+        left: 81.5%
+    .line-work-wrap
+        top: 280%
+        position: absolute
+        fill: #a9e8f9
+        .line-work
+    .line-work-wrap:nth-child(1)
+        .line-work
+            max-width: 67%
+    .line-work-wrap:nth-child(3)
+        left: 22.5%
+        .line-work
+            max-width: 65%
+    .line-work-wrap:nth-child(5)
+        left: 44.5%
+        .line-work
+            max-width: 66%
+    .line-work-wrap:nth-child(7)
+        left: 66.7%
+        .line-work
+            max-width: 66%
+    .line-work-wrap:nth-child(9)
+        left: 88%
+.show-how-work-icon
+    opacity: 1 !important
+.show-how-work
+    -webkit-animation: show-how-work 0.5s linear forwards
+    animation: show-how-work 0.5s linear forwards
+@keyframes show-how-work
+    25%
+        opacity: 0.2
+        width: 15%
+    50%
+        opacity: 0.4
+        width: 30%
+    75%
+        opacity: 0.6
+        width: 45%
+    100%
+        opacity: 1
+        width: 62%
+@webkit-keyframes show-how-work
+    25%
+        opacity: 0.2
+        width: 15%
+    50%
+        opacity: 0.4
+        width: 30%
+    75%
+        opacity: 0.6
+        width: 45%
+    100%
+        opacity: 1
+        width: 62%
 .section-footer    
 	padding-left: 75px
 	top: 115px
@@ -665,13 +777,14 @@ canvas
         opacity: 0.6
     100%
         opacity: 1
-
-
 #my-footer .section-footer
     left: 0
     top: 0
     margin: 0
-    
+#my-footer
+    padding: 7% 0 0 6% 
+    min-height: 440px
+    background-color: #545555
 .logo img
 .humburger
     padding: 76px 75px
@@ -1316,7 +1429,6 @@ canvas
     color: #fff
 .portal-menu
     height: 83px
-    text-align: center
     .login
         position: relative
         top: 31px
@@ -1343,21 +1455,22 @@ canvas
     border: 2px solid #fff
     border-radius: 44px
 .portal-menu-ul
-    margin: 0
+    position: relative
+    margin: 0 -3px
     padding: 4px
     display: -webkit-inline-box
     height: 100%
-    width: 80%
+    width: 84%
     li
         position: relative
-        top: 5px
+        top: 3px
         height: 100%
         display: inline
         text-transform: uppercase
         padding: 30px 1% 32px 1%
         cursor: pointer
         font-size: 100%
-        margin: 0 -3px
+        margin: 0 -4px 0 0
         img, .icon
             width: 3.5%
             margin-right: 1%
