@@ -47,9 +47,6 @@ function cloudFly (){
 function aboutUsFly (){
             if (windWidth > 769 ) {
                 $(".header-flex-about").stop().animate({ top: "178px" }, 2000);
-                $(".img-top").stop().animate({ top: "25%" }, 2000);
-                $(".img-left").stop().animate({ top: "36%" }, 2000);
-                $(".img-bottom").stop().animate({ top: "57%" }, 2000);
             }
             setTimeout(function () {
                     $(".header-flex-about").attr('id','about-us-fly-text');
