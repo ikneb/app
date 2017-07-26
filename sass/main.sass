@@ -721,16 +721,18 @@ canvas
 		padding: 0
 		li
 			font-family: Display-Light
-            color: $blue
+            color: #a9e8f9
 			font-size: 16px
 			padding: 2px 0
 	.footer__pages-title
-		border-bottom: 2px solid $blue
+		border-bottom: 2px solid #00bfec
 		font-family: Display-Light
 		font-size: 21px
 		padding-bottom: 10px
 		margin-top: 2px 
-		margin-bottom: 28px		
+		margin-bottom: 28px
+.footer__pages ul a
+    color: #00bfec	
 .footer__pages
     width: 390px
     margin-left: 40px
@@ -938,7 +940,7 @@ canvas
     100%
         opacity: 1
 
-.is-about-us .site-header, .cont .site-header
+.is-about-us .site-header, .cont .site-header, .dedicated .site-header, .time-materials .site-header
     min-height: 597px
     height: 100vh
     background-color: #000
@@ -1652,7 +1654,7 @@ canvas
     height: 40px
     font-size: 18px
     color: #fff
-.cont .site-header
+.cont .site-header,
     background-color: #f0f9ff
     .header-contact-img
         position: absolute
@@ -1705,4 +1707,228 @@ canvas
         input::-webkit-input-placeholder, textarea::-webkit-input-placeholder
             font-family: Segoeui-ligth
             font-size: 22px
+.dedicated .site-header
+    background-color: #ffffff
+    .header-dedicated-img
+        position: absolute
+        width: 47%
+        top: 0%
+        left: 60%
+    .header-flex-dedicated
+        position: relative
+        width: 32%
+        top: 32%
+        left: 12%
+        h1
+            color: #778192
+        p
+            margin-top: 16px
+            letter-spacing: 0.5px
+            font-size: 22px
+            font-family: Segoeui-ligth
+            text-align: left
+            line-height: 1.35
+        .row
+            div
+                text-align: center
+                font-family: Segoeui-ligth
+                color: #abe3ff
+                font-weight: 600
+                img
+                    width: 100%
+                    margin: 12px 20px 0 0
+.dedicated-stage
+    padding-left: 11%
+    background-color: #ffffff
+    .dedicated-stage-container
+        padding: 19px 0
+        overflow: hidden
+        width: 87%
+        .row
+            margin: 3% 0
+            .wrapp-composition-right, .wrapp-composition-left
+                right: 11%
+            img
+                width: 55%
+            h3
+                font-size: 2em
+                color: #74819e
+                text-align: left
+                font-family: Segoeui-ligth
+            p
+                color: #333
+                letter-spacing: 0.5px
+                font-size: 20px
+                font-family: Display-Light
+                text-align: left
+                line-height: 1.35
+                max-width: 700px
+                margin-top: 5px
+.wrapp-composition-left, .wrapp-composition-right
+    position: relative
+    right: 5%
+.dedicated-stage-container .composition-right
+    position: relative
+    left: 50%
+.waste-time
+    padding: 2.5% 0
+    background-color: #f0f9ff
+    .waste-time-img
+        width: 18%
+        position: relative
+        left: 19%
+        margin: 5% 0
+        img
+            width: 100%
+    .waste-time-text
+        position: absolute
+        left: 50%
+        top: 16%
+        width: 32%
+        h1
+            color: #74819e
+            text-align: left
+            font-family: Segoeui-ligth
+        p
+                color: #333
+                letter-spacing: 0.5px
+                font-size: 20px
+                font-family: Display-Light
+                text-align: left
+                line-height: 1.35
+                max-width: 700px
+                margin-top: 27px
+.waste-time-list
+    width: 71%
+    margin: 0 auto
+    font-family: Segoeui-ligth
+    font-size: 22px
+    ul
+        li
+            padding: 1px 0
+            position: relative
+            img
+                position: absolute
+                width: 5%
+                margin-right: 3px
+                float: left
+                display: inline
+                margin-top: -2.5%
+                top: 50%
+            p
+                overflow: hidden
+                margin-left: 6%
+.dedicated-contact
+    position: relative
+    padding: 6%
+    background-color: #ffffff
+    text-align: center
+    h1
+        color: #74819e
+        font-family: Segoeui-ligth
+        margin-bottom: 5%
+    a
+        border: 2px solid $blue
+        border-radius: 25px
+        color: $blue
+        text-transform: uppercase
+        padding: 10px 10%
+.time-materials .site-header
+    background-color: #ffffff
+    .header-time-materials-img
+        position: absolute
+        width: 58%
+        top: 61px
+        left: 51%
+    .header-flex-time-materials
+        position: relative
+        width: 32%
+        top: 30%
+        left: 11%
+        h1
+            color: #778192
+        p
+            margin-top: 16px
+            letter-spacing: 0.5px
+            font-size: 22px
+            font-family: Segoeui-ligth
+            text-align: left
+            line-height: 1.35
+.solution-section
+    background-color: #ffffff
+    min-height: 1900px
+    .analysis, .specifications, .disign, .development, .testing, .delivery, .maintenance
+        width: 79%
+        margin: 0 auto
+        position: absolute
+        img
+            width: 56%
+        h3
+            font-size: 2em
+            color: #74819e
+            text-align: left
+            font-family: Segoeui-ligth
+        p
+            color: #333
+            letter-spacing: 0.5px
+            font-size: 20px
+            font-family: Display-Light
+            text-align: left
+            line-height: 1.35
+            max-width: 700px
+            margin-top: 5px
+.analysis
+    left: 10%
+.specifications
+    left: 20.5%
+    top: 14%
+.disign
+    left: 31%
+    top: 28%
+.development
+    left: 42%
+    top: 42%
+.testing
+    left: 42%
+    top: 60%
+.delivery
+    left: 31%
+    top: 74%
+.maintenance
+    left: 21%
+    top: 88%
+.we-work-with
+    text-align: center
+    background-color: #f0f9ff
+    padding: 4% 0
+    h1
+        color: #778192
+.main_techs_1, .main_techs_2, .main_techs_3
+    margin-top: 6%
+    i
+        font-size: 65px
+    p
+        font-family: Segoeui-ligth
+        font-size: 18px
+        font-weight: 600
+.main_techs_2
+    margin-left: 8%
+    margin-right: 8%
+    i
+        font-size: 50px
+.main_techs_3
+    margin-left: 12%
+    margin-right: 12%
+    i
+        font-size: 45px
+.gorizont, .vertical
+    position: absolute
+.solution-section
+    .vertical:nth-child(1)
+        top: 7%
+        left: 15.8%
+    .gorizont:nth-child(2)
+        top: 17.5%
+        left: 10.5%
+
 
