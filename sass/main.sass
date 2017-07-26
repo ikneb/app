@@ -481,7 +481,7 @@ section, header
             width: 30%
         .puzzle-img
             width: 35%
-.we-specilise-left:hover, .we-specilise-right:hover
+.we-specilise-hover
     -webkit-animation: animate-specialaze 1s linear forwards
     animation: animate-specialaze 1s linear forwards
     .first-stage
@@ -490,7 +490,24 @@ section, header
         display: block
     .row
         display: block
-
+.we-specilise-hower-close
+    // -webkit-animation: animate-specialaze-close 1s linear forwards
+    // animation: animate-specialaze-close 1s linear forwards
+    .first-stage
+        display: block
+    p
+        display: none
+    .row
+        display: none
+@-webkit-keyframes animate-specialaze-close
+    25%
+        -webkit-transform: rotateY(60deg)
+    50%
+        -webkit-transform: rotateY(90deg)
+    75%
+        -webkit-transform: rotateY(60deg)
+    100%
+        -webkit-transform: rotateY(0deg)
 @-webkit-keyframes animate-specialaze
     25%
         -webkit-transform: rotateY(60deg)
@@ -609,19 +626,27 @@ canvas
 .slider-icon div
     opacity: 0
 .slider-icon
-    img
+    .how-img
         position: absolute
-        width: 7%
         top: 215%
         opacity: 0
-    img:nth-child(2)
+        img
+            width: 19%
+        p
+            font-family: Display-Light
+            color: #a9e8f9
+            width: 93px
+            text-align: center
+    .how-img:nth-child(2)
         left: 15%
-    img:nth-child(4)
+    .how-img:nth-child(4)
         left: 37%
-    img:nth-child(6)
+    .how-img:nth-child(6)
         left: 59.5%
-    img:nth-child(8)
+    .how-img:nth-child(8)
         left: 81.5%
+        img
+            width: 33%
     .line-work-wrap
         top: 280%
         position: absolute
@@ -647,34 +672,35 @@ canvas
 .show-how-work-icon
     opacity: 1 !important
 .show-how-work
-    -webkit-animation: show-how-work 0.5s linear forwards
-    animation: show-how-work 0.5s linear forwards
+    -webkit-animation: show-how-work 2s linear forwards
+    animation: show-how-work 2s linear forwards
 @keyframes show-how-work
     25%
-        opacity: 0.2
-        width: 15%
-    50%
-        opacity: 0.4
-        width: 30%
-    75%
-        opacity: 0.6
-        width: 45%
-    100%
         opacity: 1
-        width: 62%
+        width: 25%
+    50%
+        
+        width: 50%
+    75%
+        
+        width: 75%
+    100%
+        width: 100%
+        opacity: 1
 @webkit-keyframes show-how-work
     25%
-        opacity: 0.2
-        width: 15%
-    50%
-        opacity: 0.4
-        width: 30%
-    75%
-        opacity: 0.6
-        width: 45%
-    100%
         opacity: 1
-        width: 62%
+        width: 25%
+    50%
+        
+        width: 50%
+    75%
+        
+        width: 75%
+    100%
+        
+        width: 100%
+        opacity: 1
 .section-footer    
 	padding-left: 75px
 	top: 115px
@@ -1445,9 +1471,10 @@ canvas
     border-radius: 10px
     padding: 0.8% 10%
     color: #000
+    cursor: default
 .logout
-    position: relative
-    top: 7px
+    position: absolute
+    top: 17px
     right: 2%
     text-transform: uppercase
     color: #fff
@@ -1657,7 +1684,6 @@ canvas
                     margin: 12px 20px 0 0
 .contact-us-section
     padding-left: 50px
-    pa
     background-color: #fff
     padding-bottom: 7%
     padding: 7% 50px
@@ -1669,12 +1695,14 @@ canvas
             width: 100%
             border: 3px solid #abe3ff
             border-radius: 10px
+            font-family: Segoeui-ligth
+            padding-left: 20px
+            font-size: 22px
         input[type=text]
             height: 65px
         textarea
             height: 130px
         input::-webkit-input-placeholder, textarea::-webkit-input-placeholder
             font-family: Segoeui-ligth
-            padding-left: 20px
             font-size: 22px
 

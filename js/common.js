@@ -74,31 +74,31 @@ $(function(){
                         case 1:
                             $('.line-work-wrap:nth-child(1)').addClass('show-how-work');
                             setTimeout(function () {
-                                $('img:nth-child(2)').addClass('show-how-work-icon');
-                            }, 100);
+                                $('.how-img:nth-child(2)').addClass('show-how-work-icon');
+                            }, 200);
                             animateLineWork++;
                             break;
                         case 2:
                             $('.line-work-wrap:nth-child(3)').addClass('show-how-work');
                             setTimeout(function () {
-                                 $('img:nth-child(4)').addClass('show-how-work-icon');
-                            }, 100);
+                                 $('.how-img:nth-child(4)').addClass('show-how-work-icon');
+                            }, 200);
                            
                             animateLineWork++;
                             break;
                         case 3:
                             $('.line-work-wrap:nth-child(5)').addClass('show-how-work');
                             setTimeout(function () {
-                                $('img:nth-child(6)').addClass('show-how-work-icon');
-                            }, 100);
+                                $('.how-img:nth-child(6)').addClass('show-how-work-icon');
+                            }, 200);
                             
                             animateLineWork++;
                             break;
                         case 4:
                             $('.line-work-wrap:nth-child(7)').addClass('show-how-work');
                             setTimeout(function () {
-                                $('img:nth-child(8)').addClass('show-how-work-icon');
-                            }, 100);
+                                $('.how-img:nth-child(8)').addClass('show-how-work-icon');
+                            }, 200);
                             animateLineWork++;
                             break;
                         case 5:
@@ -818,6 +818,9 @@ $(document).ready(function () {
                         }, 700);
             } 
         }
+        if ($('body').hasClass('cont')) {
+            mousWheel();
+        }
 
         $('.tabs__caption>li').hover(function() {
             $(this).addClass('active');
@@ -856,6 +859,12 @@ $(document).ready(function () {
                 $('.dev').find('.dev-item').removeClass('big-dev-item');
                 $('.dev').find('.dev-item').attr('id', '').attr('style', '');    
             }
+        });
+
+        $('.we-specilise .we-specilise-left, .we-specilise .we-specilise-right').hover(function () {
+            $(this).addClass('we-specilise-hover');
+        },function () {
+                $(this).removeClass('we-specilise-hover'); 
         });
 
 });
