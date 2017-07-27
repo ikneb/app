@@ -874,16 +874,21 @@ $(document).ready(function () {
             }
         });
 
-        var $li = $('.we-specilise .we-specilise-left, .we-specilise .we-specilise-right').hover(function () {
+        var $li = $('.we-specilise .we-specilise-left, .we-specilise .we-specilise-right').on('mouseenter',function () {
             var self = this;
-            hovertimer = setTimeout(function(){
+            setTimeout(function(){
                 $(self).find('.first-stage').css('display', 'none');
                 $(self).find('p').css('display', 'block');
                 $(self).find('.row').css('display', 'block');
-            }, 1000);
-        },function () {
-            clearTimeout(hovertimer);
-            /*$li.removeClass('we-specilise-hover').addClass('we-specilise-hower-close');*/
+            }, 1300);
+        });
+        $('.we-specilise .we-specilise-left, .we-specilise .we-specilise-right').on('mouseleave', function () {
+                var self = this;
+                setTimeout(function(){
+                $(self).find('p').css('display', 'none');
+                $(self).find('.row').css('display', 'none');
+                $(self).find('.first-stage').css('display', 'block');
+                }, 1300);
         });
 
 });
