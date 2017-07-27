@@ -688,10 +688,10 @@ $(function() {
 });
 
 function mousWheel() {
-        $('body').on('mousewheel', function(event, delta){
+        $('body').on('mousewheel', function(e, delta){
             this.scrollLeft -= (delta * 200);
-                event.preventDefault();
-                event.stopPropagation(); 
+                e.preventDefault();
+                e.stopPropagation(); 
                 if( isAnimating) {
                     return false;
                 }
