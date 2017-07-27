@@ -877,11 +877,16 @@ $(document).ready(function () {
         var $li = $('.we-specilise .we-specilise-left, .we-specilise .we-specilise-right').hover(function () {
             var self = this;
             hovertimer = setTimeout(function(){
-                $(self).addClass('we-specilise-hover');
+                $(self).removeClass('we-specilise-hower-close').addClass('we-specilise-hover');
             }, 100);
+            /*hovertimer = setTimeout(function(){
+                $('.first-stage').css({display: block});
+                $('.we-specilise-hower-close p').css({display: block});
+                $('.we-specilise-hower-close .row').css({display: block});
+            }, 100);*/
         },function () {
             clearTimeout(hovertimer);
-            $li.removeClass('we-specilise-hover');
+            $li.removeClass('we-specilise-hover').addClass('we-specilise-hower-close');
         });
 
 });
