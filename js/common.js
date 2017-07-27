@@ -62,15 +62,22 @@ $(function(){
                 anchors.push( $(element).offset().top );
             });
         }
+
         var cells = document.getElementById('is-home');
         if (cells) {
-            $('body').on('mousewheel', function(e){
+            document.addEventListener('mousewheel', function(e) {
                 e.preventDefault();
                 e.stopPropagation();
+
+                if ('ontouchstart' in document.documentElement) {
+                    console.log(e)
+                }
+
+
+
                 if (currentAnchor == 3 && animateLineWork < 6)
                 {
                     switch(animateLineWork) {
-                        
                         case 1:
                             $('.line-work-wrap:nth-child(1)').addClass('show-how-work');
                             setTimeout(function () {
@@ -107,7 +114,7 @@ $(function(){
                             break;
                     }
                     if(animateLineWork != 6) return;
-                    console.log(currentAnchor);
+                    
                 }
 
                 if( isAnimating) {
@@ -117,11 +124,12 @@ $(function(){
                 isAnimating  = true;
                 
                 // Increase or reset current anchor
-                if( e.originalEvent.wheelDelta >= 0 ) {
+                if( e.wheelDelta >= 0 ) {
                     currentAnchor--;
                 }else{
                     currentAnchor++;
                 }
+                
                 if( currentAnchor > (anchors.length - 1) 
                    || currentAnchor < 0 ) {
                     currentAnchor = 0;
@@ -150,6 +158,10 @@ $(function(){
                         isAnimating  = false;
                     });
                 }
+            });
+
+            document.addEventListener('touchstart', function(e) {
+                console.log(e);
             });
         }
     
@@ -676,9 +688,10 @@ $(function() {
 });
 
 function mousWheel() {
-        $('body').on('mousewheel', function(e){
-                e.preventDefault();
-                e.stopPropagation(); 
+        $('body').on('mousewheel', function(event, delta){
+            this.scrollLeft -= (delta * 200);
+                event.preventDefault();
+                event.stopPropagation(); 
                 if( isAnimating) {
                     return false;
                 }
