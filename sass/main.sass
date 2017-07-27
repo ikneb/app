@@ -466,6 +466,7 @@ section, header
     border: 2px solid #a9e8f9
     border-radius: 10px
     padding-bottom: 25px
+    transition: all 2s ease-in-out
     p
         display: none
     .row
@@ -481,42 +482,23 @@ section, header
             width: 30%
         .puzzle-img
             width: 35%
-.we-specilise-hover
-    -webkit-animation: animate-specialaze 1s linear forwards
-    animation: animate-specialaze 1s linear forwards
+.we-specilise-left:hover, .we-specilise-right:hover
+    transform: rotateY(180deg)
     .first-stage
+        -webkit-animation: animate-specialaze-none 2s linear forwards
+        animation: animate-specialaze-none 2s linear forwards
         display: none
     p
         display: block
     .row
         display: block
-.we-specilise-hower-close
-    -webkit-animation: animate-specialaze-close 1s linear forwards
-    animation: animate-specialaze-close 1s linear forwards
-    .first-stage
-        display: block
-    p
-        display: none
-    .row
-        display: none
-@-webkit-keyframes animate-specialaze-close
-    25%
-        -webkit-transform: rotateY(60deg)
+@keyframes animate-specialaze-none
+    0%
+        opacity: 0.7 
     50%
-        -webkit-transform: rotateY(90deg)
-    75%
-        -webkit-transform: rotateY(60deg)
+        opacity: 0
     100%
-        -webkit-transform: rotateY(0deg)
-@-webkit-keyframes animate-specialaze
-    25%
-        -webkit-transform: rotateY(60deg)
-    50%
-        -webkit-transform: rotateY(90deg)
-    75%
-        -webkit-transform: rotateY(60deg)
-    100%
-        -webkit-transform: rotateY(0deg)
+        opacity: 0
 .we-specilise-left
     margin-right: 15%
 .we-specilise, .flex-cloud

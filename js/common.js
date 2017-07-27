@@ -874,20 +874,27 @@ $(document).ready(function () {
             }
         });
 
-        var $li = $('.we-specilise .we-specilise-left, .we-specilise .we-specilise-right').hover(function () {
+        /*var $li = $('.we-specilise .we-specilise-left, .we-specilise .we-specilise-right').hover(function () {
             var self = this;
             hovertimer = setTimeout(function(){
                 $(self).removeClass('we-specilise-hower-close').addClass('we-specilise-hover');
             }, 100);
-            /*hovertimer = setTimeout(function(){
-                $('.first-stage').css({display: block});
-                $('.we-specilise-hower-close p').css({display: block});
-                $('.we-specilise-hower-close .row').css({display: block});
-            }, 100);*/
+            $('.first-stage').css('display', 'none');
+                $('.we-specilise-hower-close p').css('display', 'block');
+                $('.we-specilise-hower-close .row').css('display', 'block');
         },function () {
             clearTimeout(hovertimer);
             $li.removeClass('we-specilise-hover').addClass('we-specilise-hower-close');
         });
+        
+        .we-specilise-hover
+    -webkit-animation: animate-specialaze 1s linear forwards
+    animation: animate-specialaze 1s linear forwards
+.we-specilise-hower-close
+    -webkit-animation: animate-specialaze-close 1s linear forwards
+    animation: animate-specialaze-close 1s linear forwards
+
+        */
 
 });
 
@@ -1026,32 +1033,35 @@ $(function() {
 
     }
 
-    var img_width = $('.how-img img')[0];
-    var email = $('.how-img:nth-child(2)').position();
-    var balance = $('.how-img:nth-child(4)').position();
-    var training = $('.how-img:nth-child(6)').position();
-    var checked = $('.how-img:nth-child(8)').position();
 
-    set_how_work_line($('.line-work-wrap:nth-child(3)'), img_width , email, balance);
-    set_how_work_line($('.line-work-wrap:nth-child(5)'), img_width , balance, training);
-    set_how_work_line($('.line-work-wrap:nth-child(7)'), img_width , training, checked);
+    if ($('body').hasClass('is-home')) { 
+        var img_width = $('.how-img img')[0];
+        var email = $('.how-img:nth-child(2)').position();
+        var balance = $('.how-img:nth-child(4)').position();
+        var training = $('.how-img:nth-child(6)').position();
+        var checked = $('.how-img:nth-child(8)').position();
 
-    $('.line-work-wrap:nth-child(1)').css({
-                top: email.top  + img_width.height/2, 
-                left: 0, 
-                position:'absolute'
-        }).find('rect').attr('width', email.left - 7);
-    $('.line-work-wrap:nth-child(9)').css({
-                top: email.top  + img_width.height/2, 
-                left: checked.left + 7 + img_width.width, 
-                position:'absolute'
-        }).find('rect').attr('width', windWidth - (checked.left + 7));
+        set_how_work_line($('.line-work-wrap:nth-child(3)'), img_width , email, balance);
+        set_how_work_line($('.line-work-wrap:nth-child(5)'), img_width , balance, training);
+        set_how_work_line($('.line-work-wrap:nth-child(7)'), img_width , training, checked);
 
-    function set_how_work_line(element, img_width, first_div_position, second_div_position) {
-        element.css({
-                top: first_div_position.top  + img_width.height/2, 
-                left: first_div_position.left + img_width.width + 7, 
-                position:'absolute'
-        }).find('rect').attr('width', (second_div_position.left - 7) -  (first_div_position.left + img_width.width + 7));
+        $('.line-work-wrap:nth-child(1)').css({
+                    top: email.top  + img_width.height/2, 
+                    left: 0, 
+                    position:'absolute'
+            }).find('rect').attr('width', email.left - 7);
+        $('.line-work-wrap:nth-child(9)').css({
+                    top: email.top  + img_width.height/2, 
+                    left: checked.left + 7 + img_width.width, 
+                    position:'absolute'
+            }).find('rect').attr('width', windWidth - (checked.left + 7));
+
+        function set_how_work_line(element, img_width, first_div_position, second_div_position) {
+            element.css({
+                    top: first_div_position.top  + img_width.height/2, 
+                    left: first_div_position.left + img_width.width + 7, 
+                    position:'absolute'
+            }).find('rect').attr('width', (second_div_position.left - 7) -  (first_div_position.left + img_width.width + 7));
+        }
     }
 });
