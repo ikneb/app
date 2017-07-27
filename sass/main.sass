@@ -651,24 +651,6 @@ canvas
         top: 280%
         position: absolute
         fill: #a9e8f9
-        .line-work
-    .line-work-wrap:nth-child(1)
-        .line-work
-            max-width: 67%
-    .line-work-wrap:nth-child(3)
-        left: 22.5%
-        .line-work
-            max-width: 65%
-    .line-work-wrap:nth-child(5)
-        left: 44.5%
-        .line-work
-            max-width: 66%
-    .line-work-wrap:nth-child(7)
-        left: 66.7%
-        .line-work
-            max-width: 66%
-    .line-work-wrap:nth-child(9)
-        left: 88%
 .show-how-work-icon
     opacity: 1 !important
 .show-how-work
@@ -1861,6 +1843,7 @@ canvas
         width: 79%
         margin: 0 auto
         position: absolute
+        opacity: 0
         img
             width: 56%
         h3
@@ -1923,13 +1906,28 @@ canvas
         font-size: 45px
 .gorizont, .vertical
     position: absolute
-.solution-section
-    .vertical:nth-child(1)
-        top: 7%
-        left: 15.9%
-        svg
-            height: 203px
-    .gorizont:nth-child(2)
-        top: 17.5%
-        left: 16%
+    opacity: 0
+.render-verticale-line
+    -webkit-animation: show-line-solution 2s linear forwards
+    animation: show-line-solution 2s linear forwards
+@keyframes show-line-solution
+    25%
+        opacity: 0.5
+    50%
+        opacity: 0.7
+    75%
+       opacity: 0.9
+    100%
+        opacity: 1
+@webkit-keyframes show-line-solution
+    25%
+        opacity: 0.5
+    50%
+        opacity: 0.7
+    75%
+       opacity: 0.9
+    100%
+        opacity: 1
+
+    
 

@@ -726,9 +726,6 @@ function mousWheel() {
 }
 
 function setPositionDevItems(rect, _this) {
-    /*if (rect.top != 0) {
-        $('.dev').css('min-height', '1200px');
-    }*/
     var third = windWidth/3;
  
     if(rect.left < third - 200){
@@ -744,6 +741,8 @@ function setPositionDevItems(rect, _this) {
     }
     
 }
+
+
 
 $(document).ready(function () {
         $('.hamburger').click(function() {
@@ -784,6 +783,7 @@ $(document).ready(function () {
             }
         });
         if ($('body').hasClass('is-home')){
+        
             if (come('.earth') && !device.ios()) {
              fly();
             } 
@@ -861,13 +861,179 @@ $(document).ready(function () {
             }
         });
 
-        $('.we-specilise .we-specilise-left, .we-specilise .we-specilise-right').hover(function () {
-            $(this).addClass('we-specilise-hover');
+        var $li = $('.we-specilise .we-specilise-left, .we-specilise .we-specilise-right').hover(function () {
+            var self = this;
+            hovertimer = setTimeout(function(){
+                $(self).addClass('we-specilise-hover');
+            }, 100);
         },function () {
-                $(this).removeClass('we-specilise-hover'); 
+            clearTimeout(hovertimer);
+            $li.removeClass('we-specilise-hover');
         });
 
 });
 
 
+$(function() {
+    if ($('body').hasClass('time-materials')) { 
+        var img_width = $('.start')[0];
+        var analysis = $('.analysis').position();
+        var specifications = $('.specifications').position();
+        var disign = $('.disign').position();
+        var development = $('.development').position();
+        var testing = $('.testing').position();
+        var delivery = $('.delivery').position();
+        var maintenance = $('.maintenance').position();
 
+
+        set_verticale_top_line_position($('.vertical:nth-child(1)'), img_width, analysis, specifications);
+        set_verticale_top_line_position($('.vertical:nth-child(2)'), img_width, specifications, disign);
+        set_verticale_top_line_position($('.vertical:nth-child(3)'), img_width, disign, development);
+
+        set_verticale_center_line_position($('.vertical:nth-child(4)'), img_width, development, testing)
+
+        set_verticale_bottom_line_position($('.vertical:nth-child(5)'), img_width, testing, delivery);
+        set_verticale_bottom_line_position($('.vertical:nth-child(6)'), img_width, delivery, maintenance);
+
+        set_gorizontal_top_line($('.gorizont:nth-child(7)'), img_width, analysis, specifications);
+        set_gorizontal_top_line($('.gorizont:nth-child(8)'), img_width, specifications, disign);
+        set_gorizontal_top_line($('.gorizont:nth-child(9)'), img_width, disign, development);
+
+        set_gorizontal_bottom_line($('.gorizont:nth-child(10)'), img_width, testing, delivery);
+        set_gorizontal_bottom_line($('.gorizont:nth-child(11)'), img_width, delivery, maintenance);
+
+
+        
+
+        function set_verticale_top_line_position(element, img_width, first_div_position, second_div_position ) {
+            element.css({
+            top: img_width.height + first_div_position.top - 3, 
+            left: img_width.width/2 + 12.5 + first_div_position.left, 
+            position:'absolute'
+         }).find('rect').attr('height', (second_div_position.top + img_width.width/2) - (img_width.height + first_div_position.top - 3));
+        }
+
+        function set_verticale_bottom_line_position(element, img_width, first_div_position, second_div_position ) {
+            element.css({
+            top: first_div_position.top + img_width.width/2, 
+            left: second_div_position.left + img_width.width/2 +13, 
+            position:'absolute'
+         }).find('rect').attr('height', (second_div_position.top + 5) - (first_div_position.top + img_width.width/2));
+        }
+
+        function set_verticale_center_line_position(element, img_width, first_div_position, second_div_position ) {
+            element.css({
+            top: img_width.height + first_div_position.top - 3, 
+            left: second_div_position.left + img_width.width/2 +13, 
+            position:'absolute'
+         }).find('rect').attr('height', (second_div_position.top + 5) - (img_width.height + first_div_position.top - 3));
+        }
+
+        function set_gorizontal_top_line(element, img_width, first_div_position, second_div_position) {
+            element.css({
+            top: second_div_position.top + img_width.width/2, 
+            left: img_width.width/2 + 13 + first_div_position.left, 
+            position:'absolute'
+         }).find('rect').attr('width',(second_div_position.left + 25) - (img_width.width/2 + 13 + first_div_position.left));
+        }
+
+        function set_gorizontal_bottom_line(element, img_width, first_div_position, second_div_position) {
+            element.css({
+            top: first_div_position.top + img_width.width/2, 
+            left: second_div_position.left + img_width.width/2 +13, 
+            position:'absolute'
+         }).find('rect').attr('width',(first_div_position.left) - (second_div_position.left + img_width.width/2 - 13));
+        }
+        var scrol = 0;
+        $('body').on('mousewheel', function(e){
+
+            if (come('.specifications')) {
+                $('.analysis').addClass('render-verticale-line');
+                switch (scrol) {
+                    case 1:
+                            $('.vertical:nth-child(1)').addClass('render-verticale-line'); 
+                        break;
+                    case 2:
+                            $('.gorizont:nth-child(7)').addClass('render-verticale-line');
+                        break;
+                    case 4:
+                            $('.specifications').addClass('render-verticale-line');
+                        break;
+                    case 6:
+                            $('.vertical:nth-child(2)').addClass('render-verticale-line');
+                        break;
+                    case 8:
+                            $('.gorizont:nth-child(8)').addClass('render-verticale-line');
+                        break;
+                    case 10:
+                            $('.disign').addClass('render-verticale-line');
+                        break;
+                    case 12:
+                            $('.vertical:nth-child(3)').addClass('render-verticale-line'); 
+                        break;
+                    case 14:
+                            $('.gorizont:nth-child(9)').addClass('render-verticale-line');
+                        break;
+                    case 16:
+                            $('.development').addClass('render-verticale-line');
+                        break;
+                    case 18:
+                            $('.vertical:nth-child(4)').addClass('render-verticale-line'); 
+                        break;
+                    case 20:
+                            $('.testing').addClass('render-verticale-line');
+                        break;
+                    case 22:
+                            $('.gorizont:nth-child(10)').addClass('render-verticale-line');
+                        break;
+                    case 24:
+                            $('.vertical:nth-child(5)').addClass('render-verticale-line'); 
+                        break;
+                    case 26:
+                            $('.delivery').addClass('render-verticale-line');
+                        break;
+                    case 28:
+                            $('.gorizont:nth-child(11)').addClass('render-verticale-line');
+                        break;
+                    case 30:
+                            $('.vertical:nth-child(6)').addClass('render-verticale-line'); 
+                        break;
+                    case 32:
+                            $('.maintenance').addClass('render-verticale-line');
+                        break;
+                }
+                scrol++;
+            }
+        });
+
+    }
+
+    var img_width = $('.how-img img')[0];
+    var email = $('.how-img:nth-child(2)').position();
+    var balance = $('.how-img:nth-child(4)').position();
+    var training = $('.how-img:nth-child(6)').position();
+    var checked = $('.how-img:nth-child(8)').position();
+
+    set_how_work_line($('.line-work-wrap:nth-child(3)'), img_width , email, balance);
+    set_how_work_line($('.line-work-wrap:nth-child(5)'), img_width , balance, training);
+    set_how_work_line($('.line-work-wrap:nth-child(7)'), img_width , training, checked);
+
+    $('.line-work-wrap:nth-child(1)').css({
+                top: email.top  + img_width.height/2, 
+                left: 0, 
+                position:'absolute'
+        }).find('rect').attr('width', email.left - 7);
+    $('.line-work-wrap:nth-child(9)').css({
+                top: email.top  + img_width.height/2, 
+                left: checked.left + 7 + img_width.width, 
+                position:'absolute'
+        }).find('rect').attr('width', windWidth - (checked.left + 7));
+
+    function set_how_work_line(element, img_width, first_div_position, second_div_position) {
+        element.css({
+                top: first_div_position.top  + img_width.height/2, 
+                left: first_div_position.left + img_width.width + 7, 
+                position:'absolute'
+        }).find('rect').attr('width', (second_div_position.left - 7) -  (first_div_position.left + img_width.width + 7));
+    }
+});
