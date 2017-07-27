@@ -483,22 +483,34 @@ section, header
         .puzzle-img
             width: 35%
 .we-specilise-left:hover, .we-specilise-right:hover
-    transform: rotateY(180deg)
+    transform: rotateY(360deg)
     .first-stage
         -webkit-animation: animate-specialaze-none 2s linear forwards
         animation: animate-specialaze-none 2s linear forwards
-        display: none
     p
-        display: block
+        -webkit-animation: animate-specialaze-block 2s linear forwards
+        animation: animate-specialaze-block 2s linear forwards
     .row
-        display: block
+        -webkit-animation: animate-specialaze-block 2s linear forwards
+        animation: animate-specialaze-block 2s linear forwards
 @keyframes animate-specialaze-none
-    0%
-        opacity: 0.7 
+    0% 
+        opacity: 0.7
+    25%
+        opacity: 0
     50%
         opacity: 0
     100%
         opacity: 0
+@keyframes animate-specialaze-block
+    0%
+        opacity: 0
+    25%
+        opacity: 0.4
+    50%
+        opacity: 0.7
+    100%
+        opacity: 1
 .we-specilise-left
     margin-right: 15%
 .we-specilise, .flex-cloud

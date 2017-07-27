@@ -874,27 +874,17 @@ $(document).ready(function () {
             }
         });
 
-        /*var $li = $('.we-specilise .we-specilise-left, .we-specilise .we-specilise-right').hover(function () {
+        var $li = $('.we-specilise .we-specilise-left, .we-specilise .we-specilise-right').hover(function () {
             var self = this;
             hovertimer = setTimeout(function(){
-                $(self).removeClass('we-specilise-hower-close').addClass('we-specilise-hover');
-            }, 100);
-            $('.first-stage').css('display', 'none');
-                $('.we-specilise-hower-close p').css('display', 'block');
-                $('.we-specilise-hower-close .row').css('display', 'block');
+                $(self).find('.first-stage').css('display', 'none');
+                $(self).find('p').css('display', 'block');
+                $(self).find('.row').css('display', 'block');
+            }, 1000);
         },function () {
             clearTimeout(hovertimer);
-            $li.removeClass('we-specilise-hover').addClass('we-specilise-hower-close');
+            /*$li.removeClass('we-specilise-hover').addClass('we-specilise-hower-close');*/
         });
-        
-        .we-specilise-hover
-    -webkit-animation: animate-specialaze 1s linear forwards
-    animation: animate-specialaze 1s linear forwards
-.we-specilise-hower-close
-    -webkit-animation: animate-specialaze-close 1s linear forwards
-    animation: animate-specialaze-close 1s linear forwards
-
-        */
 
 });
 
