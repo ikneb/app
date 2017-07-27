@@ -891,6 +891,13 @@ $(document).ready(function () {
                 }, 1300);
         });
 
+        $('.we-specilise .we-specilise-left').on('click',function () {
+            window.location.href = "https://houstonapps.co/app/time_materials.html";
+        });
+        $('.we-specilise .we-specilise-right').on('click',function () {
+            window.location.href = "https://houstonapps.co/app/dedicated.html";
+        });
+
 });
 
 
