@@ -878,16 +878,18 @@ $(document).ready(function () {
             }
         });
 
-        var $li = $('.we-specilise .we-specilise-left, .we-specilise .we-specilise-right').on('mouseenter',function () {
+        $('.we-specilise .we-specilise-left-wrap, .we-specilise .we-specilise-right-wrap').on('mouseenter',function () {
             var self = this;
+            $(self).find('div:first').addClass('we-specilise-hover')
             setTimeout(function(){
                 $(self).find('.first-stage').css('display', 'none');
                 $(self).find('p').css('display', 'block');
                 $(self).find('.row').css('display', 'block');
             }, 1300);
         });
-        $('.we-specilise .we-specilise-left, .we-specilise .we-specilise-right').on('mouseleave', function () {
+        $('.we-specilise .we-specilise-left-wrap, .we-specilise .we-specilise-right-wrap').on('mouseleave', function () {
                 var self = this;
+                $(self).find('div:first').removeClass('we-specilise-hover');
                 setTimeout(function(){
                 $(self).find('p').css('display', 'none');
                 $(self).find('.row').css('display', 'none');
@@ -900,6 +902,23 @@ $(document).ready(function () {
         });
         $('.we-specilise .we-specilise-right').on('click',function () {
             window.location.href = "https://houstonapps.co/app/dedicated.html";
+        });
+
+        $('.login').click(function (e) {
+            e.preventDefault();
+            $('.modal-backdrop').addClass('in');
+            $('.modal').addClass('in');
+
+        });
+        $('.close').click(function (e) {
+            e.preventDefault();
+            $('.modal-backdrop').removeClass('in');
+            $('.modal').removeClass('in');
+
+        });
+        $('.lwa-form').submit(function (e) {
+            e.preventDefault();
+            window.location.href = "https://houstonapps.co/app/portal_log_in.html";
         });
 
 });

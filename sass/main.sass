@@ -462,12 +462,15 @@ section, header
             img
                 width: 24%
                 margin-right: 13px
+.we-specilise-left-wrap, .we-specilise-right-wrap
 .we-specilise-left, .we-specilise-right
     border: 2px solid #a9e8f9
     border-radius: 10px
     padding-bottom: 25px
     transition: all 2s ease-in-out
     cursor: pointer
+    width: 100%
+    padding: 10px
     p
         display: none
     .row
@@ -483,10 +486,9 @@ section, header
             width: 30%
         .puzzle-img
             width: 35%
-.we-specilise-left:hover, .we-specilise-right:hover
+.we-specilise-hover
     transform: rotateY(360deg)
-    .first-stage
-.we-specilise-left
+.we-specilise-left-wrap
     margin-right: 15%
 .we-specilise, .flex-cloud
     opacity: 0
@@ -1909,6 +1911,87 @@ canvas
        opacity: 0.9
     100%
         opacity: 1
-
-    
-
+.modal
+    overflow-x: hidden
+    overflow-y: auto
+    background-color: #fff
+.modal.in
+    opacity: 1
+    display: block
+.modal
+    display: none
+    position: fixed
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    z-index: 1050
+    -webkit-overflow-scrolling: touch
+    outline: 0
+.fade
+    transition: opacity 0.15s linear
+.modal.in .modal-dialog
+    transform: translate(0, 0)
+.modal.fade .modal-dialog
+     transition: transform 0.3s ease-out
+.modal-dialog
+    position: relative
+    width: 600px
+    margin: 30px auto
+.modal-backdrop.in
+    opacity: 0.5
+    display: block
+.modal-backdrop
+    display: none
+    position: fixed
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    z-index: 1040
+    background-color: #000
+.modal-content
+    position: relative;
+    background-color: #fff;
+    border: 1px solid #999;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+    background-clip: padding-box;
+    outline: 0;
+    -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    text-align: center
+    input[type=text], input[type=password]
+        width: 50%
+        margin-right: 100px
+        border: 2px solid $blue
+        border-radius: 10px
+        height: 40px
+        padding-left: 15px
+        margin: 0 auto
+    .form-group
+            margin-bottom: 15px
+            margin-top: 15px
+.modal-header
+    background: #fcfcfc
+    padding: 15px
+    border-bottom: 1px solid #e5e5e5
+.modal-header:before, .modal-header:after
+    content: " "
+    display: table
+.modal-header .close
+    margin-top: -2px
+    padding: 0
+    cursor: pointer
+    background: transparent
+    border: 0
+    -webkit-appearance: none
+    float: right
+    font-size: 21px
+    font-weight: bold
+    line-height: 1
+    color: #000
+    text-shadow: 0 1px 0 #fff
+    opacity: 0.2

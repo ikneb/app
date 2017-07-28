@@ -234,7 +234,76 @@
                               </ul>
                         </div>
                   </section>
-      </div>
+                  <div class="modal fade" id="loginModal" >
+                      <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                              <div class="modal-header">
+                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                  <h4 class="modal-title text-center">Login form</h4>
+                              </div>
+                              <div class="modal-body">
+                                    <div class="lwa lwa-default">        
+                                          <form class="lwa-form" action="#" method="post">
+                                                <div>
+                                                      <span class="lwa-status"></span>
+                                                            <div class="form-group">
+                                                                  <div class="lwa-username-label">
+                                                                        <label>Username</label>
+                                                                  </div>
+                                                                    <div class="lwa-username-input">
+                                                                        <input type="text" class="form-control" name="log">
+                                                                    </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <div class="lwa-password-label">
+                                                                  <label>Password</label>
+                                                                </div>
+                                                                <div class="lwa-password-input">
+                                                                  <input class="form-control" type="password" name="pwd">
+                                                                  </div>
+                                                            </div>
+                                  
+                                                            <div class="form-group lwa-submit">
+                                                                  <div class="lwa-submit-button">
+                                                                        <input type="submit" class="btn btn-block btn-primary gform_button" name="wp-submit" id="lwa_wp-submit" value="Log In" tabindex="100">
+                                                                  </div>
+                                                            </div>
+                                                            <div class="form-group lwa-submit-links">
+                                                                  <p>
+                                                                     <input name="rememberme" type="checkbox" class="lwa-rememberme" value="forever"> <label>Remember Me</label>
+                                                                  </p>
+                                                                  <a class="lwa-links-remember" href="https://rc.houstonapps.co/wp-login.php?action=lostpassword" title="Password Lost and Found">Lost your password?</a>
+                                                            </div>
+                                                      </div>
+                                                </form>
+                                                <form class="lwa-remember" action="https://rc.houstonapps.co/wp-login.php?action=lostpassword" method="post" style="display:none;">
+                                                      <div>
+                                                            <span class="lwa-status"></span>
+                                                            <div class="form-group">
+                                                                  <div>
+                                                                       <strong>Forgotten Password</strong>         
+                                                                  </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                  <input type="text" name="user_login" class="form-control lwa-member " value="Enter username or email" onfocus="if(this.value == 'Enter username or email'){this.value = '';}" onblur="if(this.value == ''){this.value = 'Enter username or email'}">
+                                                             </div>
+                                                            <div class="form-group">
+                                                                    <div class="lwa-remember-buttons">
+                                                                        <input type="submit" value="Get New Password" class="btn btn-success lwa-button-remember">
+                                                                        <a href="#" class="btn btn-default lwa-links-remember-cancel">Cancel</a>
+                                                                        <input type="hidden" name="login-with-ajax" value="remember">
+                                                                    </div>
+                                                            </div>
+                                                      </div>
+                                                </form>
+                                          </div>            
+                                    </div>
+                              </div>
+                        </div><!-- /.modal-dialog -->
+
+                  </div>
+                  <div class="modal-backdrop fade"></div>
+            </div>
       <div id="my-footer">
       <div class="anchor" id="anchor3" ></div>
 			<div class="section-footer">
@@ -253,7 +322,7 @@
 					<div class="col-md-5 col-sm-5 foo_right">
 						<ul>
                                           <li><a href="we_are_hiring.html">We're hiring</a></li>
-                                          <li><a href="portal_log_in.html">Recruitment portal</a></li>
+                                          <li><a href="portal_log_out.html">Recruitment portal</a></li>
                                     </ul>
 					</div>
 					</div>
