@@ -10,7 +10,7 @@ var stop = false;
 var isAnim = true;
 var swichOfAnimate = false;
 var speed = 5;
-var animateLineWork = 1;
+var animateLineWork = 0;
 
 
 function fly() {
@@ -73,7 +73,7 @@ $(function(){
                     /**/
                 }
 
-                if (currentAnchor == 3 && animateLineWork < 6)
+                if (currentAnchor == 3 && animateLineWork < 14)
                 {
                     if (come('.flex-slider')) {
                         switch(animateLineWork) {
@@ -82,38 +82,32 @@ $(function(){
                                 setTimeout(function () {
                                     $('.how-img:nth-child(2)').addClass('show-how-work-icon');
                                 }, 200);
-                                animateLineWork++;
                                 break;
-                            case 2:
+                            case 4:
                                 $('.line-work-wrap:nth-child(3)').addClass('show-how-work');
                                 setTimeout(function () {
                                      $('.how-img:nth-child(4)').addClass('show-how-work-icon');
                                 }, 200);
-                               
-                                animateLineWork++;
                                 break;
-                            case 3:
+                            case 7:
                                 $('.line-work-wrap:nth-child(5)').addClass('show-how-work');
                                 setTimeout(function () {
                                     $('.how-img:nth-child(6)').addClass('show-how-work-icon');
                                 }, 200);
-                                
-                                animateLineWork++;
                                 break;
-                            case 4:
+                            case 10:
                                 $('.line-work-wrap:nth-child(7)').addClass('show-how-work');
                                 setTimeout(function () {
                                     $('.how-img:nth-child(8)').addClass('show-how-work-icon');
                                 }, 200);
-                                animateLineWork++;
                                 break;
-                            case 5:
+                            case 13:
                                 $('.line-work-wrap:nth-child(9)').addClass('show-how-work');
-                                animateLineWork++;
                                 break;
                         }
+                        animateLineWork++;
                     }
-                    if(animateLineWork != 6) return;
+                    if(animateLineWork < 14) return;
                     
                 }
 
