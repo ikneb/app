@@ -70,48 +70,48 @@ $(function(){
                 e.stopPropagation();
 
                 if ('ontouchstart' in document.documentElement) {
-                    console.log(e)
+                    /**/
                 }
-
-
 
                 if (currentAnchor == 3 && animateLineWork < 6)
                 {
-                    switch(animateLineWork) {
-                        case 1:
-                            $('.line-work-wrap:nth-child(1)').addClass('show-how-work');
-                            setTimeout(function () {
-                                $('.how-img:nth-child(2)').addClass('show-how-work-icon');
-                            }, 200);
-                            animateLineWork++;
-                            break;
-                        case 2:
-                            $('.line-work-wrap:nth-child(3)').addClass('show-how-work');
-                            setTimeout(function () {
-                                 $('.how-img:nth-child(4)').addClass('show-how-work-icon');
-                            }, 200);
-                           
-                            animateLineWork++;
-                            break;
-                        case 3:
-                            $('.line-work-wrap:nth-child(5)').addClass('show-how-work');
-                            setTimeout(function () {
-                                $('.how-img:nth-child(6)').addClass('show-how-work-icon');
-                            }, 200);
-                            
-                            animateLineWork++;
-                            break;
-                        case 4:
-                            $('.line-work-wrap:nth-child(7)').addClass('show-how-work');
-                            setTimeout(function () {
-                                $('.how-img:nth-child(8)').addClass('show-how-work-icon');
-                            }, 200);
-                            animateLineWork++;
-                            break;
-                        case 5:
-                            $('.line-work-wrap:nth-child(9)').addClass('show-how-work');
-                            animateLineWork++;
-                            break;
+                    if (come('.flex-slider')) {
+                        switch(animateLineWork) {
+                            case 1:
+                                $('.line-work-wrap:nth-child(1)').addClass('show-how-work');
+                                setTimeout(function () {
+                                    $('.how-img:nth-child(2)').addClass('show-how-work-icon');
+                                }, 200);
+                                animateLineWork++;
+                                break;
+                            case 2:
+                                $('.line-work-wrap:nth-child(3)').addClass('show-how-work');
+                                setTimeout(function () {
+                                     $('.how-img:nth-child(4)').addClass('show-how-work-icon');
+                                }, 200);
+                               
+                                animateLineWork++;
+                                break;
+                            case 3:
+                                $('.line-work-wrap:nth-child(5)').addClass('show-how-work');
+                                setTimeout(function () {
+                                    $('.how-img:nth-child(6)').addClass('show-how-work-icon');
+                                }, 200);
+                                
+                                animateLineWork++;
+                                break;
+                            case 4:
+                                $('.line-work-wrap:nth-child(7)').addClass('show-how-work');
+                                setTimeout(function () {
+                                    $('.how-img:nth-child(8)').addClass('show-how-work-icon');
+                                }, 200);
+                                animateLineWork++;
+                                break;
+                            case 5:
+                                $('.line-work-wrap:nth-child(9)').addClass('show-how-work');
+                                animateLineWork++;
+                                break;
+                        }
                     }
                     if(animateLineWork != 6) return;
                     
