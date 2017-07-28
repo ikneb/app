@@ -116,7 +116,7 @@ $(function(){
                     return false;
                 }
                 isAnimating  = true;
-                
+                // console.log(e.wheelDelta);
                 // Increase or reset current anchor
                 if( e.wheelDelta >= 0 ) {
                     currentAnchor--;
@@ -986,10 +986,10 @@ $(function() {
 
         function set_verticale_top_line_position(element, img_width, first_div_position, second_div_position ) {
             element.css({
-            top: img_width.height + first_div_position.top - 3, 
+            top: img_width.height + first_div_position.top - 4, 
             left: img_width.width/2 + 12.5 + first_div_position.left, 
             position:'absolute'
-         }).find('rect').attr('height', (second_div_position.top + img_width.width/2) - (img_width.height + first_div_position.top - 3));
+         }).find('rect').attr('height', (second_div_position.top + img_width.width/2) - (img_width.height + first_div_position.top - 7));
         }
 
         function set_verticale_bottom_line_position(element, img_width, first_div_position, second_div_position ) {
@@ -1026,9 +1026,9 @@ $(function() {
         var scrol = 0;
         $('body').on('mousewheel', function(e){
 
-            if (come('.specifications')) {
+            if (come('.analysis')) {
                 $('.analysis').addClass('render-verticale-line');
-                switch (scrol) {
+                /*switch (scrol) {
                     case 1:
                             $('.vertical:nth-child(1)').addClass('render-verticale-line'); 
                         break;
@@ -1080,9 +1080,49 @@ $(function() {
                     case 32:
                             $('.maintenance').addClass('render-verticale-line');
                         break;
-                }
-                scrol++;
+                }*/
+                // scrol++;
             }
+             if (come('.vertical:nth-child(1)')) {
+                $('.vertical:nth-child(1)').addClass('render-verticale-line'); 
+             }
+             if (come('.gorizont:nth-child(7)')) {
+                $('.gorizont:nth-child(7)').addClass('render-verticale-line');
+                    $('.specifications').addClass('render-verticale-line'); 
+             }
+             if (come('.vertical:nth-child(2)')) {
+                $('.vertical:nth-child(2)').addClass('render-verticale-line');
+             }
+             if (come('.gorizont:nth-child(8)')) {
+                $('.gorizont:nth-child(8)').addClass('render-verticale-line');
+                    $('.disign').addClass('render-verticale-line');
+             }
+
+             if (come('.vertical:nth-child(3)')) {
+                $('.vertical:nth-child(3)').addClass('render-verticale-line'); 
+             }
+             if (come('.gorizont:nth-child(9)')) {
+                $('.gorizont:nth-child(9)').addClass('render-verticale-line');
+                $('.development').addClass('render-verticale-line');
+             }
+             if (come('.vertical:nth-child(4)')) {
+                $('.vertical:nth-child(4)').addClass('render-verticale-line'); 
+                $('.testing').addClass('render-verticale-line');
+             }
+             if (come('.gorizont:nth-child(10)')) {
+                $('.gorizont:nth-child(10)').addClass('render-verticale-line');
+             }
+             if (come('.delivery')) {
+                $('.vertical:nth-child(5)').addClass('render-verticale-line'); 
+                $('.delivery').addClass('render-verticale-line');
+             }
+             if (come('.gorizont:nth-child(11)')) {
+                            $('.gorizont:nth-child(11)').addClass('render-verticale-line');
+             }
+             if (come('.maintenance')) {
+                $('.vertical:nth-child(6)').addClass('render-verticale-line'); 
+                $('.maintenance').addClass('render-verticale-line');
+             }
         });
 
     }
