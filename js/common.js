@@ -850,6 +850,10 @@ $(document).ready(function () {
             }
         });
         $('.portal-menu-ul li').click (function() {
+            if ($(this).hasClass('contact-hr')){
+                window.location.href = "https://houstonapps.co/app/contact.html";
+                return;
+            }
             if(!$(this).hasClass('active')) {
                 $(this)
               .addClass('active').siblings().removeClass('active');

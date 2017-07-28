@@ -1409,6 +1409,8 @@ canvas
     left: 36%
     top: 43%
     color: #fff
+.log-out-page 
+    text-align: center
 .portal-menu
     height: 83px
     .login
@@ -1547,17 +1549,20 @@ canvas
                 border: 2px solid $blue
                 border-radius: 10px
                 height: 40px
+                padding-left: 15px
             .ginput_container_website, .ginput_container_comp_name
                 input
                     width: 100%
             input::-webkit-input-placeholder
                 color: #9d9e9e
                 font-size: 18px
-                padding-left: 10px
             textarea
                 border: 2px solid $blue
                 border-radius: 10px
                 width: 65%
+                padding-left: 15px
+                padding-top: 15px
+                outline: none
 .gfield_required
     color: #ff0000
 .gf_right_half
@@ -1599,6 +1604,8 @@ canvas
     height: 40px
     border: 2px solid $blue
     border-radius: 10px
+    padding-left: 15px
+    outline: none
 .gform_button
     background-color: $blue
     border: 2px solid $blue
@@ -1657,6 +1664,8 @@ canvas
             height: 65px
         textarea
             height: 130px
+            outline: none
+            padding-top: 10px
         input::-webkit-input-placeholder, textarea::-webkit-input-placeholder
             font-family: Segoeui-ligth
             font-size: 22px
@@ -1695,12 +1704,12 @@ canvas
     background-color: #ffffff
     .dedicated-stage-container
         padding: 19px 0
-        overflow: hidden
         width: 87%
         .row
             margin: 3% 0
             .wrapp-composition-right, .wrapp-composition-left
                 right: 11%
+                overflow: hidden
             img
                 width: 55%
             h3
@@ -1715,7 +1724,7 @@ canvas
                 font-family: Display-Light
                 text-align: left
                 line-height: 1.35
-                max-width: 700px
+                max-width: 425px
                 margin-top: 5px
 .wrapp-composition-left, .wrapp-composition-right
     position: relative
@@ -1771,6 +1780,7 @@ canvas
             p
                 overflow: hidden
                 margin-left: 6%
+                padding: 3px 0
 .dedicated-contact
     position: relative
     padding: 6%
