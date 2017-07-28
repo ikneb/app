@@ -1241,6 +1241,23 @@ canvas
             top: 10px
     .dev-item:nth-child(3n+2)
         margin: 0 16%
+    .content-oportunities .dev .dev-item .skill-hover
+        border: 2px solid #008ba0
+        border-radius: 10px
+        box-shadow: 0px 0 10px 0px rgba(0, 0, 0, .3)
+        width: 102.5%
+        margin: 0 -3px
+        position: absolute
+        top: 250px
+        left: 0
+        background-color: #fff
+        .skill-item
+            position: relative
+            display: inline-block
+            border: 2px solid #00c4eb
+            border-radius: 7px
+            padding: 4px 10px
+            margin: 3% 5%
     .dev
         position: relative
         top: 69px
@@ -1292,7 +1309,7 @@ canvas
                 width: 73%
                 margin-bottom: 30px
                 font-weight: 600
-            .skill
+            .skill, .skill-how
                 width: 100%
                 position: relative
                 top: 2px
@@ -1368,7 +1385,7 @@ canvas
             width: 75%
             text-align: left
             margin: 0 auto
-    .skill
+    .skill, .skill-how
         width: 61%
         .hid
             display: inline-block
@@ -1978,7 +1995,7 @@ canvas
     textarea
         border: 2px solid $blue
         border-radius: 10px
-        width: 65%
+        width: 80%
         padding-left: 15px
         padding-top: 15px
         outline: none

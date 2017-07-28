@@ -742,13 +742,13 @@ function setPositionDevItems(rect, _this) {
     var third = windWidth/3;
  
     if(rect.left < third - 200){
-        _this.css({'left': '28.5%', 'top': rect.top});
+        _this.css({'left': rect.left, 'top': rect.top});
         _this.addClass('big-dev-item');
     } else if (third > rect.left ) {
        _this.css({'left': '28.5%', 'top': rect.top});
         _this.addClass('big-dev-item');
     } else if(third < rect.left) {
-       _this.css({'right': '27.5%', 'top': rect.top});
+       _this.css({'right': rect.right, 'top': rect.top});
         _this.addClass('big-dev-item');
     }
 }
@@ -860,7 +860,6 @@ $(document).ready(function () {
         });
 
         $('body').on('click', '.dev-item',function (e) {
-            console.log(e.target.class);
             if(e.target && e.target.nodeName == "A") {
                 if ($(e.target).hasClass('leave-feedback')) {
                     $('.modal-backdrop').addClass('in');
@@ -868,6 +867,7 @@ $(document).ready(function () {
                 }
             } else {
                 var _this = $(this);
+                $(this).find('.skill').addClass('skill-how').removeClass('skill');
                 $('.dev').find('.dev-item').attr('id', '').attr('style', '');
                 _this.attr('id', 'big-dev-item');
                 var target = document.getElementById('big-dev-item');
@@ -889,6 +889,7 @@ $(document).ready(function () {
                 $('.dev').find('.dev-item').attr('id', '').attr('style', ''); 
                 $('.opportunities').css('padding-bottom', '0'); 
                 $('.avaible-team').css('padding-bottom', '0');  
+                $(this).find('.skill').addClass('skill').removeClass('skill-how');
             }
         });
 
@@ -932,6 +933,28 @@ $(document).ready(function () {
         $('.lwa-form').submit(function (e) {
             e.preventDefault();
             window.location.href = "https://houstonapps.co/app/portal_log_in.html";
+        });
+
+        $('.link-contact-form').click(function (e) {
+            e.preventDefault();
+            console.log(123);
+            $('html, body').animate({
+                        scrollTop: parseInt( anchors[1] )
+                    }, 1100, 'swing', function(){
+                        isAnimating  = false;
+                    });
+        });
+        $('.skill').mouseout( function (e) {
+            e.preventDefault();
+            var count = $(this).find('.skill-item').length;
+            if (count > 6 && $(this).hasClass('skill')) {
+                $(this).addClass('skill-hover');
+            }
+         });
+
+        $('.skill').mouseleave( function (e) {
+            e.preventDefault();
+            $(this).removeClass('skill-hover');
         });
 });
 
