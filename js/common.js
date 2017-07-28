@@ -742,7 +742,6 @@ function setPositionDevItems(rect, _this) {
     var third = windWidth/3;
  
     if(rect.left < third - 200){
-       
         _this.css({'left': '28.5%', 'top': rect.top});
         _this.addClass('big-dev-item');
     } else if (third > rect.left ) {
@@ -752,7 +751,6 @@ function setPositionDevItems(rect, _this) {
        _this.css({'right': '27.5%', 'top': rect.top});
         _this.addClass('big-dev-item');
     }
-    
 }
 
 
@@ -861,20 +859,36 @@ $(document).ready(function () {
             }
         });
 
-        $('body').on('click', '.dev-item',function () {
-            var _this = $(this);
-            $('.dev').find('.dev-item').attr('id', '').attr('style', '');
-            _this.attr('id', 'big-dev-item');
-            var target = document.getElementById('big-dev-item');
-            $('.dev').find('.dev-item').removeClass('big-dev-item');
-            setPositionDevItems($("#big-dev-item").position(), _this);
+        $('body').on('click', '.dev-item',function (e) {
+            console.log(e.target.class);
+            if(e.target && e.target.nodeName == "A") {
+                if ($(e.target).hasClass('leave-feedback')) {
+                    $('.modal-backdrop').addClass('in');
+                    $('.modal').addClass('in');
+                }
+            } else {
+                var _this = $(this);
+                $('.dev').find('.dev-item').attr('id', '').attr('style', '');
+                _this.attr('id', 'big-dev-item');
+                var target = document.getElementById('big-dev-item');
+                $('.dev').find('.dev-item').removeClass('big-dev-item');
+                setPositionDevItems($("#big-dev-item").position(), _this);
+
+                if ($("#big-dev-item").position().top > 0) {
+                    $('.opportunities').css('padding-bottom', '500px');
+                    $('.avaible-team').css('padding-bottom', '500px');
+                }
+            }
+            
         });
 
         $(document).mouseup(function (e) {
             var container = $('big-dev-item');
             if (container.has(e.target).length === 0){
                 $('.dev').find('.dev-item').removeClass('big-dev-item');
-                $('.dev').find('.dev-item').attr('id', '').attr('style', '');    
+                $('.dev').find('.dev-item').attr('id', '').attr('style', ''); 
+                $('.opportunities').css('padding-bottom', '0'); 
+                $('.avaible-team').css('padding-bottom', '0');  
             }
         });
 
@@ -908,7 +922,6 @@ $(document).ready(function () {
             e.preventDefault();
             $('.modal-backdrop').addClass('in');
             $('.modal').addClass('in');
-
         });
         $('.close').click(function (e) {
             e.preventDefault();
@@ -920,7 +933,6 @@ $(document).ready(function () {
             e.preventDefault();
             window.location.href = "https://houstonapps.co/app/portal_log_in.html";
         });
-
 });
 
 
