@@ -11,6 +11,7 @@ var isAnim = true;
 var swichOfAnimate = false;
 var speed = 5;
 var animateLineWork = 0;
+var is_move = false;
 
 
 function fly() {
@@ -1078,21 +1079,19 @@ $(function() {
 
          document.addEventListener('mousewheel', function(e){
             if (firstMousWell) {
-                disableScroll();
+                     disableScroll();
                    $('html, body').animate({
                     scrollTop: anchors[1]
                 }, 1100, 'swing', function(){
                     if (comeWerticaleCenter('.analysis')) {
                 $('.analysis').addClass('render-verticale-line');
                 if (!off_analice) {
-                    disableScroll();
+                     disableScroll();
                     setTimeout( function() {
                         enableScroll();
                     }, 1200);
                     off_analice = true;
                 }
-                
-
             }
                 });
                 firstMousWell = false;
@@ -1101,10 +1100,13 @@ $(function() {
             
             if (comeWerticaleCenter('.vertical:nth-child(1)')) { 
                 if (!off_specifications) {
-                    disableScroll();
+                     disableScroll();
                     $('.vertical:nth-child(1)').addClass('render-verticale-line'); 
                     $('.gorizont:nth-child(7)').addClass('render-verticale-line');
                     $('.specifications').addClass('render-verticale-line');
+                    $('html, body').animate({
+                        scrollTop: $('.vertical:nth-child(1)').offset().top
+                    }, 1100, 'swing', function(){});   
                     setTimeout( function() {
                         enableScroll();
                     }, 1200);
@@ -1115,10 +1117,13 @@ $(function() {
              if (comeWerticaleCenter('.vertical:nth-child(2)')) {
                 
                 if (!off_disign) {
-                    disableScroll();
+                   disableScroll();
                     $('.vertical:nth-child(2)').addClass('render-verticale-line');
                     $('.gorizont:nth-child(8)').addClass('render-verticale-line');
                     $('.disign').addClass('render-verticale-line');
+                    $('html, body').animate({
+                        scrollTop: $('.vertical:nth-child(2)').offset().top
+                    }, 1100, 'swing', function(){}); 
                     setTimeout( function() {
                         enableScroll();
                     }, 1200);
@@ -1132,6 +1137,9 @@ $(function() {
                     $('.vertical:nth-child(3)').addClass('render-verticale-line');
                     $('.gorizont:nth-child(9)').addClass('render-verticale-line');
                     $('.development').addClass('render-verticale-line');
+                    $('html, body').animate({
+                        scrollTop: $('.vertical:nth-child(3)').offset().top
+                    }, 1100, 'swing', function(){}); 
                     setTimeout( function() {
                         enableScroll();
                     }, 1200);
@@ -1141,10 +1149,12 @@ $(function() {
              
              if (comeWerticaleCenter('.vertical:nth-child(4)')) {
                 if (!off_testing) {
-                    disableScroll();
+                     disableScroll();
                     $('.vertical:nth-child(4)').addClass('render-verticale-line'); 
                     $('.testing').addClass('render-verticale-line');
-                    console.log('disableScroll');
+                    $('html, body').animate({
+                        scrollTop: $('.vertical:nth-child(4)').offset().top
+                    }, 1100, 'swing', function(){}); 
                     setTimeout( function() {
                         enableScroll();
                     }, 1200);
@@ -1157,6 +1167,9 @@ $(function() {
                     $('.gorizont:nth-child(10)').addClass('render-verticale-line');
                     $('.vertical:nth-child(5)').addClass('render-verticale-line'); 
                     $('.delivery').addClass('render-verticale-line');
+                     $('html, body').animate({
+                        scrollTop: $('.vertical:nth-child(4)').offset().top
+                    }, 1100, 'swing', function(){}); 
                     setTimeout( function() {
                         enableScroll();
                     }, 1200);
