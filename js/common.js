@@ -1099,7 +1099,7 @@ $(function() {
             } 
 
             
-            if (comeWerticaleCenter('.specifications')) {
+            if (comeWerticaleCenter('.vertical:nth-child(1)')) {
                 $('.vertical:nth-child(1)').addClass('render-verticale-line'); 
                 $('.gorizont:nth-child(7)').addClass('render-verticale-line');
                 $('.specifications').addClass('render-verticale-line'); 
