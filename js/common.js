@@ -1077,7 +1077,7 @@ $(function() {
             document.onkeydown = null;  
         }
 
-         document.addEventListener('mousewheel', function(e){
+        $('body').on('mousewheel', function(e){
             e.preventDefault();
                 e.stopPropagation();
             if (firstMousWell) {
@@ -1207,6 +1207,7 @@ $(function() {
                     }, 1500);
                     off_maintenance = true;
                 }
+                $('body').unbind('mousewheel');
              }
              is_move++;
         });
