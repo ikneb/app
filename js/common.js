@@ -1024,7 +1024,7 @@ $(function() {
         var scrol = 0;
 
         function comeWerticaleCenter(elem) {
-              var docViewTop = $(window).scrollTop() + $(window).height()/2;
+              var docViewTop = $(window).scrollTop() + $(window).height()/2 + 300;
               
               var docViewBottom = docViewTop + $(window).height()/2;
               var elemTop = $(elem).offset().top + 100;
@@ -1099,13 +1099,12 @@ $(function() {
             } 
 
             
-            if (comeWerticaleCenter('.vertical:nth-child(1)')) {
-                $('.vertical:nth-child(1)').addClass('render-verticale-line'); 
-                $('.gorizont:nth-child(7)').addClass('render-verticale-line');
-                $('.specifications').addClass('render-verticale-line'); 
+            if (comeWerticaleCenter('.vertical:nth-child(1)')) { 
                 if (!off_specifications) {
                     disableScroll();
-                    console.log('disableScroll');
+                    $('.vertical:nth-child(1)').addClass('render-verticale-line'); 
+                    $('.gorizont:nth-child(7)').addClass('render-verticale-line');
+                    $('.specifications').addClass('render-verticale-line');
                     setTimeout( function() {
                         enableScroll();
                     }, 1200);
@@ -1114,12 +1113,12 @@ $(function() {
             }
 
              if (comeWerticaleCenter('.vertical:nth-child(2)')) {
-                $('.vertical:nth-child(2)').addClass('render-verticale-line');
-                $('.gorizont:nth-child(8)').addClass('render-verticale-line');
-                $('.disign').addClass('render-verticale-line');
+                
                 if (!off_disign) {
                     disableScroll();
-                    console.log('disableScroll');
+                    $('.vertical:nth-child(2)').addClass('render-verticale-line');
+                    $('.gorizont:nth-child(8)').addClass('render-verticale-line');
+                    $('.disign').addClass('render-verticale-line');
                     setTimeout( function() {
                         enableScroll();
                     }, 1200);
@@ -1128,12 +1127,11 @@ $(function() {
              }
 
              if (comeWerticaleCenter('.vertical:nth-child(3)')) {
-                $('.vertical:nth-child(3)').addClass('render-verticale-line');
-                $('.gorizont:nth-child(9)').addClass('render-verticale-line');
-                $('.development').addClass('render-verticale-line');
                 if (!off_development) {
                     disableScroll();
-                    console.log('disableScroll');
+                    $('.vertical:nth-child(3)').addClass('render-verticale-line');
+                    $('.gorizont:nth-child(9)').addClass('render-verticale-line');
+                    $('.development').addClass('render-verticale-line');
                     setTimeout( function() {
                         enableScroll();
                     }, 1200);
@@ -1142,10 +1140,10 @@ $(function() {
              }
              
              if (comeWerticaleCenter('.vertical:nth-child(4)')) {
-                $('.vertical:nth-child(4)').addClass('render-verticale-line'); 
-                $('.testing').addClass('render-verticale-line');
                 if (!off_testing) {
                     disableScroll();
+                    $('.vertical:nth-child(4)').addClass('render-verticale-line'); 
+                    $('.testing').addClass('render-verticale-line');
                     console.log('disableScroll');
                     setTimeout( function() {
                         enableScroll();
@@ -1154,12 +1152,11 @@ $(function() {
                 }
              }
              if (comeWerticaleCenter('.gorizont:nth-child(10)')) {
-                $('.gorizont:nth-child(10)').addClass('render-verticale-line');
-                $('.vertical:nth-child(5)').addClass('render-verticale-line'); 
-                $('.delivery').addClass('render-verticale-line');
                 if (!off_delivery) {
                     disableScroll();
-                    console.log('disableScroll');
+                    $('.gorizont:nth-child(10)').addClass('render-verticale-line');
+                    $('.vertical:nth-child(5)').addClass('render-verticale-line'); 
+                    $('.delivery').addClass('render-verticale-line');
                     setTimeout( function() {
                         enableScroll();
                     }, 1200);
@@ -1168,12 +1165,11 @@ $(function() {
              }
              
              if (comeWerticaleCenter('.gorizont:nth-child(11)')) {
-                $('.gorizont:nth-child(11)').addClass('render-verticale-line');
-                $('.vertical:nth-child(6)').addClass('render-verticale-line'); 
-                $('.maintenance').addClass('render-verticale-line');
                 if (!off_maintenance) {
                     disableScroll();
-                    console.log('disableScroll');
+                    $('.gorizont:nth-child(11)').addClass('render-verticale-line');
+                    $('.vertical:nth-child(6)').addClass('render-verticale-line'); 
+                    $('.maintenance').addClass('render-verticale-line');
                     setTimeout( function() {
                         enableScroll();
                     }, 1200);
