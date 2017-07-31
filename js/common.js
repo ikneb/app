@@ -708,12 +708,9 @@ function mousWheel() {
                             $('.header-opportunities p').addClass('about-us-fly-img');
                             $(".header-opportunities p").stop().animate({ left: "0px" }, 1000);
                         }, 1500);   
-                        $('body').unbind('mousewheel');         
+                        /*$('body').unbind('mousewheel'); */        
                 }
-                if( anchors[currentAnchor] > 600) {          
-                     
-                }
-                    render = true;
+                render = true;
                 if (firstMousWell) {
                        $('html, body').animate({
                         scrollTop: parseInt(anchors[1])
