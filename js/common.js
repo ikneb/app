@@ -1088,7 +1088,7 @@ $(function() {
                     disableScroll();
                     setTimeout( function() {
                         enableScroll();
-                    }, 2000);
+                    }, 1200);
                     off_analice = true;
                 }
                 
