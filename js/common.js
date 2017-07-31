@@ -819,7 +819,7 @@ $(document).ready(function () {
                         }, 700);
             } 
         }
-        if ($('body').hasClass('cont')) {
+        if ($('body').hasClass('cont') || $('body').hasClass('dedicated')) {
             mousWheel();
         }
 
