@@ -1078,28 +1078,36 @@ $(function() {
         }
 
          document.addEventListener('mousewheel', function(e){
-
+            e.preventDefault();
+                e.stopPropagation();
             if (firstMousWell) {
                 disableScroll();
                 $('html, body').animate({
                     scrollTop: anchors[1]
-                }, 1500, 'swing', function(){
+                }, 1500,  function(){
                     if (comeWerticaleCenter('.analysis')) {
                         $('.analysis').addClass('render-verticale-line');
                         if (!off_analice) {
                              disableScroll();
-                            setTimeout( function() {
+                           /* setTimeout( function() {
                                 enableScroll();
-                            }, 1500);
+                            }, 1500);*/
                             off_analice = true;
                         }
                     }
                 });
                 firstMousWell = false;
+                setTimeout(function () {
+                    $('html, body').animate({
+                            scrollTop: $('.analysis').offset().top
+                        }, 1500,  function(){              
+                     });
+                },2000);
             } 
 
             
             if (comeWerticaleCenter('.vertical:nth-child(1)')) { 
+              
                 if (!off_specifications) {
                      disableScroll();
                     $('.vertical:nth-child(1)').addClass('render-verticale-line'); 
