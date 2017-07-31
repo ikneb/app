@@ -1041,7 +1041,7 @@ $(function() {
         var off_testing = false;
         var off_delivery = false;
         var off_maintenance = false;
-        
+
 
 
         function preventDefault(e) {
@@ -1076,21 +1076,30 @@ $(function() {
             document.onkeydown = null;  
         }
 
-        $('body').on('mousewheel', function(e){
-            if (comeWerticaleCenter('.analysis')) {
+         document.addEventListener('mousewheel', function(e){
+            if (firstMousWell) {
+                disableScroll();
+                   $('html, body').animate({
+                    scrollTop: anchors[1]
+                }, 1100, 'swing', function(){
+                    if (comeWerticaleCenter('.analysis')) {
                 $('.analysis').addClass('render-verticale-line');
                 if (!off_analice) {
                     disableScroll();
-                    console.log('disableScroll');
                     setTimeout( function() {
                         enableScroll();
-                    }, 1500);
+                    }, 2000);
                     off_analice = true;
                 }
                 
 
             }
-            if (comeWerticaleCenter('.vertical:nth-child(1)')) {
+                });
+                firstMousWell = false;
+            } 
+
+            
+            if (comeWerticaleCenter('.specifications')) {
                 $('.vertical:nth-child(1)').addClass('render-verticale-line'); 
                 $('.gorizont:nth-child(7)').addClass('render-verticale-line');
                 $('.specifications').addClass('render-verticale-line'); 
@@ -1099,7 +1108,7 @@ $(function() {
                     console.log('disableScroll');
                     setTimeout( function() {
                         enableScroll();
-                    }, 1500);
+                    }, 1200);
                     off_specifications = true;
                 }
             }
@@ -1113,7 +1122,7 @@ $(function() {
                     console.log('disableScroll');
                     setTimeout( function() {
                         enableScroll();
-                    }, 1500);
+                    }, 1200);
                     off_disign = true;
                 }
              }
@@ -1127,7 +1136,7 @@ $(function() {
                     console.log('disableScroll');
                     setTimeout( function() {
                         enableScroll();
-                    }, 1500);
+                    }, 1200);
                     off_development = true;
                 }
              }
@@ -1140,7 +1149,7 @@ $(function() {
                     console.log('disableScroll');
                     setTimeout( function() {
                         enableScroll();
-                    }, 1500);
+                    }, 1200);
                     off_testing = true;
                 }
              }
@@ -1153,7 +1162,7 @@ $(function() {
                     console.log('disableScroll');
                     setTimeout( function() {
                         enableScroll();
-                    }, 1500);
+                    }, 1200);
                     off_delivery = true;
                 }
              }
@@ -1167,7 +1176,7 @@ $(function() {
                     console.log('disableScroll');
                     setTimeout( function() {
                         enableScroll();
-                    }, 1500);
+                    }, 1200);
                     off_maintenance = true;
                 }
              }
