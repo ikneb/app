@@ -1040,7 +1040,8 @@ $(function() {
         var off_development = false;
         var off_testing = false;
         var off_delivery = false;
-
+        var off_maintenance = false;
+        
 
 
         function preventDefault(e) {
@@ -1161,7 +1162,14 @@ $(function() {
                 $('.gorizont:nth-child(11)').addClass('render-verticale-line');
                 $('.vertical:nth-child(6)').addClass('render-verticale-line'); 
                 $('.maintenance').addClass('render-verticale-line');
-                
+                if (!off_maintenance) {
+                    disableScroll();
+                    console.log('disableScroll');
+                    setTimeout( function() {
+                        enableScroll();
+                    }, 1500);
+                    off_maintenance = true;
+                }
              }
         });
 
