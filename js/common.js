@@ -1078,21 +1078,22 @@ $(function() {
         }
 
          document.addEventListener('mousewheel', function(e){
+
             if (firstMousWell) {
-                     disableScroll();
-                   $('html, body').animate({
+                disableScroll();
+                $('html, body').animate({
                     scrollTop: anchors[1]
                 }, 1500, 'swing', function(){
                     if (comeWerticaleCenter('.analysis')) {
-                $('.analysis').addClass('render-verticale-line');
-                if (!off_analice) {
-                     disableScroll();
-                    setTimeout( function() {
-                        enableScroll();
-                    }, 1500);
-                    off_analice = true;
-                }
-            }
+                        $('.analysis').addClass('render-verticale-line');
+                        if (!off_analice) {
+                             disableScroll();
+                            setTimeout( function() {
+                                enableScroll();
+                            }, 1500);
+                            off_analice = true;
+                        }
+                    }
                 });
                 firstMousWell = false;
             } 
@@ -1199,6 +1200,7 @@ $(function() {
                     off_maintenance = true;
                 }
              }
+             is_move++;
         });
 
     }
