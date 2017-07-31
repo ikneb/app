@@ -708,7 +708,6 @@ function mousWheel() {
                             $('.header-opportunities p').addClass('about-us-fly-img');
                             $(".header-opportunities p").stop().animate({ left: "0px" }, 1000);
                         }, 1500);   
-                        /*$('body').unbind('mousewheel'); */        
                 }
                 render = true;
                 if (firstMousWell) {
@@ -864,7 +863,6 @@ $(document).ready(function () {
                 var target = document.getElementById('big-dev-item');
                 $('.dev').find('.dev-item').removeClass('big-dev-item');
                 setPositionDevItems($("#big-dev-item").position(), _this);
-
                 if ($("#big-dev-item").position().top > 0) {
                     $('.opportunities').css('padding-bottom', '500px');
                     $('.avaible-team').css('padding-bottom', '500px');
@@ -880,7 +878,7 @@ $(document).ready(function () {
                 $('.dev').find('.dev-item').attr('id', '').attr('style', ''); 
                 $('.opportunities').css('padding-bottom', '0'); 
                 $('.avaible-team').css('padding-bottom', '0');  
-                $(this).find('.skill').addClass('skill').removeClass('skill-how');
+                $(this).find('.skill-how').addClass('skill').removeClass('skill-how');
             }
         });
 
@@ -1024,104 +1022,146 @@ $(function() {
          }).find('rect').attr('width',(first_div_position.left) - (second_div_position.left + img_width.width/2 - 13));
         }
         var scrol = 0;
-        $('body').on('mousewheel', function(e){
 
-            if (come('.analysis')) {
-                $('.analysis').addClass('render-verticale-line');
-                /*switch (scrol) {
-                    case 1:
-                            $('.vertical:nth-child(1)').addClass('render-verticale-line'); 
-                        break;
-                    case 2:
-                            $('.gorizont:nth-child(7)').addClass('render-verticale-line');
-                        break;
-                    case 4:
-                            $('.specifications').addClass('render-verticale-line');
-                        break;
-                    case 6:
-                            $('.vertical:nth-child(2)').addClass('render-verticale-line');
-                        break;
-                    case 8:
-                            $('.gorizont:nth-child(8)').addClass('render-verticale-line');
-                        break;
-                    case 10:
-                            $('.disign').addClass('render-verticale-line');
-                        break;
-                    case 12:
-                            $('.vertical:nth-child(3)').addClass('render-verticale-line'); 
-                        break;
-                    case 14:
-                            $('.gorizont:nth-child(9)').addClass('render-verticale-line');
-                        break;
-                    case 16:
-                            $('.development').addClass('render-verticale-line');
-                        break;
-                    case 18:
-                            $('.vertical:nth-child(4)').addClass('render-verticale-line'); 
-                        break;
-                    case 20:
-                            $('.testing').addClass('render-verticale-line');
-                        break;
-                    case 22:
-                            $('.gorizont:nth-child(10)').addClass('render-verticale-line');
-                        break;
-                    case 24:
-                            $('.vertical:nth-child(5)').addClass('render-verticale-line'); 
-                        break;
-                    case 26:
-                            $('.delivery').addClass('render-verticale-line');
-                        break;
-                    case 28:
-                            $('.gorizont:nth-child(11)').addClass('render-verticale-line');
-                        break;
-                    case 30:
-                            $('.vertical:nth-child(6)').addClass('render-verticale-line'); 
-                        break;
-                    case 32:
-                            $('.maintenance').addClass('render-verticale-line');
-                        break;
-                }*/
-                // scrol++;
+        function comeWerticaleCenter(elem) {
+              var docViewTop = $(window).scrollTop() + $(window).height()/2;
+              
+              var docViewBottom = docViewTop + $(window).height()/2;
+              var elemTop = $(elem).offset().top + 100;
+              if (parseInt(docViewTop) > parseInt(elemTop)) {
+                return true;
+              }
+              return false;
+        }
+        var keys = {37: 1, 38: 1, 39: 1, 40: 1};
+        var off_analice = false;
+        var off_specifications = false;
+        var off_disign = false;
+        var off_development = false;
+        var off_testing = false;
+        var off_delivery = false;
+
+
+
+        function preventDefault(e) {
+              e = e || window.event;
+              if (e.preventDefault)
+                  e.preventDefault();
+              e.returnValue = false;  
             }
-             if (come('.vertical:nth-child(1)')) {
+
+        function preventDefaultForScrollKeys(e) {
+            if (keys[e.keyCode]) {
+                preventDefault(e);
+                return false;
+            }
+        }
+
+        function disableScroll() {
+          if (window.addEventListener) // older FF
+              window.addEventListener('DOMMouseScroll', preventDefault, false);
+          window.onwheel = preventDefault; // modern standard
+          window.onmousewheel = document.onmousewheel = preventDefault; // older browsers, IE
+          window.ontouchmove  = preventDefault; // mobile
+          document.onkeydown  = preventDefaultForScrollKeys;
+        }
+
+        function enableScroll() {
+            if (window.removeEventListener)
+                window.removeEventListener('DOMMouseScroll', preventDefault, false);
+            window.onmousewheel = document.onmousewheel = null; 
+            window.onwheel = null; 
+            window.ontouchmove = null;  
+            document.onkeydown = null;  
+        }
+
+        $('body').on('mousewheel', function(e){
+            if (comeWerticaleCenter('.analysis')) {
+                $('.analysis').addClass('render-verticale-line');
+                if (!off_analice) {
+                    disableScroll();
+                    console.log('disableScroll');
+                    setTimeout( function() {
+                        enableScroll();
+                    }, 2000);
+                    off_analice = true;
+                }
+                
+
+            }
+            if (comeWerticaleCenter('.vertical:nth-child(1)')) {
                 $('.vertical:nth-child(1)').addClass('render-verticale-line'); 
-             }
-             if (come('.gorizont:nth-child(7)')) {
                 $('.gorizont:nth-child(7)').addClass('render-verticale-line');
-                    $('.specifications').addClass('render-verticale-line'); 
-             }
-             if (come('.vertical:nth-child(2)')) {
+                $('.specifications').addClass('render-verticale-line'); 
+                if (!off_specifications) {
+                    disableScroll();
+                    console.log('disableScroll');
+                    setTimeout( function() {
+                        enableScroll();
+                    }, 2000);
+                    off_specifications = true;
+                }
+            }
+
+             if (comeWerticaleCenter('.vertical:nth-child(2)')) {
                 $('.vertical:nth-child(2)').addClass('render-verticale-line');
-             }
-             if (come('.gorizont:nth-child(8)')) {
                 $('.gorizont:nth-child(8)').addClass('render-verticale-line');
-                    $('.disign').addClass('render-verticale-line');
+                $('.disign').addClass('render-verticale-line');
+                if (!off_disign) {
+                    disableScroll();
+                    console.log('disableScroll');
+                    setTimeout( function() {
+                        enableScroll();
+                    }, 2000);
+                    off_disign = true;
+                }
              }
 
-             if (come('.vertical:nth-child(3)')) {
-                $('.vertical:nth-child(3)').addClass('render-verticale-line'); 
-             }
-             if (come('.gorizont:nth-child(9)')) {
+             if (comeWerticaleCenter('.vertical:nth-child(3)')) {
+                $('.vertical:nth-child(3)').addClass('render-verticale-line');
                 $('.gorizont:nth-child(9)').addClass('render-verticale-line');
                 $('.development').addClass('render-verticale-line');
+                if (!off_development) {
+                    disableScroll();
+                    console.log('disableScroll');
+                    setTimeout( function() {
+                        enableScroll();
+                    }, 2000);
+                    off_development = true;
+                }
              }
-             if (come('.vertical:nth-child(4)')) {
+             
+             if (comeWerticaleCenter('.vertical:nth-child(4)')) {
                 $('.vertical:nth-child(4)').addClass('render-verticale-line'); 
                 $('.testing').addClass('render-verticale-line');
+                if (!off_testing) {
+                    disableScroll();
+                    console.log('disableScroll');
+                    setTimeout( function() {
+                        enableScroll();
+                    }, 2000);
+                    off_testing = true;
+                }
              }
-             if (come('.gorizont:nth-child(10)')) {
+             if (comeWerticaleCenter('.gorizont:nth-child(10)')) {
                 $('.gorizont:nth-child(10)').addClass('render-verticale-line');
-             }
-             if (come('.delivery')) {
                 $('.vertical:nth-child(5)').addClass('render-verticale-line'); 
                 $('.delivery').addClass('render-verticale-line');
+                if (!off_delivery) {
+                    disableScroll();
+                    console.log('disableScroll');
+                    setTimeout( function() {
+                        enableScroll();
+                    }, 2000);
+                    off_delivery = true;
+                }
              }
-             if (come('.gorizont:nth-child(11)')) {
-                            $('.gorizont:nth-child(11)').addClass('render-verticale-line');
-             }
-             if (come('.maintenance')) {
+             
+             if (comeWerticaleCenter('.gorizont:nth-child(11)')) {
+                $('.gorizont:nth-child(11)').addClass('render-verticale-line');
                 $('.vertical:nth-child(6)').addClass('render-verticale-line'); 
                 $('.maintenance').addClass('render-verticale-line');
+                
              }
         });
 
