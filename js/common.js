@@ -1024,7 +1024,7 @@ $(function() {
         var scrol = 0;
 
         function comeWerticaleCenter(elem) {
-              var docViewTop = $(window).scrollTop() + $(window).height()/2 + 300;
+              var docViewTop = $(window).scrollTop() + $(window).height()/2;
               
               var docViewBottom = docViewTop + $(window).height()/2;
               var elemTop = $(elem).offset().top + 100;
