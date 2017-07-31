@@ -1082,14 +1082,14 @@ $(function() {
                      disableScroll();
                    $('html, body').animate({
                     scrollTop: anchors[1]
-                }, 1100, 'swing', function(){
+                }, 1500, 'swing', function(){
                     if (comeWerticaleCenter('.analysis')) {
                 $('.analysis').addClass('render-verticale-line');
                 if (!off_analice) {
                      disableScroll();
                     setTimeout( function() {
                         enableScroll();
-                    }, 1200);
+                    }, 1500);
                     off_analice = true;
                 }
             }
@@ -1106,10 +1106,12 @@ $(function() {
                     $('.specifications').addClass('render-verticale-line');
                     $('html, body').animate({
                         scrollTop: $('.vertical:nth-child(1)').offset().top
-                    }, 1100, 'swing', function(){});   
-                    setTimeout( function() {
+                    }, 1500, 'swing', function(){
+                        setTimeout( function() {
                         enableScroll();
-                    }, 1200);
+                    }, 1500);
+                    });   
+                    
                     off_specifications = true;
                 }
             }
@@ -1123,10 +1125,12 @@ $(function() {
                     $('.disign').addClass('render-verticale-line');
                     $('html, body').animate({
                         scrollTop: $('.vertical:nth-child(2)').offset().top
-                    }, 1100, 'swing', function(){}); 
-                    setTimeout( function() {
+                    }, 1500, 'swing', function(){
+                        setTimeout( function() {
                         enableScroll();
-                    }, 1200);
+                    }, 1500);
+                    }); 
+                    
                     off_disign = true;
                 }
              }
@@ -1139,10 +1143,12 @@ $(function() {
                     $('.development').addClass('render-verticale-line');
                     $('html, body').animate({
                         scrollTop: $('.vertical:nth-child(3)').offset().top
-                    }, 1100, 'swing', function(){}); 
-                    setTimeout( function() {
+                    }, 1500, 'swing', function(){
+                        setTimeout( function() {
                         enableScroll();
-                    }, 1200);
+                    }, 1500);
+                    }); 
+                    
                     off_development = true;
                 }
              }
@@ -1154,10 +1160,12 @@ $(function() {
                     $('.testing').addClass('render-verticale-line');
                     $('html, body').animate({
                         scrollTop: $('.vertical:nth-child(4)').offset().top
-                    }, 1100, 'swing', function(){}); 
-                    setTimeout( function() {
+                    }, 1500, 'swing', function(){
+                        setTimeout( function() {
                         enableScroll();
-                    }, 1200);
+                    }, 1500);
+                    }); 
+                    
                     off_testing = true;
                 }
              }
@@ -1168,11 +1176,13 @@ $(function() {
                     $('.vertical:nth-child(5)').addClass('render-verticale-line'); 
                     $('.delivery').addClass('render-verticale-line');
                      $('html, body').animate({
-                        scrollTop: $('.vertical:nth-child(4)').offset().top
-                    }, 1100, 'swing', function(){}); 
-                    setTimeout( function() {
+                        scrollTop: $('.gorizont:nth-child(10)').offset().top
+                    }, 1500, 'swing', function(){
+                        setTimeout( function() {
                         enableScroll();
-                    }, 1200);
+                    }, 1500);
+                    }); 
+                    
                     off_delivery = true;
                 }
              }
@@ -1185,7 +1195,7 @@ $(function() {
                     $('.maintenance').addClass('render-verticale-line');
                     setTimeout( function() {
                         enableScroll();
-                    }, 1200);
+                    }, 1500);
                     off_maintenance = true;
                 }
              }
