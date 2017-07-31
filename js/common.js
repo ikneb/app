@@ -1083,7 +1083,7 @@ $(function() {
                     console.log('disableScroll');
                     setTimeout( function() {
                         enableScroll();
-                    }, 2000);
+                    }, 1500);
                     off_analice = true;
                 }
                 
@@ -1098,7 +1098,7 @@ $(function() {
                     console.log('disableScroll');
                     setTimeout( function() {
                         enableScroll();
-                    }, 2000);
+                    }, 1500);
                     off_specifications = true;
                 }
             }
@@ -1112,7 +1112,7 @@ $(function() {
                     console.log('disableScroll');
                     setTimeout( function() {
                         enableScroll();
-                    }, 2000);
+                    }, 1500);
                     off_disign = true;
                 }
              }
@@ -1126,7 +1126,7 @@ $(function() {
                     console.log('disableScroll');
                     setTimeout( function() {
                         enableScroll();
-                    }, 2000);
+                    }, 1500);
                     off_development = true;
                 }
              }
@@ -1139,7 +1139,7 @@ $(function() {
                     console.log('disableScroll');
                     setTimeout( function() {
                         enableScroll();
-                    }, 2000);
+                    }, 1500);
                     off_testing = true;
                 }
              }
@@ -1152,7 +1152,7 @@ $(function() {
                     console.log('disableScroll');
                     setTimeout( function() {
                         enableScroll();
-                    }, 2000);
+                    }, 1500);
                     off_delivery = true;
                 }
              }
