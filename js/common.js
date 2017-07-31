@@ -950,6 +950,9 @@ $(document).ready(function () {
             e.preventDefault();
             $(this).removeClass('skill-hover');
         });
+        $('#gform_1').submit(function (e) {
+            e.preventDefault();
+        });
 });
 
 
