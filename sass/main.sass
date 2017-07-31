@@ -407,6 +407,106 @@ section, header
     	right: -180px
     100% 
     	right: -200px
+.show-menu-mobile
+        display: block !important
+        -webkit-animation: show-menu-mobile 0.5s linear forwards
+        animation: show-menu-mobile 0.5s linear forwards
+@-webkit-keyframes show-menu-mobile 
+    0% 
+        top: -250px
+    10% 
+        top: -214px
+    20% 
+        top: -178px
+    30% 
+        top: -142px
+    40% 
+        top: -106px
+    50% 
+        top: -70px
+    60% 
+        top: -34px
+    70% 
+        top: 2px
+    80% 
+        top: 38px
+    80% 
+        top: 74px
+    100% 
+        top: 111px
+@keyframes show-menu-mobile  
+    0% 
+        top: -250px
+    10% 
+        top: -214px
+    20% 
+        top: -178px
+    30% 
+        top: -142px
+    40% 
+        top: -106px
+    50% 
+        top: -70px
+    60% 
+        top: -34px
+    70% 
+        top: 2px
+    80% 
+        top: 38px
+    80% 
+        top: 74px
+    100% 
+        top: 111px
+.close-menu-mobile
+    display: block !important
+    -webkit-animation: close-menu-mobile 0.5s linear forwards
+    animation: close-menu-mobile 0.5s linear forwards
+@-webkit-keyframes close-menu-mobile 
+    0% 
+        top:  111px
+    10% 
+        top: 74px
+    20% 
+        top: 38px
+    30% 
+        top: 2px
+    40% 
+        top: -34px
+    50% 
+        top: -70px
+    60% 
+        top: -106px
+    70% 
+        top: -142px
+    80% 
+        top: -178px
+    80% 
+        top: -214px
+    100% 
+        top: -250
+@keyframes close-menu-mobile
+    0% 
+        top:  111px
+    10% 
+        top: 74px
+    20% 
+        top: 38px
+    30% 
+        top: 2px
+    40% 
+        top: -34px
+    50% 
+        top: -70px
+    60% 
+        top: -106px
+    70% 
+        top: -142px
+    80% 
+        top: -178px
+    80% 
+        top: -214px
+    100% 
+        top: -250
 .header-flex
 	display:flex
 	height: 100%
@@ -1252,7 +1352,7 @@ canvas
         top: 250px
         left: 0
         background-color: #fff
-        z-index: 2
+        z-index: 1
         .skill-item
             position: relative
             display: inline-block
@@ -1265,7 +1365,7 @@ canvas
         top: 69px
         width: 100%
         margin-bottom: 20px
-        min-height: 850px
+        min-height: 1000px
         .dev-item
             width: 18%
             border: 2px solid #00c2f2
@@ -1359,7 +1459,7 @@ canvas
     animation: opp-animation 0.1s linear forwards
     margin: 0
     top: 0
-    z-index: 2
+    z-index: 5
     background-color: #fff
     padding: 5% 0
     img

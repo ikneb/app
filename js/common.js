@@ -756,7 +756,9 @@ $(document).ready(function () {
                         $('#hamburger').removeClass('in-left').addClass('in-right');
                     click = false;
                 } else {
-
+                    $(this).removeClass('is-active').removeClass('js-hamburger');
+                    $('#my-menu').removeClass('show-menu-mobile').addClass('close-menu-mobile');
+                    click = false;
                 }
             } else {
                 if (windWidth > 768){
@@ -766,7 +768,9 @@ $(document).ready(function () {
                         $('#hamburger').addClass('in-left').removeClass('in-right');
                     click = true;
                 }else {
-
+                    $(this).addClass('is-active').addClass('js-hamburger');
+                    $('#my-menu').removeClass('close-menu-mobile').addClass('show-menu-mobile');
+                    click = true;
                 }
             }
         }); 
@@ -1216,33 +1220,41 @@ $(function() {
 
 
     if ($('body').hasClass('is-home')) { 
-        var img_width = $('.how-img img')[0];
-        var email = $('.how-img:nth-child(2)').position();
-        var balance = $('.how-img:nth-child(4)').position();
-        var training = $('.how-img:nth-child(6)').position();
-        var checked = $('.how-img:nth-child(8)').position();
+        if (windWidth < 768) {
+            var img_width = $('.how-img img')[0];
+            var email = $('.how-img:nth-child(2)').position();
+            var balance = $('.how-img:nth-child(4)').position();
+            var training = $('.how-img:nth-child(6)').position();
+            var checked = $('.how-img:nth-child(8)').position();
 
-        set_how_work_line($('.line-work-wrap:nth-child(3)'), img_width , email, balance);
-        set_how_work_line($('.line-work-wrap:nth-child(5)'), img_width , balance, training);
-        set_how_work_line($('.line-work-wrap:nth-child(7)'), img_width , training, checked);
+            set_how_work_line($('.line-work-wrap:nth-child(3)'), img_width , email, balance);
+            set_how_work_line($('.line-work-wrap:nth-child(5)'), img_width , balance, training);
+            set_how_work_line($('.line-work-wrap:nth-child(7)'), img_width , training, checked);
 
-        $('.line-work-wrap:nth-child(1)').css({
-                    top: email.top  + img_width.height/2, 
-                    left: 0, 
-                    position:'absolute'
-            }).find('rect').attr('width', email.left - 7);
-        $('.line-work-wrap:nth-child(9)').css({
-                    top: email.top  + img_width.height/2, 
-                    left: checked.left + 7 + img_width.width, 
-                    position:'absolute'
-            }).find('rect').attr('width', windWidth - (checked.left + 7));
+            $('.line-work-wrap:nth-child(1)').css({
+                        top: email.top  + img_width.height/2, 
+                        left: 0, 
+                        position:'absolute'
+                }).find('rect').attr('width', email.left - 7);
+            $('.line-work-wrap:nth-child(9)').css({
+                        top: email.top  + img_width.height/2, 
+                        left: checked.left + 7 + img_width.width, 
+                        position:'absolute'
+                }).find('rect').attr('width', windWidth - (checked.left + 7));
 
-        function set_how_work_line(element, img_width, first_div_position, second_div_position) {
-            element.css({
-                    top: first_div_position.top  + img_width.height/2, 
-                    left: first_div_position.left + img_width.width + 7, 
-                    position:'absolute'
-            }).find('rect').attr('width', (second_div_position.left - 7) -  (first_div_position.left + img_width.width + 7));
+            function set_how_work_line(element, img_width, first_div_position, second_div_position) {
+                element.css({
+                        top: first_div_position.top  + img_width.height/2, 
+                        left: first_div_position.left + img_width.width + 7, 
+                        position:'absolute'
+                }).find('rect').attr('width', (second_div_position.left - 7) -  (first_div_position.left + img_width.width + 7));
+            }
+        } else {
+            $('.how-img:nth-child(2)').addClass('show-how-work-icon');
+            $('.how-img:nth-child(4)').addClass('show-how-work-icon');
+            $('.how-img:nth-child(6)').addClass('show-how-work-icon');
+            $('.how-img:nth-child(8)').addClass('show-how-work-icon');
+
         }
     }
 });
