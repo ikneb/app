@@ -1029,7 +1029,7 @@ $(function() {
         var scrol = 0;
 
         function comeWerticaleCenter(elem) {
-              var docViewTop = $(window).scrollTop() + $(window).height()/2;
+              var docViewTop = $(window).scrollTop() + $(window).height()/2 + 120;
               
               var docViewBottom = docViewTop + $(window).height()/2;
               var elemTop = $(elem).offset().top + 100;
@@ -1148,7 +1148,7 @@ $(function() {
                 }
              }
 
-             if (comeWerticaleCenter('.vertical:nth-child(3)')) {
+             if (comeWerticaleCenter('.vertical:nth-child(3)') ) {
                 if (!off_development) {
                     disableScroll();
                     $('.vertical:nth-child(3)').addClass('render-verticale-line');

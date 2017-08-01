@@ -64,10 +64,17 @@
 		min-height: 537px
 	.show-how-work
 		// display: none
+	.link-menu
+		.hiring-link, .portal-link
+			padding: 10px 10px 7px 10px
+			font-size: 14px
+	.top-line .logo img
+		width: 208px
 /* Large Devices, Wide Screens */
 @media only screen and (max-width: 1199px)
 	.top-line .link-menu
-		top: 69px
+		top: 9px
+		right: 13%
 	#my-footer .logo-footer-wrapp
 	#my-footer .section-footer
 		left: 0
@@ -103,7 +110,7 @@
 		border-bottom: 2px solid #aaa
 	.top-line .link-menu
 		top: 2px
-		left: 30%
+		left: 35%
 		float: none
 	.top-line .logo img
 		margin-left: 38px
@@ -129,12 +136,17 @@
 		margin-top: 270px
 	#my-footer .footer__pages,#my-footer .footer__contact,#my-footer .footer__social
 		margin-left: 5px
+		top: 20px
 	.section-footer .footer__contact-title, .section-footer .footer__social-title, .section-footer .footer__pages .footer__pages-title
 		padding: 3px
 		margin-top: 15px
 		font-size: 17px
 		margin-bottom: 5px
 		width: 95%
+	#my-footer .footer__contact
+		display: inline-block
+	#my-footer .footer__social
+		left: 11px
 	.back
 		width: 100%
 		height: 300px
@@ -231,8 +243,7 @@
 		opacity: 1
 		top: 132%
 	.flex-slider .slider-icon div
-		top: 109%
-		// display: none
+		top: 201%
 	.portal-menu .portal-menu-ul li
 		font-size: 60%
 		top: 29px
@@ -250,6 +261,10 @@
 	    position: absolute
 	    top: -250px
 	    z-index: 0
+	.slider-icon .line-work-wrap
+		display: none
+	.top-line .hamburger
+		right: -48px
 @media only screen and (max-width: 640px)
 	.slider .flex-slider
 		left: -223px
@@ -329,7 +344,6 @@
 		min-height: 374px
 	.basic-principles .principles-container .row p
 		font-size: 14px
-
 /* Extra Small Devices, Phones */
 @media only screen and (max-width: 480px)
 	.top-line .in-left-menu
@@ -432,8 +446,6 @@
 		font-size: 14px
 	#my-header .header-flex h1,.flex-cloud .composition-cloud h1, .header-flex-team  .composition h1
 		font-size: 24px
-	#my-header #my-menu
-		top: 98px
 	#my-header .header-flex
 		top: 245px
 	.mm-nolistview .hidden-media
@@ -516,7 +528,6 @@
 		left: 95%
 	.flex-slider .slider-icon img:nth-child(8)
 		left: 120%
-	.line-work-wrap
 /* Custom, iPhone Retina */
 @media only screen and (max-width: 320px)
 	/**/

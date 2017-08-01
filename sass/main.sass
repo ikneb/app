@@ -2016,6 +2016,7 @@ canvas
     opacity: 0
 .render-verticale-line
     -webkit-animation: show-line-solution 2s linear forwards
+    -moz-animation: show-line-solution 2s linear forwards
     animation: show-line-solution 2s linear forwards
 @keyframes show-line-solution
     25%
@@ -2027,6 +2028,15 @@ canvas
     100%
         opacity: 1
 @webkit-keyframes show-line-solution
+    25%
+        opacity: 0.7
+    50%
+        opacity: 0.8
+    75%
+       opacity: 0.9
+    100%
+        opacity: 1
+@moz-keyframes show-line-solution
     25%
         opacity: 0.7
     50%
