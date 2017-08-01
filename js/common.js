@@ -744,6 +744,27 @@ function setPositionDevItems(rect, _this) {
     }
 }
 
+function setPositionDevItemsMobile(rect, _this) {
+    var third = windWidth/3;
+ 
+    if(rect.left < third - 200){
+        _this.css({'left': rect.left, 'top': rect.top});
+        _this.addClass('big-dev-item-mobile');
+    } else if (third > rect.left ) {
+       _this.css({'left': '3%', 'top': rect.top});
+        _this.addClass('big-dev-item-mobile');
+    } else if(third < rect.left) {
+       _this.css({'right': rect.right, 'top': rect.top});
+        _this.addClass('big-dev-item-mobile');
+    }
+}
+
+function setPositionDevItemsMobileDevice(rect, _this, e) { 
+        _this.css({'left': rect.left, 'top': 0});
+        _this.addClass('big-dev-item-mobile');
+}
+
+
 
 
 $(document).ready(function () {
@@ -862,29 +883,58 @@ $(document).ready(function () {
                 }
             } else {
                 var _this = $(this);
-                $(this).find('.skill').addClass('skill-how').removeClass('skill');
-                $('.dev').find('.dev-item').attr('id', '').attr('style', '');
-                _this.attr('id', 'big-dev-item');
-                var target = document.getElementById('big-dev-item');
-                $('.dev').find('.dev-item').removeClass('big-dev-item');
-                setPositionDevItems($("#big-dev-item").position(), _this);
-                if ($("#big-dev-item").position().top > 0) {
-                    $('.opportunities').css('padding-bottom', '500px');
-                    $('.avaible-team').css('padding-bottom', '500px');
-                }
+                    $(this).find('.skill').addClass('skill-how').removeClass('skill');
+                    $('.dev').find('.dev-item').attr('id', '').attr('style', '');
+                    if (windWidth > 768) {
+                        _this.attr('id', 'big-dev-item');
+                        var target = document.getElementById('big-dev-item');
+                        $('.dev').find('.dev-item').removeClass('big-dev-item');
+                        setPositionDevItems($("#big-dev-item").position(), _this);
+                        if ($("#big-dev-item").position().top > 0) {
+                            $('.opportunities').css('padding-bottom', '500px');
+                            $('.avaible-team').css('padding-bottom', '500px');
+                        }
+                    } else if (windWidth > 480)  {
+                        _this.attr('id', 'big-dev-item-mobile');
+                        var target = document.getElementById('big-dev-item-mobile');
+                        $('.dev').find('.dev-item').removeClass('big-dev-item-mobile');
+                        setPositionDevItemsMobile($("#big-dev-item-mobile").position(), _this);
+                        if ($("#big-dev-item-mobile").position().top > 0) {
+                            $('.opportunities').css('padding-bottom', '500px');
+                            $('.avaible-team').css('padding-bottom', '500px');
+                        }
+                    } else {
+                        $('.dev').find('.dev-item').removeClass('big-dev-item-mobile');
+                        _this.attr('id', 'big-dev-item-mobile');
+                        var target = document.getElementById('big-dev-item-mobile');
+                        setPositionDevItemsMobileDevice($("#big-dev-item-mobile").position(), _this, e);
+                    }
+                    
             }
             
         });
 
         $(document).mouseup(function (e) {
-            var container = $('big-dev-item');
-            if (container.has(e.target).length === 0){
-                $('.dev').find('.dev-item').removeClass('big-dev-item');
-                $('.dev').find('.dev-item').attr('id', '').attr('style', ''); 
-                $('.opportunities').css('padding-bottom', '0'); 
-                $('.avaible-team').css('padding-bottom', '0');  
-                $(this).find('.skill-how').addClass('skill').removeClass('skill-how');
+            if (windWidth > 768) {
+                var container = $('big-dev-item');
+                if (container.has(e.target).length === 0){
+                    $('.dev').find('.dev-item').removeClass('big-dev-item');
+                    $('.dev').find('.dev-item').attr('id', '').attr('style', ''); 
+                    $('.opportunities').css('padding-bottom', '0'); 
+                    $('.avaible-team').css('padding-bottom', '0');  
+                    $(this).find('.skill-how').addClass('skill').removeClass('skill-how');
+                }
+            } else if (windWidth > 480) {
+                var container = $('big-dev-item-mobile');
+                if (container.has(e.target).length === 0){
+                    $('.dev').find('.dev-item').removeClass('big-dev-item-mobile');
+                    $('.dev').find('.dev-item').attr('id', '').attr('style', ''); 
+                    $('.opportunities').css('padding-bottom', '0'); 
+                    $('.avaible-team').css('padding-bottom', '0');  
+                    $(this).find('.skill-how').addClass('skill').removeClass('skill-how');
+                }
             }
+            
         });
 
         $('.we-specilise .we-specilise-left-wrap, .we-specilise .we-specilise-right-wrap').on('mouseenter',function () {

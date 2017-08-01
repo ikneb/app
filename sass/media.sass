@@ -70,6 +70,11 @@
 			font-size: 14px
 	.top-line .logo img
 		width: 208px
+	.site-header .header-hring-img
+		top: 27%
+		left: 57%
+	.header-opportunities
+		padding: 0 20px
 /* Large Devices, Wide Screens */
 @media only screen and (max-width: 1199px)
 	.top-line .link-menu
@@ -104,15 +109,16 @@
 	
 /* Small Devices, Tablets */
 @media only screen and (max-width: 769px)
-	.top-line
+	#my-page .site-header .top-line
 		background-color: #fff
 		padding-bottom: 27px
 		border-bottom: 2px solid #aaa
+		z-index: 2
 	.top-line .link-menu
 		top: 2px
 		left: 35%
 		float: none
-	.top-line .logo img
+	body #my-page #my-header .site-header .top-line .logo img
 		margin-left: 38px
 	#my-footer .section-footer
 		top: 0
@@ -214,12 +220,15 @@
 	.site-header .img-bottom
 		top: 65%
     	left: 46%
-	.basic-principles .principles-container .row img
-		width: 21%
+	.basic-principles .principles-container .row
+		text-align: left
+		img
+			width: 21%
+			margin-left: 15px
 	.basic-principles .principles-container .row h2
-		text-align: center
+		text-align: left
 	.basic-principles .principles-container .row p
-		text-align: center
+		text-align: left
 	.wrapp-composition-left, .wrapp-composition-right
 		padding-left: 11%
 	.site-header .header-flex-team
@@ -260,12 +269,43 @@
 	    right: 0
 	    position: absolute
 	    top: -250px
-	    z-index: 0
+	    z-index: 1
 	.slider-icon .line-work-wrap
 		display: none
 	.top-line .hamburger
 		right: -48px
-@media only screen and (max-width: 640px)
+	.site-header .header-flex-about
+		top: 191px
+	.site-header .about-img
+		max-width: 25%
+	.site-header .img-left
+		top: 58%
+		left: 15%
+	.site-header .img-top
+		top: 46%
+		left: 53%
+	.site-header .img-bottom
+		top: 72%
+		left: 41%
+	.header-flex-become .composition-become
+		text-align: left
+		p
+			padding: 0
+	.composition-principles
+		text-align: left
+		h1
+			margin-left: 5%
+	#my-content .avaible-team, #my-content .opportunities 
+		.dev .dev-item
+			width: 27%
+		.dev .dev-item:nth-child(3n+1)
+			left: 3%
+		.dev .dev-item:nth-child(3n)
+			right: 3%
+		.dev .dev-item:nth-child(3n-1)
+			left: 20%
+
+@media only screen and (max-width: 669px)
 	.slider .flex-slider
 		left: -223px
 	#my-page #my-footer .logo-footer-wrapp
@@ -326,16 +366,16 @@
 	.site-header .header-flex-about p, .header-flex-become p
 		font-size: 14px
 	.site-header .img-left
-		top: 68%
-		left: 39%
+		top: 55%
+		left: 17%
 	.site-header .img-top
-		top: 57%
-		left: 62%
+		top: 43%
+		left: 60%
 	.site-header .img-bottom
-		top: 81%
-		left: 56%
+		top: 73%
+		left: 46%
 	.site-header .header-flex-about
-		top: 219px
+		top: 127px
 	.become .header-flex-become
 		top: 9px
 	.become .header-flex-become p
@@ -344,6 +384,20 @@
 		min-height: 374px
 	.basic-principles .principles-container .row p
 		font-size: 14px
+	.top-line .link-menu
+		left: 30%
+	.flex-slider .slider-icon
+		.how-img
+			opacity: 1
+			margin-left: 200px
+			p
+				text-align: left
+			img
+				width: 60px
+				left: 2px
+	body #my-page #my-header .site-header .top-line .logo img
+    	margin-left: 38px
+    	width: 202px
 /* Extra Small Devices, Phones */
 @media only screen and (max-width: 480px)
 	.top-line .in-left-menu
@@ -414,7 +468,6 @@
 	.footer__pages div ul li
 		font-size: 14px
 	#my-footer .footer__pages,#my-footer .footer__contact,#my-footer .footer__social
-		margin-left: 39px
 		top: 10px
 	.section-footer .footer__contact-title, .section-footer .footer__social-title, .section-footer .footer__pages .footer__pages-title
 		padding: 3px
@@ -440,14 +493,15 @@
 	#my-content .flex-cloud
 		top: 205px
 	#my-header .earth
-		margin-top: -411px
+		margin-top: -525px
 		min-height: 183px
 	.header-flex .composition p,.flex-cloud .composition-cloud p, .header-flex-team .row .composition p
 		font-size: 14px
 	#my-header .header-flex h1,.flex-cloud .composition-cloud h1, .header-flex-team  .composition h1
 		font-size: 24px
 	#my-header .header-flex
-		top: 245px
+		top: 143px
+		padding-top: 3px
 	.mm-nolistview .hidden-media
 		display: block
 	.link-menu
@@ -458,8 +512,6 @@
 	.slider-flex .row
 		margin-right: 0
 		margin-left: 0
-	#hamburger
-		padding: 76px 75px
 	#my-footer .section-footer
         left: 0
         top: 0
@@ -482,17 +534,19 @@
 		font-size: 32px
 	.site-header .header-flex-about p, .header-flex-become p
 		font-size: 14px
+	.site-header .about-img
+		max-width: 25%
 	.site-header .img-left
-		top: 77%
-		left: 29%
+		top: 58%
+		left: 15%
 	.site-header .img-top
-		top: 60%
-		left: 62%
+		top: 50%
+		left: 53%
 	.site-header .img-bottom
-		top: 85%
-		left: 56%
+		top: 72%
+		left: 41%
 	.site-header .header-flex-about
-		top: 219px
+		top: 137px
 	#my-page #my-footer .logo-footer-wrapp
 		left: 10%
 	.is-home #my-footer
@@ -512,7 +566,8 @@
 	.tabs__content .works-list li
 		width: 100%
 	.top-line .link-menu
-		top: 75px
+		top: 2px
+		left: 3% 
 	#we-specilise
     	top: 235px
 	body.is-home .site-header
@@ -528,6 +583,71 @@
 		left: 95%
 	.flex-slider .slider-icon img:nth-child(8)
 		left: 120%
+	body #my-page #my-header .site-header .top-line .logo img
+		margin-left: 10px
+		width: 154px
+	.top-line .hamburger
+		right: 0
+		left: 67%
+		top: 22px
+	#we-specilise
+		width: 94%
+	.flex-slider .slider-icon
+		.how-img
+			opacity: 1
+			margin-left: 121px
+			p
+				text-align: left
+			img
+				width: 60px
+				left: 2px
+	#my-footer .footer__social
+		left: 0
+	.site-header .header-hring-img
+		width: 56%
+		top: 13%
+		left: 21%
+	#my-page #my-content .avaible-team .dev .dev-item, #my-page #my-content .opportunities .dev .dev-item
+		position: relative
+		left: 3%
+		margin: 10px 0 0 0
+		width: 94%
+		overflow: hidden
+	#my-content .avaible-team .dev, #my-content .opportunities .dev
+		margin-bottom: 95px
+	body.dedicated .site-header .header-flex-dedicated
+		width: 88%
+		top: 19%
+		left: 6%
+		h1
+			font-size: 30px
+		p
+			font-size: 20px
+	body.dedicated .site-header .header-dedicated-img
+		width: 98%
+		top: 56%
+		left: 20%
+	#my-content .dedicated-stage
+		padding-left: 5%
+		.dedicated-stage-container
+			width: 108%
+			.row.composition-right, .row.composition-left
+				.col-md-3
+					padding-left: 0
+				left: 0
+				img
+					width: 28%
+				h3
+					position: absolute
+					left: 44%
+					top: -50%
+					font-size: 24px
+				p
+					font-size: 20px
+	#my-content .dedicated-stage .dedicated-stage-container .row 
+		.wrapp-composition-left, .wrapp-composition-right
+			    overflow: inherit
+
 /* Custom, iPhone Retina */
 @media only screen and (max-width: 320px)
 	/**/

@@ -306,7 +306,6 @@ section, header
     right: -201px;
     position: absolute
     top: 34px
-    z-index: 2
     display: none
 .show-menu
     display: block !important
@@ -433,7 +432,7 @@ section, header
     80% 
         top: 74px
     100% 
-        top: 111px
+        top: 99px
 @keyframes show-menu-mobile  
     0% 
         top: -250px
@@ -456,14 +455,14 @@ section, header
     80% 
         top: 74px
     100% 
-        top: 111px
+        top: 99px
 .close-menu-mobile
     display: block !important
     -webkit-animation: close-menu-mobile 0.5s linear forwards
     animation: close-menu-mobile 0.5s linear forwards
 @-webkit-keyframes close-menu-mobile 
     0% 
-        top:  111px
+        top: 99px
     10% 
         top: 74px
     20% 
@@ -486,7 +485,7 @@ section, header
         top: -250
 @keyframes close-menu-mobile
     0% 
-        top:  111px
+        top: 99px
     10% 
         top: 74px
     20% 
@@ -1007,6 +1006,7 @@ canvas
         padding-top: 27px
         width: 100%
         z-index: 1
+        overflow: hidden
         .logo
             img
                 width: 235px
@@ -1107,6 +1107,8 @@ canvas
     left: 0
     position: absolute
     background: #fff
+#my-page #my-header .top-line
+    overflow: hidden
 #is-our-team .site-header
     min-height: 604px
     width:  100%
@@ -1288,7 +1290,7 @@ canvas
         position: absolute
         padding-top: 27px
         width: 100%
-        z-index: 1
+        z-index: 9
         .logo
             img
                 width: 235px
@@ -1321,7 +1323,6 @@ canvas
     padding: 3% 0 3% 0
     background-color: #fff
     .header-opportunities
-        width: 836px
         text-align: left
         position: relative
         margin: 0 auto
@@ -1454,7 +1455,7 @@ canvas
     top: 60%
 .avaible-team .dev .dev-item
     padding-bottom: 1%
-.opportunities .content-oportunities .dev .big-dev-item, .avaible-team .dev .big-dev-item, 
+.opportunities .content-oportunities .dev .big-dev-item, .avaible-team .dev .big-dev-item
     -webkit-animation: opp-animation 0.1s linear forwards
     animation: opp-animation 0.1s linear forwards
     margin: 0
@@ -1513,6 +1514,65 @@ canvas
         width: 39%
     100%
         width: 44%
+.opportunities .content-oportunities .dev .big-dev-item-mobile, .avaible-team .dev .big-dev-item-mobile
+    -webkit-animation: opp-animation-mobile 0.1s linear forwards
+    animation: opp-animation-mobile 0.1s linear forwards
+    margin: 0
+    top: 0
+    z-index: 5
+    background-color: #fff
+    padding: 5% 0
+    img
+        width: 17%
+    .skill-title
+        display: block
+        margin-top: 20px
+    .requirement
+        display: block
+        margin-top: 20px
+        li
+            padding-top: 5px
+            font-size: 17px
+            line-height: 18px
+            position: relative
+        li:before
+            color: $blue
+            content: "\2022"
+            font-size: 26px
+            font-weight: 700
+            left: -15px
+            line-height: 18px
+            position: absolute
+            top: 6px
+    .the-opp
+        display: block
+        margin-top: 20px
+        .opp-text
+            width: 75%
+            text-align: left
+            margin: 0 auto
+    .skill, .skill-how
+        width: 61%
+        .hid
+            display: inline-block
+@-webkit-keyframes opp-animation-mobile
+    25%
+        width: 26%
+    50%
+        width: 32%
+    75%
+        width: 39%
+    100%
+        width: 94%
+@keyframes opp-animation-mobile
+    25%
+        width: 26%
+    50%
+        width: 32%
+    75%
+        width: 39%
+    100%
+        width: 94%
 .is-portal
     .site-header
         background-color: #000
