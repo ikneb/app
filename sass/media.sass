@@ -54,8 +54,10 @@
 		text-align: left
 	.composition-cloud
 		position: relative
-	#my-footer .section-footer
-		/* margin-left: 10% */
+	#my-menu
+		z-index: 1
+	#my-content, .solution-wrap, .time-materials .site-header
+		overflow: hidden
 	.earth .brz-flex .composition
     	left: 28%
     	top: 53%
@@ -75,6 +77,14 @@
 		left: 57%
 	.header-opportunities
 		padding: 0 20px
+	.solution-section
+		.solution-wrap
+			.development p, .testing p
+				overflow: hidden
+				max-width: 377px
+	body.cont .site-header .header-flex-contact
+		width: 41%
+		top: 24%
 /* Large Devices, Wide Screens */
 @media only screen and (max-width: 1199px)
 	.top-line .link-menu
@@ -102,6 +112,19 @@
 		font-size: 60%
 		top: 15px
 		padding: 38px 1% 32px 1%
+	#my-content
+		overflow: hidden
+	body.dedicated .site-header .header-flex-dedicated
+		top: 31%
+	body.dedicated .site-header .header-dedicated-img
+		top: 17%
+		left: 53%
+	body.dedicated .site-header
+		height: 600px
+	.dedicated-stage .dedicated-stage-container .composition-right
+		left: 38%
+	#my-content .waste-time .waste-time-text
+		top: 6%
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width: 997px)
@@ -304,7 +327,72 @@
 			right: 3%
 		.dev .dev-item:nth-child(3n-1)
 			left: 20%
-
+	#my-content
+		overflow: hidden
+	body.dedicated .site-header .header-flex-dedicated
+		top: 31%
+		width: 78%
+	body.dedicated .site-header .header-dedicated-img
+		top: 46%
+		left: 26%
+		width: 73%
+	body.dedicated .site-header
+		height: 800px
+	.dedicated-stage .dedicated-stage-container .composition-right
+		left: 38%
+	#my-content .waste-time .waste-time-text
+		top: 2%
+		width: 45%
+	#my-content .dedicated-stage
+		padding-left: 5%
+		.dedicated-stage-container
+			width: 108%
+			.row.composition-right, .row.composition-left
+				.col-md-3
+					padding-left: 0
+				left: 0
+				img
+					width: 65%
+				p
+					max-width: 674px
+	#my-content .dedicated-stage .dedicated-stage-container .row 
+		.wrapp-composition-left, .wrapp-composition-right
+			    overflow: inherit
+	body.time-materials .site-header .header-flex-time-materials
+		width: 79%
+		top: 14%
+		left: 11%
+		p
+			font-size: 30px
+	body.time-materials .site-header .header-time-materials-img
+		width: 115%
+		top: 45%
+		left: 10%
+	#my-content .solution-section .solution-wrap
+		padding: 30px
+		div
+			position: inherit
+			display: inline-block
+			width: 100%
+			margin-top: 20px
+			h3
+				position: relative
+				top: -142px
+				left: 36%
+				font-size: 3em
+			img
+				width: 32%
+			p
+				max-width: 900px
+				font-size: 30px
+				margin-top: -51px
+	body.cont .site-header .header-flex-contact
+		width: 83%
+		top: 19%
+	body.cont .site-header .header-contact-img
+		width: 24%
+		top: 61%
+		left: 38%
 @media only screen and (max-width: 669px)
 	.slider .flex-slider
 		left: -223px
@@ -395,6 +483,48 @@
 			img
 				width: 60px
 				left: 2px
+	body.cont .site-header .header-flex-contact
+		width: 50%
+		top: 19%
+	body.cont .site-header .header-contact-img
+		width: 21%
+		top: 23%
+		left: 71%
+	#my-content .contact-us-section
+		padding: 7% 5px
+	.button-input-contact
+		margin-top: 24px
+	body.time-materials .site-header .header-flex-time-materials
+		width: 90%
+		top: 19%
+		left: 5%
+		h1
+			font-size: 36px
+		p
+			font-size: 16px
+	body.time-materials .site-header .header-time-materials-img
+		width: 100%
+		top: 32%
+		left: 15%
+	#my-content .solution-section
+		min-height: 900px
+	#my-content .solution-section .solution-wrap
+		div
+			position: inherit
+			display: inline-block
+			width: 100%
+			margin-top: 20px
+			h3
+				position: relative
+				top: -84px
+				left: 19%
+				font-size: 2em
+			img
+				width: 16%
+			p
+				max-width: 900px
+				font-size: 16px
+				margin-top: -51px
 	body #my-page #my-header .site-header .top-line .logo img
     	margin-left: 38px
     	width: 202px
@@ -640,14 +770,79 @@
 				h3
 					position: absolute
 					left: 44%
-					top: -50%
+					top: -81%
 					font-size: 24px
 				p
-					font-size: 20px
+					font-size: 18px
 	#my-content .dedicated-stage .dedicated-stage-container .row 
 		.wrapp-composition-left, .wrapp-composition-right
 			    overflow: inherit
-
+	body.dedicated .site-header
+		overflow: hidden
+	#my-content .waste-time .waste-time-text h1
+		font-size: 30px
+	#my-content .waste-time .waste-time-img
+		width: 31%
+		left: 31%
+		top: 1px
+	#my-content .waste-time .waste-time-text
+		top: 18%
+		width: 90%
+		left: 5%
+		p
+			font-size: 18px
+			margin-top: 10px
+		h1
+			text-align: center
+	.waste-time .waste-time-list
+		width: 91%
+		font-size: 18px
+		margin-top: 130px
+	#my-content .dedicated-contact h1
+		font-size: 2em
+		margin-bottom: 12%
+	body.time-materials .site-header .header-flex-time-materials
+		width: 96%
+		top: 19%
+		left: 3%
+		h1
+			font-size: 36px
+		p
+			font-size: 16px
+	body.time-materials .site-header .header-time-materials-img
+		width: 115%
+		top: 45%
+		left: 10%
+	#my-content .solution-section
+		min-height: 900px
+	#my-content .solution-section .solution-wrap
+		div
+			position: inherit
+			display: inline-block
+			width: 100%
+			margin-top: 20px
+			h3
+				position: relative
+				top: -84px
+				left: 36%
+				font-size: 2em
+			img
+				width: 32%
+			p
+				max-width: 900px
+				font-size: 16px
+				margin-top: -51px
+	body.cont .site-header .header-flex-contact
+		width: 83%
+		top: 19%
+	body.cont .site-header .header-contact-img
+		width: 24%
+		top: 68%
+		left: 38%
+	#my-content .contact-us-section
+		padding: 7% 5px
+	.button-input-contact
+		margin-top: 24px
 /* Custom, iPhone Retina */
 @media only screen and (max-width: 320px)
 	/**/
