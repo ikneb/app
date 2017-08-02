@@ -403,7 +403,7 @@
 		position: absolute
 		width: 30%
 		display: grid
-		z-index: 1
+		z-index: -2
 		right: 0
 		top: -500%
 		// opacity: 0
@@ -416,10 +416,20 @@
 			background-color: #00c2f2
 		.contact-hr
 			padding-top: 14px
-	.portal-menu .logout
-		right: 67%
+	.portal-menu
+		z-index: 9999
+		.logout
+			right: 67%
 	.wrap-hamburger
 		z-index: 9999
+	.hidden-menu
+		position: absolute
+		top: 0
+		right: 0
+		width: 30%
+		height: 100%
+		background-color: #a9e8f9
+		z-index: -1
 @media only screen and (max-width: 669px)
 	.slider .flex-slider
 		left: -223px
