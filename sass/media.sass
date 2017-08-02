@@ -398,11 +398,12 @@
 		position: absolute
 		top: 14px
 		float: right
+		right: -39px
 	.portal-menu .portal-menu-ul
 		position: absolute
 		width: 30%
 		display: grid
-		z-index: 0.5
+		z-index: 1
 		right: 0
 		top: -500%
 		// opacity: 0
@@ -417,6 +418,8 @@
 			padding-top: 14px
 	.portal-menu .logout
 		right: 67%
+	.wrap-hamburger
+		z-index: 9999
 @media only screen and (max-width: 669px)
 	.slider .flex-slider
 		left: -223px
@@ -884,6 +887,31 @@
 		.modal-content
 			input
 				width: 80%
+	.portal-menu .logout
+    	right: 35%
+	.portal-menu .portal-menu-ul
+    	width: 52%
+	.filling .panel-body .gform_description
+		width: 100%
+	.filling .panel-body .gform_body-ul 
+		li
+			input[type=text]
+				width: 100%
+		width: 100%
+	.gform_body-ul li .name_last input
+		margin-top: 30px
+	.filling .panel-body .gform_body-ul li .col
+		width: 100%
+	.filling .panel-body .gform_body-ul li textarea
+		width: 100%
+	.gform_body-ul .gf_list_3col
+		height: 280px
+		.ginput_container
+			ul
+				li
+					width: 45%
+	.ginput_container .gfield_select
+		width: 100%
 /* Custom, iPhone Retina */
 @media only screen and (max-width: 320px)
 	/**/

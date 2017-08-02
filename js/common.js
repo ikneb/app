@@ -783,11 +783,11 @@ $(document).ready(function () {
                 e.preventDefault();
                 if(click){
                         $(this).removeClass('is-active').removeClass('js-hamburger');
-                        $('.portal-menu-ul').addClass('show-portal-menu');
+                        $('.portal-menu-ul').removeClass('show-portal-menu').addClass('close-portal-menu');
                         click = false;
                 } else {
                         $(this).addClass('is-active').addClass('js-hamburger');
-                        $('.portal-menu-ul').addClass('close-portal-menu');
+                        $('.portal-menu-ul').removeClass('close-portal-menu').addClass('show-portal-menu');
 
                         click = true;
                 }
