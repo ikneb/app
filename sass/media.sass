@@ -129,7 +129,9 @@
 /* Medium Devices, Desktops */
 @media only screen and (max-width: 997px)
 	/**/
-	
+@media only screen and (min-width: 769px)
+	.portal-menu .hamburger
+		display: none
 /* Small Devices, Tablets */
 @media only screen and (max-width: 769px)
 	#my-page .site-header .top-line
@@ -276,10 +278,6 @@
 		top: 132%
 	.flex-slider .slider-icon div
 		top: 201%
-	.portal-menu .portal-menu-ul li
-		font-size: 60%
-		top: 29px
-		padding: 38px 1% 32px 1%
 	.we-specilise .we-specilise-left-wrap
 		margin-right: 0
 	.slider-icon .how-img:nth-child(6)
@@ -393,6 +391,32 @@
 		width: 24%
 		top: 61%
 		left: 38%
+	body.is-portal .site-header .link-menu
+		top: 12px
+		left: 28%
+	.portal-menu .hamburger
+		position: absolute
+		top: 14px
+		float: right
+	.portal-menu .portal-menu-ul
+		position: absolute
+		width: 30%
+		display: grid
+		z-index: 0.5
+		right: 0
+		top: -500%
+		// opacity: 0
+		li
+			background-color: #a9e8f9
+			padding: 0px 3% 20px 7%
+			.icon, img
+				width: 40px
+		.active
+			background-color: #00c2f2
+		.contact-hr
+			padding-top: 14px
+	.portal-menu .logout
+		right: 67%
 @media only screen and (max-width: 669px)
 	.slider .flex-slider
 		left: -223px
@@ -525,6 +549,13 @@
 				max-width: 900px
 				font-size: 16px
 				margin-top: -51px
+	body.is-portal .site-header .link-menu
+		left: 6%
+		top: 4px
+	body.is-portal .site-header .top-line .return
+		padding: 12px 18px
+	body.is-portal .site-header .top-line
+    	padding-top: 17px
 	body #my-page #my-header .site-header .top-line .logo img
     	margin-left: 38px
     	width: 202px
@@ -843,6 +874,16 @@
 		padding: 7% 5px
 	.button-input-contact
 		margin-top: 24px
+	#my-content .avaible-team
+		padding: 11% 0 3% 0
+	.site-header .portal-title
+		left: 9%
+		top: 25%
+	.modal .modal-dialog 
+		width: 365px
+		.modal-content
+			input
+				width: 80%
 /* Custom, iPhone Retina */
 @media only screen and (max-width: 320px)
 	/**/
