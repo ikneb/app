@@ -14,7 +14,7 @@ var animateLineWork = 0;
 var is_move = false;
 
 /*
-*
+* Animation line and box composition for header section home page
 *
 */
 function fly() {
@@ -41,7 +41,7 @@ function fly() {
 }
 
 /*
-*
+* Animation section cloud home page
 *
 */
 function cloudFly (){
@@ -52,7 +52,7 @@ function cloudFly (){
 }
 
 /*
-*
+*  Animate on about as page
 *
 */
 function aboutUsFly (){
@@ -65,14 +65,10 @@ function aboutUsFly (){
                 }, 900);
 }
 
-/*
-*
-*
-*/
 $(function(){
 
         /*
-        *
+        * Find all anchors
         *
         */
         function updateAnchors() {
@@ -83,8 +79,7 @@ $(function(){
         }
 
         /*
-        *
-        *
+        * Scroll for home page
         */
         var cells = document.getElementById('is-home');
         if (cells) {
@@ -96,6 +91,9 @@ $(function(){
                     /**/
                 }
 
+                /*
+                * Animate "how we work section"
+                */
                 if (currentAnchor == 3 && animateLineWork < 14)
                 {
                     if (come('.flex-slider')) {
@@ -179,7 +177,7 @@ $(function(){
         }
     
     /*
-    *
+    * Animate for mobile home page
     *
     */
     $('body').on('touchmove', function(e){
@@ -195,8 +193,7 @@ $(function(){
 });
 
 /*
-*
-*
+* Check isset element on the page
 */
 function come(elem) {
   var docViewTop = $(window).scrollTop() + $(window).height();
@@ -210,8 +207,7 @@ function come(elem) {
 }
 
 /*
-*
-*
+*  Animate convas for about us page
 */
 $(function() {
     var cells = document.getElementById('is-about-us');
@@ -638,8 +634,7 @@ $(function() {
     }
 
     /*
-    *
-    *
+    * Scroll for "about us" and "we're hiring"
     */
     function mouse () {
         $('body').on('mousewheel', function(e){
@@ -686,7 +681,7 @@ $(function() {
     }
 
     /*
-    *
+    * Animation become section "about us" page
     *
     */
     function flyBecome() {
@@ -718,7 +713,7 @@ $(function() {
 });
 
 /*
-*
+* Scroll
 *
 */
 function mousWheel() {
@@ -769,7 +764,7 @@ function mousWheel() {
 }
 
 /*
-*
+* Set positio for click on dev items element 
 *
 */
 function setPositionDevItems(rect, _this) {
@@ -788,7 +783,7 @@ function setPositionDevItems(rect, _this) {
 }
 
 /*
-*
+* Set positio for click on dev items element on mobile page
 *
 */
 function setPositionDevItemsMobile(rect, _this) {
@@ -807,7 +802,7 @@ function setPositionDevItemsMobile(rect, _this) {
 }
 
 /*
-*
+* Set positio for click on dev items element on mobile page
 *
 */
 function setPositionDevItemsMobileDevice(rect, _this, e) { 
@@ -832,7 +827,7 @@ $(document).ready(function () {
         }
 
         /*
-        *
+        *  Event for humburger on the all page or is portal page
         *
         */
         if ($('body').hasClass('is-portal')) {
@@ -879,6 +874,9 @@ $(document).ready(function () {
             }); 
         }
 
+        /*
+        *  Event mouseup portal menu
+        */
         $(document).mouseup(function (e) {
             if (windWidth < 768) {
                 if($('body').hasClass('is-portal') && $('.portal-menu-ul').hasClass('show-portal-menu')) {
@@ -895,8 +893,7 @@ $(document).ready(function () {
 
 
         /*
-        *
-        *
+        *  Event click nav menu 
         */
         $('#my-menu>ul>li').click(function () {
             var _this = $(this);
@@ -905,7 +902,7 @@ $(document).ready(function () {
         });
 
         /*
-        *
+        * Set height for flex box on the header section home page
         *
         */
         $('.height-composition').each(function(i, element){
@@ -917,11 +914,10 @@ $(document).ready(function () {
         });
 
         /*
-        *
+        *  Play animation if page open on the earth section 
         *
         */
         if ($('body').hasClass('is-home')){
-        
             if (come('.earth') && !device.ios()) {
              fly();
             } 
@@ -931,7 +927,7 @@ $(document).ready(function () {
         }
 
         /*
-        *
+        *  Animation on about us page 
         *
         */
         if ($('body').hasClass('is-about-us')){
@@ -939,7 +935,7 @@ $(document).ready(function () {
         }
 
         /*
-        *
+        * Animation on our team page
         *
         */
         if ($('body').hasClass('is-our-team')) {
@@ -953,7 +949,7 @@ $(document).ready(function () {
         }
 
         /*
-        *
+        *  Animation on we're hiring page 
         *
         */
         if ($('body').hasClass('is-hiring')) {
@@ -971,17 +967,26 @@ $(document).ready(function () {
                         }, 700);
             } 
         }
+
+        /*
+        * Animate text for dedicated page
+        */
         if ($('body').hasClass('cont') || $('body').hasClass('dedicated')) {
             mousWheel();
         }
 
+        /*
+        * Animate hover for tabs on our team page
+        */
         $('.tabs__caption>li').hover(function() {
             $(this).addClass('active');
-        },function() {
-            
-                $(this).removeClass('active');
-            
+        },function() {    
+                $(this).removeClass('active'); 
         });
+
+        /*
+        * Evaent for click tabs on our team page
+        */
         $('.tabs__caption li').click (function() {
             if(!$(this).hasClass('is-active')) {
                 $(this)
@@ -989,6 +994,10 @@ $(document).ready(function () {
               .closest('div.tabs').find('div.tabs__content').removeClass('active').eq($(this).index()).addClass('active');
             }
         });
+
+        /*
+        *
+        */
         $('.portal-menu-ul li').click (function() {
             if ($(this).hasClass('contact-hr')){
                 window.location.href = "https://houstonapps.co/app/contact.html";
@@ -1006,6 +1015,10 @@ $(document).ready(function () {
             }
         });
 
+
+        /*
+        *
+        */
         $('body').on('click', '.dev-item',function (e) {
             if(e.target && e.target.nodeName == "A") {
                 if ($(e.target).hasClass('leave-feedback')) {
@@ -1045,6 +1058,10 @@ $(document).ready(function () {
             
         });
 
+
+        /*
+        *
+        */
         $(document).mouseup(function (e) {
             if (windWidth > 768) {
                 var container = $('big-dev-item');
@@ -1068,6 +1085,10 @@ $(document).ready(function () {
             
         });
 
+
+        /*
+        *
+        */
         $('.we-specilise .we-specilise-left-wrap, .we-specilise .we-specilise-right-wrap').on('mouseenter',function () {
             var self = this;
             $(self).find('div:first').addClass('we-specilise-hover')
@@ -1077,6 +1098,11 @@ $(document).ready(function () {
                 $(self).find('.row').css('display', 'block');
             }, 1300);
         });
+
+
+        /*
+        *
+        */        
         $('.we-specilise .we-specilise-left-wrap, .we-specilise .we-specilise-right-wrap').on('mouseleave', function () {
                 var self = this;
                 $(self).find('div:first').removeClass('we-specilise-hover');
@@ -1087,6 +1113,10 @@ $(document).ready(function () {
                 }, 1300);
         });
 
+
+        /*
+        *
+        */
         $('.we-specilise .we-specilise-left').on('click',function () {
             window.location.href = "https://houstonapps.co/app/time_materials.html";
         });
@@ -1094,22 +1124,40 @@ $(document).ready(function () {
             window.location.href = "https://houstonapps.co/app/dedicated.html";
         });
 
+
+        /*
+        *
+        */
         $('.login').click(function (e) {
             e.preventDefault();
             $('.modal-backdrop').addClass('in');
             $('.modal').addClass('in');
         });
+
+
+        /*
+        *
+        */
         $('.close').click(function (e) {
             e.preventDefault();
             $('.modal-backdrop').removeClass('in');
             $('.modal').removeClass('in');
 
         });
+
+
+        /*
+        *
+        */
         $('.lwa-form').submit(function (e) {
             e.preventDefault();
             window.location.href = "https://houstonapps.co/app/portal_log_in.html";
         });
 
+
+        /*
+        *
+        */
         $('.link-contact-form').click(function (e) {
             e.preventDefault();
             console.log(123);
@@ -1119,14 +1167,23 @@ $(document).ready(function () {
                         isAnimating  = false;
                     });
         });
+
+
+        /*
+        *
+        */
         $('.skill').mouseout( function (e) {
             e.preventDefault();
             var count = $(this).find('.skill-item').length;
             if (count > 6 && $(this).hasClass('skill')) {
                 $(this).addClass('skill-hover');
             }
-         });
+        });
 
+
+        /*
+        *
+        */
         $('.skill').mouseleave( function (e) {
             e.preventDefault();
             $(this).removeClass('skill-hover');
@@ -1138,6 +1195,11 @@ $(document).ready(function () {
 
 
 $(function() {
+
+    
+/*
+*
+*/
     if ($('body').hasClass('time-materials') && windWidth > 768) { 
         var img_width = $('.start')[0];
         var analysis = $('.analysis').position();
