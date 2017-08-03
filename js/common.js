@@ -13,7 +13,10 @@ var speed = 5;
 var animateLineWork = 0;
 var is_move = false;
 
-
+/*
+*
+*
+*/
 function fly() {
     setTimeout(function () {
                 $('.line-aus').addClass('path-aus');
@@ -37,7 +40,10 @@ function fly() {
             }, 1600);
 }
 
-
+/*
+*
+*
+*/
 function cloudFly (){
      setTimeout(function () {
                     $(".flex-cloud").attr('id','flex-cloud');
@@ -45,6 +51,10 @@ function cloudFly (){
                 }, 600);
 }
 
+/*
+*
+*
+*/
 function aboutUsFly (){
             if (windWidth > 769 ) {
                 $(".header-flex-about").stop().animate({ top: "178px" }, 2000);
@@ -55,8 +65,16 @@ function aboutUsFly (){
                 }, 900);
 }
 
-
+/*
+*
+*
+*/
 $(function(){
+
+        /*
+        *
+        *
+        */
         function updateAnchors() {
             anchors = [];
             $('.anchor').each(function(i, element){
@@ -64,6 +82,10 @@ $(function(){
             });
         }
 
+        /*
+        *
+        *
+        */
         var cells = document.getElementById('is-home');
         if (cells) {
             document.addEventListener('mousewheel', function(e) {
@@ -117,7 +139,7 @@ $(function(){
                     return false;
                 }
                 isAnimating  = true;
-                // console.log(e.wheelDelta);
+               
                 // Increase or reset current anchor
                 if( e.wheelDelta >= 0 ) {
                     currentAnchor--;
@@ -156,7 +178,10 @@ $(function(){
             });
         }
     
-
+    /*
+    *
+    *
+    */
     $('body').on('touchmove', function(e){
         e.preventDefault();
         e.stopPropagation();
@@ -169,6 +194,10 @@ $(function(){
     updateAnchors(); 
 });
 
+/*
+*
+*
+*/
 function come(elem) {
   var docViewTop = $(window).scrollTop() + $(window).height();
   
@@ -180,7 +209,10 @@ function come(elem) {
   return false;
 }
 
-
+/*
+*
+*
+*/
 $(function() {
     var cells = document.getElementById('is-about-us');
         if (cells) {
@@ -605,6 +637,10 @@ $(function() {
     });
     }
 
+    /*
+    *
+    *
+    */
     function mouse () {
         $('body').on('mousewheel', function(e){
                 e.preventDefault();
@@ -649,7 +685,10 @@ $(function() {
             });
     }
 
-
+    /*
+    *
+    *
+    */
     function flyBecome() {
          moveBox18();   
             setTimeout(function () {
@@ -678,6 +717,10 @@ $(function() {
     }
 });
 
+/*
+*
+*
+*/
 function mousWheel() {
         $('body').on('mousewheel', function(e, delta){
             this.scrollLeft -= (delta * 200);
@@ -725,6 +768,10 @@ function mousWheel() {
             });
 }
 
+/*
+*
+*
+*/
 function setPositionDevItems(rect, _this) {
     var third = windWidth/3;
  
@@ -740,6 +787,10 @@ function setPositionDevItems(rect, _this) {
     }
 }
 
+/*
+*
+*
+*/
 function setPositionDevItemsMobile(rect, _this) {
     var third = windWidth/3;
  
@@ -755,15 +806,22 @@ function setPositionDevItemsMobile(rect, _this) {
     }
 }
 
+/*
+*
+*
+*/
 function setPositionDevItemsMobileDevice(rect, _this, e) { 
         _this.css({'left': rect.left, 'top': 0});
         _this.addClass('big-dev-item-mobile');
 }
 
 
-
-
 $(document).ready(function () {
+
+        /*
+        *
+        *
+        */
         if (windWidth < 769) { 
             if($('body').hasClass('time-materials')) { 
                 $('.solution-wrap').find('div').addClass('render-verticale-line');
@@ -773,7 +831,10 @@ $(document).ready(function () {
             }
         }
 
-
+        /*
+        *
+        *
+        */
         if ($('body').hasClass('is-portal')) {
             $('.hamburger').click(function(e) {
                 e.preventDefault();
@@ -818,12 +879,35 @@ $(document).ready(function () {
             }); 
         }
 
+        $(document).mouseup(function (e) {
+            if (windWidth < 768) {
+                if($('body').hasClass('is-portal') && $('.portal-menu-ul').hasClass('show-portal-menu')) {
+                    var container = $('.show-portal-menu');
+                    var hamburger = $('.hamburger');
+                    if (container.has(e.target).length === 0 && hamburger.has(e.target).length === 0){
+                        $('.hamburger').removeClass('is-active').removeClass('js-hamburger');
+                        $('.portal-menu-ul').removeClass('show-portal-menu').addClass('close-portal-menu');
+                        click = false;
+                    }
+                } 
+            }
+        });
+
+
+        /*
+        *
+        *
+        */
         $('#my-menu>ul>li').click(function () {
             var _this = $(this);
             $('.active').removeClass('active');
             _this.addClass('active');
         });
 
+        /*
+        *
+        *
+        */
         $('.height-composition').each(function(i, element){
                 var composition = $(this)[0];
                 composition.style.height = composition.clientWidth + 'px';
@@ -831,6 +915,11 @@ $(document).ready(function () {
                 composition.style.height = composition.clientWidth + 'px';
             }
         });
+
+        /*
+        *
+        *
+        */
         if ($('body').hasClass('is-home')){
         
             if (come('.earth') && !device.ios()) {
@@ -840,9 +929,19 @@ $(document).ready(function () {
                 cloudFly();
             }
         }
+
+        /*
+        *
+        *
+        */
         if ($('body').hasClass('is-about-us')){
              aboutUsFly();
-        } 
+        }
+
+        /*
+        *
+        *
+        */
         if ($('body').hasClass('is-our-team')) {
             mousWheel();
             if (windWidth > 769 ) {
@@ -852,6 +951,11 @@ $(document).ready(function () {
                     $(".header-flex-team").attr('id','about-us-fly-text');
                 }, 100);
         }
+
+        /*
+        *
+        *
+        */
         if ($('body').hasClass('is-hiring')) {
             mousWheel();
             if (windWidth > 769 ) {
@@ -894,6 +998,11 @@ $(document).ready(function () {
                 $(this)
               .addClass('active').siblings().removeClass('active');
               $('div.tab-login').find('div.filling').removeClass('active').eq($(this).index()).addClass('active');
+              if (windWidth < 768) {
+                    $('.hamburger').removeClass('is-active').removeClass('js-hamburger');
+                    $('.portal-menu-ul').removeClass('show-portal-menu').addClass('close-portal-menu');
+                    click = false;
+              }
             }
         });
 
