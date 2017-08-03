@@ -154,10 +154,6 @@ $(function(){
                     });
                 }
             });
-
-            document.addEventListener('touchstart', function(e) {
-                console.log(e);
-            });
         }
     
 
@@ -1033,7 +1029,7 @@ $(document).ready(function () {
 
 
 $(function() {
-    if ($('body').hasClass('time-materials')) { 
+    if ($('body').hasClass('time-materials') && windWidth > 768) { 
         var img_width = $('.start')[0];
         var analysis = $('.analysis').position();
         var specifications = $('.specifications').position();
