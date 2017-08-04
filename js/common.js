@@ -996,7 +996,7 @@ $(document).ready(function () {
         });
 
         /*
-        *
+        * Event for click portal menu on desctop and mobile version
         */
         $('.portal-menu-ul li').click (function() {
             if ($(this).hasClass('contact-hr')){
@@ -1017,7 +1017,7 @@ $(document).ready(function () {
 
 
         /*
-        *
+        * Event for click dev items 
         */
         $('body').on('click', '.dev-item',function (e) {
             if(e.target && e.target.nodeName == "A") {
@@ -1060,7 +1060,7 @@ $(document).ready(function () {
 
 
         /*
-        *
+        * Event for click out dev items
         */
         $(document).mouseup(function (e) {
             if (windWidth > 768) {
@@ -1087,7 +1087,7 @@ $(document).ready(function () {
 
 
         /*
-        *
+        * Event for hover in cloud section home page
         */
         $('.we-specilise .we-specilise-left-wrap, .we-specilise .we-specilise-right-wrap').on('mouseenter',function () {
             var self = this;
@@ -1101,7 +1101,7 @@ $(document).ready(function () {
 
 
         /*
-        *
+        *   Event for hover in cloud section home page
         */        
         $('.we-specilise .we-specilise-left-wrap, .we-specilise .we-specilise-right-wrap').on('mouseleave', function () {
                 var self = this;
@@ -1115,7 +1115,7 @@ $(document).ready(function () {
 
 
         /*
-        *
+        *  Click for hover in cloud section home page
         */
         $('.we-specilise .we-specilise-left').on('click',function () {
             window.location.href = "https://houstonapps.co/app/time_materials.html";
@@ -1125,8 +1125,8 @@ $(document).ready(function () {
         });
 
 
-        /*
-        *
+        /* 
+        *   Event click login on the portal log uot page
         */
         $('.login').click(function (e) {
             e.preventDefault();
@@ -1136,7 +1136,7 @@ $(document).ready(function () {
 
 
         /*
-        *
+        *   Close popup login page
         */
         $('.close').click(function (e) {
             e.preventDefault();
@@ -1146,21 +1146,16 @@ $(document).ready(function () {
         });
 
 
-        /*
-        *
+        /* 
+        *   Submit login form
         */
         $('.lwa-form').submit(function (e) {
             e.preventDefault();
             window.location.href = "https://houstonapps.co/app/portal_log_in.html";
         });
 
-
-        /*
-        *
-        */
         $('.link-contact-form').click(function (e) {
             e.preventDefault();
-            console.log(123);
             $('html, body').animate({
                         scrollTop: parseInt( anchors[1] )
                     }, 1100, 'swing', function(){
@@ -1170,7 +1165,7 @@ $(document).ready(function () {
 
 
         /*
-        *
+        *  Hovew skil section on dev items
         */
         $('.skill').mouseout( function (e) {
             e.preventDefault();
@@ -1179,11 +1174,6 @@ $(document).ready(function () {
                 $(this).addClass('skill-hover');
             }
         });
-
-
-        /*
-        *
-        */
         $('.skill').mouseleave( function (e) {
             e.preventDefault();
             $(this).removeClass('skill-hover');
@@ -1196,10 +1186,9 @@ $(document).ready(function () {
 
 $(function() {
 
-    
-/*
-*
-*/
+    /*
+    *   Render line on the "time_material" page
+    */
     if ($('body').hasClass('time-materials') && windWidth > 768) { 
         var img_width = $('.start')[0];
         var analysis = $('.analysis').position();
@@ -1272,7 +1261,9 @@ $(function() {
         var scrol = 0;
 
         function comeWerticaleCenter(elem) {
-              var docViewTop = $(window).scrollTop() + $(window).height()/2 + 120;
+
+              var dop_height = (windHeigth > 768) ? 50 : 120;
+              var docViewTop = $(window).scrollTop() + $(window).height()/2 + dop_height;
               
               var docViewBottom = docViewTop + $(window).height()/2;
               var elemTop = $(elem).offset().top + 100;
