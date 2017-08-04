@@ -1181,7 +1181,18 @@ $(document).ready(function () {
         $('#gform_1').submit(function (e) {
             e.preventDefault();
         });
-});
+
+        var biggestHeight = 0;
+
+        $(".dev .dev-item").each(function(){
+            console.log($(this));
+             if ($(this).height() > biggestHeight ) {
+               biggestHeight = $(this).height();
+             }
+        });
+
+        $(".dev").height(biggestHeight);
+    });
 
 
 $(function() {
@@ -1261,10 +1272,15 @@ $(function() {
         var scrol = 0;
 
         function comeWerticaleCenter(elem) {
+                var dop_height = 120;
+                if (windHeigth > 768) {
+                    dop_height = 50;
+                } else if(windHeigth > 900) {
+                    dop_height = 1;
+                } 
 
-              var dop_height = (windHeigth > 768) ? 50 : 120;
               var docViewTop = $(window).scrollTop() + $(window).height()/2 + dop_height;
-              
+              console.log(docViewTop);
               var docViewBottom = docViewTop + $(window).height()/2;
               var elemTop = $(elem).offset().top + 100;
               if (parseInt(docViewTop) > parseInt(elemTop)) {
