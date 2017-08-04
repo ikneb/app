@@ -1182,7 +1182,7 @@ $(document).ready(function () {
             e.preventDefault();
         });
 
-        var biggestHeight = 0;
+        /*var biggestHeight = 0;
 
         $(".dev .dev-item").each(function(){
             console.log($(this));
@@ -1191,7 +1191,7 @@ $(document).ready(function () {
              }
         });
 
-        $(".dev").height(biggestHeight);
+        $(".dev").height(biggestHeight);*/
     });
 
 
