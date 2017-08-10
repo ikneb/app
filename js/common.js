@@ -84,7 +84,7 @@ $(function(){
         */
         var cells = document.getElementById('is-home');
         if (cells) {
-            document.addEventListener('mousewheel touchmove', function(e) {
+            document.addEventListener('mousewheel', function(e) {
                 e.preventDefault();
                 e.stopPropagation();
 
@@ -613,7 +613,7 @@ $(function() {
         $('body').on('touchmove', function(e){
         e.stopPropagation();
         var cells = document.getElementById('is-about-us');
-        if (cells && isAnim == true) {
+        if (cells && isAnim == true ) {
              flyBecome();
             firstMousWell = false;
             isAnim = false;
@@ -625,7 +625,7 @@ $(function() {
     * Scroll for "about us" and "we're hiring"
     */
     function mouse () {
-        $('body').on('mousewheel touchmove', function(e){
+        $('body').on('mousewheel', function(e){
                 e.preventDefault();
                 e.stopPropagation(); 
                 if( isAnimating) {
@@ -943,9 +943,15 @@ $(document).ready(function () {
         *
         */
         if ($('body').hasClass('is-hiring')) {
-            mousWheel();
+            
             if (windWidth > 769 ) {
+                mousWheel();
                 $(".header-flex-hiring").stop().animate({ top: "175px" }, 1000);
+            } else {
+                setTimeout(function () {
+                            $('.header-opportunities p').addClass('about-us-fly-img');
+                            $(".header-opportunities p").stop().animate({ left: "0px" }, 1000);
+                        }, 3000); 
             }
             setTimeout(function () {
                     $(".header-flex-hiring").attr('id','about-us-fly-text');
