@@ -84,7 +84,7 @@ $(function(){
         */
         var cells = document.getElementById('is-home');
         if (cells) {
-            document.addEventListener('mousewheel', function(e) {
+            document.addEventListener('mousewheel touchmove', function(e) {
                 e.preventDefault();
                 e.stopPropagation();
 
@@ -177,19 +177,6 @@ $(function(){
             });
         }
     
-    /*
-    * Animate for mobile home page
-    *
-    */
-    $('body').on('touchmove', function(e){
-        e.preventDefault();
-        e.stopPropagation();
-        var cells = document.getElementById('is-home');
-        if (cells) {
-            fly();
-            cloudFly();
-        }
-    });
     updateAnchors(); 
 });
 
@@ -638,7 +625,7 @@ $(function() {
     * Scroll for "about us" and "we're hiring"
     */
     function mouse () {
-        $('body').on('mousewheel', function(e){
+        $('body').on('mousewheel touchmove', function(e){
                 e.preventDefault();
                 e.stopPropagation(); 
                 if( isAnimating) {
@@ -1090,35 +1077,6 @@ $(document).ready(function () {
             
         });
 
-
-        /*
-        * Event for hover in cloud section home page
-        */
-        $('.we-specilise .we-specilise-left-wrap, .we-specilise .we-specilise-right-wrap').on('mouseenter',function () {
-            var self = this;
-            $(self).find('div:first').addClass('we-specilise-hover')
-            setTimeout(function(){
-                $(self).find('.first-stage').css('display', 'none');
-                $(self).find('p').css('display', 'block');
-                $(self).find('.row').css('display', 'block');
-            }, 1300);
-        });
-
-
-        /*
-        *   Event for hover in cloud section home page
-        */        
-        $('.we-specilise .we-specilise-left-wrap, .we-specilise .we-specilise-right-wrap').on('mouseleave', function () {
-                var self = this;
-                $(self).find('div:first').removeClass('we-specilise-hover');
-                setTimeout(function(){
-                $(self).find('p').css('display', 'none');
-                $(self).find('.row').css('display', 'none');
-                $(self).find('.first-stage').css('display', 'block');
-                }, 1300);
-        });
-
-
         /*
         *  Click for hover in cloud section home page
         */
@@ -1201,6 +1159,20 @@ $(document).ready(function () {
                 return false;
             }
         });
+
+
+
+        /*
+        * Animate for mobile home page
+        *
+        */
+        if (windWidth < 768) {
+            var cells = document.getElementById('is-home');
+            if (cells) {
+                fly();
+                cloudFly();
+            }
+        }
 
         /*var biggestHeight = 0;
 
