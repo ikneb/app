@@ -1,4 +1,5 @@
 var anchors = [];
+var inputArr = [];
 var currentAnchor = -1;
 var isAnimating  = false;
 var click = false;
@@ -717,7 +718,7 @@ $(function() {
 *
 */
 function mousWheel() {
-        $('body').on('mousewheel', function(e, delta){
+        $('body').on('mousewheel touchmove', function(e, delta){
             this.scrollLeft -= (delta * 200);
                 e.preventDefault();
                 e.stopPropagation(); 
@@ -738,11 +739,13 @@ function mousWheel() {
                 }
                 isAnimating  = true;
                 if ($('body').hasClass('is-hiring')) {
-                    
                         setTimeout(function () {
                             $('.header-opportunities p').addClass('about-us-fly-img');
                             $(".header-opportunities p").stop().animate({ left: "0px" }, 1000);
-                        }, 1500);   
+                        }, 1500);  
+                        if(windWidth < 768) {
+                            $('body').unbind('touchmove');
+                        } 
                 }
                 render = true;
                 if (firstMousWell) {
@@ -1180,6 +1183,22 @@ $(document).ready(function () {
         });
         $('#gform_1').submit(function (e) {
             e.preventDefault();
+        });
+
+        $('input, textarea').keyup(function(event) {
+            if(event.keyCode==13){
+                textboxes = $("input, textarea");
+                currentBoxNumber = textboxes.index(this);
+                console.log(this);
+
+                if (textboxes[currentBoxNumber + 1] != null) {
+                    nextBox = textboxes[currentBoxNumber + 1];
+                    nextBox.focus();
+                    nextBox.select();
+                }
+                event.preventDefault();
+                return false;
+            }
         });
 
         /*var biggestHeight = 0;
