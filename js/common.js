@@ -1189,7 +1189,6 @@ $(document).ready(function () {
             if(event.keyCode==13){
                 textboxes = $("input, textarea");
                 currentBoxNumber = textboxes.index(this);
-                console.log(this);
 
                 if (textboxes[currentBoxNumber + 1] != null) {
                     nextBox = textboxes[currentBoxNumber + 1];
