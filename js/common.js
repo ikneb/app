@@ -975,7 +975,9 @@ $(document).ready(function () {
         * Animate text for dedicated page
         */
         if ($('body').hasClass('cont') || $('body').hasClass('dedicated')) {
-            mousWheel();
+            if (windWidth > 768) {
+                mousWheel();
+            }
         }
 
         /*
